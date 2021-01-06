@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Abaddon · Web 前端架构师课-学员分享</title>
+        <title>Week02 Lerna源码分析 · Web 前端架构师课-学员分享</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01-week01 需求分析与架构设计.html" />
     
-    
-    <link rel="prev" href="../../" />
+    <link rel="prev" href="05-Week02-yargs使用.html" />
     
 
     </head>
@@ -124,9 +122,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../Abaddon/">
             
-                <a href="./">
+                <a href="../Abaddon/">
             
                     
                     Abaddon
@@ -138,9 +136,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="01-week01 需求分析与架构设计.html">
+        <li class="chapter " data-level="1.2.1" data-path="../Abaddon/01-week01 需求分析与架构设计.html">
             
-                <a href="01-week01 需求分析与架构设计.html">
+                <a href="../Abaddon/01-week01 需求分析与架构设计.html">
             
                     
                     Week01 需求分析与架构设计
@@ -452,9 +450,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="../clqyfe/">
+        <li class="chapter " data-level="1.9" data-path="./">
             
-                <a href="../clqyfe/">
+                <a href="./">
             
                     
                     Clqyfe
@@ -466,9 +464,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../clqyfe/01-Week01-作业.html">
+        <li class="chapter " data-level="1.9.1" data-path="01-Week01-作业.html">
             
-                <a href="../clqyfe/01-Week01-作业.html">
+                <a href="01-Week01-作业.html">
             
                     
                     Week01 作业
@@ -479,9 +477,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="../clqyfe/02-Week02-理解脚手架.html">
+        <li class="chapter " data-level="1.9.2" data-path="02-Week02-理解脚手架.html">
             
-                <a href="../clqyfe/02-Week02-理解脚手架.html">
+                <a href="02-Week02-理解脚手架.html">
             
                     
                     Week02 理解脚手架
@@ -492,9 +490,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../clqyfe/03-Week02-基于原生开发脚手架.html">
+        <li class="chapter " data-level="1.9.3" data-path="03-Week02-基于原生开发脚手架.html">
             
-                <a href="../clqyfe/03-Week02-基于原生开发脚手架.html">
+                <a href="03-Week02-基于原生开发脚手架.html">
             
                     
                     Week02 基于原生开发脚手架
@@ -505,9 +503,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.4" data-path="../clqyfe/04-Week02-基于lerna开发脚手架.html">
+        <li class="chapter " data-level="1.9.4" data-path="04-Week02-基于lerna开发脚手架.html">
             
-                <a href="../clqyfe/04-Week02-基于lerna开发脚手架.html">
+                <a href="04-Week02-基于lerna开发脚手架.html">
             
                     
                     Week02 基于Lerna开发脚手架
@@ -518,9 +516,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.5" data-path="../clqyfe/05-Week02-yargs使用.html">
+        <li class="chapter " data-level="1.9.5" data-path="05-Week02-yargs使用.html">
             
-                <a href="../clqyfe/05-Week02-yargs使用.html">
+                <a href="05-Week02-yargs使用.html">
             
                     
                     Week02 Yargs使用
@@ -531,9 +529,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.6" data-path="../clqyfe/06-Week02-lerna源码分析.html">
+        <li class="chapter active" data-level="1.9.6" data-path="06-Week02-lerna源码分析.html">
             
-                <a href="../clqyfe/06-Week02-lerna源码分析.html">
+                <a href="06-Week02-lerna源码分析.html">
             
                     
                     Week02 Lerna源码分析
@@ -2118,7 +2116,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Abaddon</a>
+        <a href="../.." >Week02 Lerna源码分析</a>
     </h1>
 </div>
 
@@ -2143,8 +2141,27 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script>
-</header><h1 id="abaddon---&#x8BFE;&#x7A0B;&#x5206;&#x4EAB;">Abaddon - &#x8BFE;&#x7A0B;&#x5206;&#x4EAB;</h1>
-<p>&#x8BF7;&#x76F4;&#x63A5;&#x770B;&#x4E0B;&#x7EA7;&#x76EE;&#x5F55;</p>
+</header><h1 id="lerna&#x6E90;&#x7801;&#x5206;&#x6790;">lerna&#x6E90;&#x7801;&#x5206;&#x6790;</h1>
+<h2 id="lerna&#x5B9E;&#x73B0;&#x539F;&#x7406;">lerna&#x5B9E;&#x73B0;&#x539F;&#x7406;</h2>
+<ol>
+<li>&#x901A;&#x8FC7; import-local &#x5E93;&#x4F18;&#x5148;&#x8C03;&#x7528;&#x672C;&#x5730;&#x7684; lerna &#x547D;&#x4EE4;&#x3002;&#x5DE7;&#x5999;&#x7684;&#x5229;&#x7528;&#x5F02;&#x6B65;&#x7684;&#x65B9;&#x5F0F;&#x5148;&#x8F93;&#x51FA;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF0C;&#x518D;&#x5B8C;&#x6210;&#x547D;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x3002;</li>
+<li>&#x901A;&#x8FC7; yargs &#x751F;&#x6210;&#x811A;&#x624B;&#x67B6;&#xFF0C;&#x5148;&#x6CE8;&#x518C;&#x5168;&#x5C40;&#x5C5E;&#x6027;&#xFF0C;&#x5728;&#x6CE8;&#x518C;&#x547D;&#x4EE4;&#xFF0C;&#x6700;&#x540E;&#x901A;&#x8FC7; parse &#x65B9;&#x6CD5;&#x89E3;&#x6790;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x3002;</li>
+<li>&#x6CE8;&#x518C;&#x547D;&#x4EE4;&#x65F6;&#x9700;&#x8981;&#x4F20;&#x5165; builder &#x548C; handler &#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;builder &#x7528;&#x6765;&#x914D;&#x7F6E;&#x547D;&#x4EE4;&#x7684;&#x4E13;&#x5C5E; option&#xFF0C;handler &#x7528;&#x6765;&#x5904;&#x7406;&#x547D;&#x4EE4;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x540C;&#x65F6;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x65B9;&#x5F0F;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x3002;</li>
+<li>lerna &#x901A;&#x8FC7;&#x5176;&#x81EA;&#x6709;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5F15;&#x7528;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x901A;&#x8FC7; npm link &#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5177;&#x4F53;&#x5199;&#x6CD5;&#xFF1A;&#x5728; package.json &#x7684;&#x4F9D;&#x8D56;&#x9879;&#x4E2D;&#x5199;&#x5165;&#xFF0C;&#x5728;&#x6267;&#x884C; lerna publish &#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x8BE5;&#x4F9D;&#x8D56;&#x66FF;&#x6362;&#x3002;</li>
+</ol>
+<pre><code class="lang-json"><span class="hljs-comment">// package.json</span>
+{
+    <span class="hljs-string">&quot;dependencies&quot;</span>: {
+        <span class="hljs-string">&quot;lerna&quot;</span>: <span class="hljs-string">&quot;file:core/lerna&quot;</span>
+    }
+}
+</code></pre>
+<h2 id="import-local-&#x6E90;&#x7801;&#x5206;&#x6790;">import-local &#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<p>TODO: &#x5B66;&#x5B8C;&#x811A;&#x624B;&#x67B6;&#x5185;&#x5BB9;&#x518D;&#x6765;&#x5543;&#x8FD9;&#x90E8;&#x5206;&#x5185;&#x5BB9;</p>
+<h2 id="node-&#x7684;-module-&#x6A21;&#x5757;&#x5206;&#x6790;">node &#x7684; module &#x6A21;&#x5757;&#x5206;&#x6790;</h2>
+<p>TODO: &#x5B66;&#x5B8C;&#x811A;&#x624B;&#x67B6;&#x5185;&#x5BB9;&#x518D;&#x6765;&#x5543;&#x8FD9;&#x90E8;&#x5206;&#x5185;&#x5BB9;</p>
+<h2 id="vscode-&#x6E90;&#x7801;&#x8C03;&#x8BD5;&#x6280;&#x5DE7;">vscode &#x6E90;&#x7801;&#x8C03;&#x8BD5;&#x6280;&#x5DE7;</h2>
+<p><a href="https://www.yuque.com/docs/share/faa9343a-42c7-4493-b2a7-aafd8e369005?#" target="_blank">vscode &#x8C03;&#x8BD5;&#x6280;&#x5DE7;</a></p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; imooc-lego (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
 2021-01-06 13:07:03
 </span></footer><footer></footer>
@@ -2174,14 +2191,10 @@
 
             
                 
-                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="05-Week02-yargs使用.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Week02 Yargs使用">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="01-week01 需求分析与架构设计.html" class="navigation navigation-next " aria-label="Next page: Week01 需求分析与架构设计">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -2190,7 +2203,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Abaddon","level":"1.2","depth":1,"next":{"title":"Week01 需求分析与架构设计","level":"1.2.1","depth":2,"path":"pages/Abaddon/01-week01 需求分析与架构设计.md","ref":"pages/Abaddon/01-week01 需求分析与架构设计.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/Abaddon/README.md","mtime":"2021-01-06T13:07:03.195Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-06T13:07:54.402Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week02 Lerna源码分析","level":"1.9.6","depth":2,"next":{"title":"Images","level":"1.9.7","depth":2,"ref":"","articles":[]},"previous":{"title":"Week02 Yargs使用","level":"1.9.5","depth":2,"path":"pages/clqyfe/05-Week02-yargs使用.md","ref":"pages/clqyfe/05-Week02-yargs使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/clqyfe/06-Week02-lerna源码分析.md","mtime":"2021-01-06T13:07:03.239Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-06T13:07:54.402Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
