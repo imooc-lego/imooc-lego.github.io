@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 01 技术方案设计文档 · Web 前端架构师课-学员分享</title>
+        <title>第二周作业 · Web 前端架构师课-学员分享</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,8 +77,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="week-02-cli.html" />
+    <link rel="next" href="../诸神の黄昏/" />
     
+    
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -869,9 +871,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17" data-path="./">
+        <li class="chapter " data-level="1.17" data-path="../joge/">
             
-                <a href="./">
+                <a href="../joge/">
             
                     
                     Joge
@@ -896,9 +898,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.17.2" data-path="week-01-技术方案设计文档.html">
+        <li class="chapter " data-level="1.17.2" data-path="../joge/week-01-技术方案设计文档.html">
             
-                <a href="week-01-技术方案设计文档.html">
+                <a href="../joge/week-01-技术方案设计文档.html">
             
                     
                     Week 01 技术方案设计文档
@@ -909,9 +911,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.17.3" data-path="week-02-cli.html">
+        <li class="chapter " data-level="1.17.3" data-path="../joge/week-02-cli.html">
             
-                <a href="week-02-cli.html">
+                <a href="../joge/week-02-cli.html">
             
                     
                     Week 02 Cli
@@ -2080,9 +2082,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.38" data-path="../猛男落泪/">
+        <li class="chapter " data-level="1.38" data-path="./">
             
-                <a href="../猛男落泪/">
+                <a href="./">
             
                     
                     猛男落泪
@@ -2094,9 +2096,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.38.1" data-path="../猛男落泪/01-第二周作业.html">
+        <li class="chapter active" data-level="1.38.1" data-path="01-第二周作业.html">
             
-                <a href="../猛男落泪/01-第二周作业.html">
+                <a href="01-第二周作业.html">
             
                     
                     第二周作业
@@ -2696,7 +2698,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Week 01 技术方案设计文档</a>
+        <a href="../.." >第二周作业</a>
     </h1>
 </div>
 
@@ -2721,93 +2723,65 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script>
-</header><h1 id="&#x6574;&#x4F53;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;v10">&#x6574;&#x4F53;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;V1.0</h1>
-<h2 id="&#x8303;&#x56F4;">&#x8303;&#x56F4;</h2>
-<p>&#x62C6;&#x5206;&#x6A21;&#x5757;&#x8303;&#x56F4;:  </p>
+</header><h1 id="&#x811A;&#x624B;&#x67B6;&#x5B9E;&#x73B0;&#x539F;&#x7406;">&#x811A;&#x624B;&#x67B6;&#x5B9E;&#x73B0;&#x539F;&#x7406;</h1>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x5168;&#x5C40;&#x5B89;&#x88C5;vuecli&#x540E;&#x4F1A;&#x6DFB;&#x52A0;&#x547D;&#x4EE4;&#x4E3A;vue">&#x4E3A;&#x4EC0;&#x4E48;&#x5168;&#x5C40;&#x5B89;&#x88C5;@vue/cli&#x540E;&#x4F1A;&#x6DFB;&#x52A0;&#x547D;&#x4EE4;&#x4E3A;vue</h3>
+<pre><code>&#x5B9E;&#x9645;&#x6CE8;&#x518C;&#x7684;&#x547D;&#x4EE4;&#x662F;package.json&#x4E2D;bin&#x914D;&#x7F6E;&#x7684;
+</code></pre><h3 id="&#x5168;&#x5C40;&#x5B89;&#x88C5;vuecli&#x662F;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;">&#x5168;&#x5C40;&#x5B89;&#x88C5;@vue/cli&#x662F;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;</h3>
+<pre><code>npm&#x4F1A;&#x67E5;&#x770B;package.json,&#x5982;&#x679C;&#x53D1;&#x73B0;&#x4E86;bin&#x5B57;&#x6BB5;&#x5C31;&#x4F1A;&#x5728;&#x5168;&#x5C40;node_module&#x540C;&#x7EA7;&#x76EE;&#x5F55;&#x521B;&#x5EFA;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;
+</code></pre><h3 id="&#x6267;&#x884C;vue&#x547D;&#x4EE4;&#x65F6;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;vue&#x6307;&#x5411;&#x4E00;&#x4E2A;js&#x6587;&#x4EF6;&#x6211;&#x4EEC;&#x5374;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;vue&#x547D;&#x4EE4;&#x53BB;&#x6267;&#x884C;&#x5B83;">&#x6267;&#x884C;vue&#x547D;&#x4EE4;&#x65F6;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;?&#x4E3A;&#x4EC0;&#x4E48;vue&#x6307;&#x5411;&#x4E00;&#x4E2A;js&#x6587;&#x4EF6;,&#x6211;&#x4EEC;&#x5374;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;vue&#x547D;&#x4EE4;&#x53BB;&#x6267;&#x884C;&#x5B83;</h3>
+<pre><code>1.&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x5BFB;&#x627E;vue&#x547D;&#x4EE4;,&#x5982;&#x679C;&#x5B58;&#x5728;&#x5C31;&#x5148;&#x627E;&#x5230;&#x5B9E;&#x9645;&#x7684;&#x5305;&#x76EE;&#x5F55;(&#x6709;&#x53EF;&#x80FD;&#x662F;&#x8F6F;&#x8FDE;&#x63A5;)&#x518D;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x5165;&#x53E3;&#x6587;&#x4EF6;;
+2.&#x56E0;&#x4E3A;&#x5165;&#x53E3;js &#x9876;&#x90E8; &#x58F0;&#x660E;&#x4E86;&#x4F7F;&#x7528;node&#x53BB;&#x6267;&#x884C;,!# /usr/bin/env node; &#x6267;&#x884C;vue&#x547D;&#x4EE4;&#x65F6;&#x4F20;&#x5165;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;node
+</code></pre><h1 id="yargs&#x5E38;&#x7528;api&#x548C;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;">Yargs&#x5E38;&#x7528;API&#x548C;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;</h1>
+<h3 id="&#x4F20;&#x9012;&#x53C2;&#x6570;">&#x4F20;&#x9012;&#x53C2;&#x6570;:</h3>
+<p>  require(&apos;yargs/yargs&apos;)(process.argv.slice(2)).argv
+  &#x7B49;&#x4EF7;&#x4E8E;
+  require(&apos;yargs/yargs&apos;)(process.argv.slice(2)).parse()</p>
+<p>  const { hideBin } = require(&apos;yargs/helpers&apos;);
+  process.argv.slice(2)
+  &#x7B49;&#x4EF7;&#x4E8E;
+  hideBin(process.argv)</p>
+<h3 id="&#x811A;&#x624B;&#x67B6;&#x521D;&#x59CB;&#x5316;&#x6D41;&#x7A0B;">&#x811A;&#x624B;&#x67B6;&#x521D;&#x59CB;&#x5316;&#x6D41;&#x7A0B;</h3>
 <ul>
-<li>&#x7F16;&#x8F91;&#x5668;<br>&#x53D1;&#x5E03;&#x548C;&#x9884;&#x89C8;h5, &#x62C6;&#x5206;&#x4E3A;&#x524D;&#x7AEF;&#x548C;&#x540E;&#x7AEF;  </li>
-<li>&#x7BA1;&#x7406;&#x5E73;&#x53F0;<br>&#x7BA1;&#x7406;&#x7528;&#x6237;&#x548C;h5&#x7684;&#x4E0A;&#x7EBF;&#x4E0B;&#x7EBF;, &#x62C6;&#x5206;&#x4E3A;&#x524D;&#x7AEF;&#x548C;&#x540E;&#x7AEF;  </li>
-<li>&#x5C55;&#x793A;&#x7AEF; H5<br>&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;html&#x4E32;  </li>
-<li>&#x7EC4;&#x4EF6;&#x5E93;<br>&#x5C55;&#x793A;&#x7AEF;&#x548C;&#x7F16;&#x8F91;&#x5668;&#x516C;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x5E93;  </li>
-<li>&#x7EDF;&#x8BA1;<br>&#x81EA;&#x7814;&#x4E00;&#x4E2A;&#x7EDF;&#x8BA1;&#x670D;&#x52A1;&#xFF0C;H5&#x8D1F;&#x8D23;&#x6536;&#x96C6;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x5206;&#x6790;&#xFF0C;&#x901A;&#x8FC7;openApi&#x7684;&#x65B9;&#x5F0F;&#x8FBE;&#x5230;&#x5C55;&#x793A;&#xFF0C;&#x5B8C;&#x6210;&#x95ED;&#x73AF;  </li>
-<li>&#x6570;&#x636E;&#x5E93;<br>&#x7F16;&#x8F91;&#x5668;&#x548C;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x5171;&#x7528;&#x4E00;&#x5957;&#x6570;&#x636E;&#x5E93;  </li>
-</ul>
-<h2 id="&#x6A21;&#x5757;&#x8BBE;&#x8BA1;">&#x6A21;&#x5757;&#x8BBE;&#x8BA1;</h2>
-<h3 id="&#x7F16;&#x8F91;&#x5668;">&#x7F16;&#x8F91;&#x5668;</h3>
-<p>&#x7528;&#x4E8E;&#x53D1;&#x5E03;/&#x9884;&#x89C8;H5, &#x65B0;&#x5EFA;&#x53CA;&#x66F4;&#x65B0;H5<br><img src="images/week_01_editor_module.png" alt="&#x53D1;&#x5E03;&#x548C;&#x9884;&#x89C8;H5" title="&#x53D1;&#x5E03;&#x548C;&#x9884;&#x89C8;H5">  </p>
-<h3 id="&#x7BA1;&#x7406;&#x5E73;&#x53F0;">&#x7BA1;&#x7406;&#x5E73;&#x53F0;</h3>
-<p>&#x63A7;&#x5236;H5&#x7684;&#x4E0A;&#x7EBF;&#x548C;&#x4E0B;&#x7EBF;&#xFF0C;&#x6BD4;&#x5982;&#x7D27;&#x6025;&#x4E0B;&#x7EBF;<br><img src="images/week_01_management_module.png" alt="&#x4E0A;&#x7EBF;&#x548C;&#x4E0B;&#x7EBF;H5" title="&#x4E0A;&#x7EBF;&#x548C;&#x4E0B;&#x7EBF;H5">  </p>
-<h3 id="h5">H5</h3>
-<p><img src="images/week_01_h5_module.png" alt="H5 SSR" title="H5 SSR">  </p>
-<h3 id="&#x7EC4;&#x4EF6;&#x5E93;">&#x7EC4;&#x4EF6;&#x5E93;</h3>
-<p>&#x7F16;&#x8F91;&#x5668;&#x548C;H5&#x90FD;&#x7528;&#x5230;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x5E93;<br><img src="images/week_01_component_module.png" alt="&#x7EC4;&#x4EF6;&#x5E93;" title="&#x7EC4;&#x4EF6;&#x5E93;">  </p>
-<h3 id="&#x7EDF;&#x8BA1;">&#x7EDF;&#x8BA1;</h3>
-<p>&#x5728;H5&#x7AEF;&#x6536;&#x96C6;&#x4FE1;&#x606F;&#xFF0C;&#x901A;&#x8FC7;openApi&#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x5BF9;&#x5916;&#x7684;&#x63A5;&#x53E3;<br>&#x81EA;&#x7814;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x4E8B;&#x4EF6;<br>&#x63D0;&#x4F9B;&#x7EDF;&#x8BA1;&#x670D;&#x52A1;&#x4E1A;&#x52A1;&#x624D;&#x80FD;&#x95ED;&#x73AF;<br><img src="images/week_01_statist_module.png" alt="&#x7EC4;&#x4EF6;&#x5E93;" title="&#x7EC4;&#x4EF6;&#x5E93;">  </p>
-<h2 id="&#x6574;&#x4F53;&#x6D41;&#x7A0B;&#x53CA;&#x6570;&#x636E;&#x6D41;&#x8F6C;">&#x6574;&#x4F53;&#x6D41;&#x7A0B;&#x53CA;&#x6570;&#x636E;&#x6D41;&#x8F6C;</h2>
-<p><img src="images/week_01_whole.png" alt="&#x6574;&#x4F53;&#x6D41;&#x7A0B;&#x53CA;&#x6570;&#x636E;&#x6D41;&#x8F6C;" title="&#x6574;&#x4F53;&#x6D41;&#x7A0B;&#x53CA;&#x6570;&#x636E;&#x6D41;&#x8F6C;">  </p>
-<h2 id="&#x4F5C;&#x54C1;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;">&#x4F5C;&#x54C1;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</h2>
-<ul>
-<li>&#x4EE5;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x4E3A;&#x601D;&#x60F3;  </li>
-<li>&#x7EF4;&#x62A4;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4EFD;&#x6570;&#x636E;&#x53BB;&#x6E32;&#x67D3;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x5EFA;&#xFF08;&#x51CF;&#x5C11;&#x6570;&#x636E;&#x540C;&#x6B65;&#xFF09;  </li>
-<li>&#x4EE5;&#x6570;&#x7EC4;&#x4E3A;&#x6574;&#x4F53;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x65B9;&#x4FBF;&#x6392;&#x5E8F;  </li>
-<li><p>&#x5355;&#x4E2A;&#x7684;&#x6570;&#x636E;&#xFF08;&#x7EC4;&#x5EFA;&#xFF09;&#x4EE5;vnode&#x7684;&#x683C;&#x5F0F;&#x5B58;&#x50A8;&#x8BFB;&#x53D6;<br>eg:  </p>
-<pre><code class="lang-javascript">{
-<span class="hljs-comment">// &#x4F5C;&#x54C1;</span>
-work: {
-  title: <span class="hljs-string">&apos;&#x4F5C;&#x54C1;&#x6807;&#x9898;&apos;</span>,
-  setting: {<span class="hljs-comment">/* &#x4E00;&#x4E9B;&#x53EF;&#x80FD;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x7528;&#x4E0D;&#x5230;&#x5C31;&#x9884;&#x7559; */</span>},
-  props: {<span class="hljs-comment">/* &#x9875;&#x9762;body&#x7684;&#x4E00;&#x4E9B;&#x8BBE;&#x7F6E;&#xFF0C;&#x5982;&#x80CC;&#x666F;&#x8272;&#x7B49; */</span>}&#xFF0C;
-  components: [
-    <span class="hljs-comment">// &#x5355;&#x4E2A;node&#xFF0C;&#x8981;&#x7B26;&#x5408;VNode&#x89C4;&#x8303;</span>
-    {
-      id: <span class="hljs-string">&apos;xxx&apos;</span>,
-      name: <span class="hljs-string">&apos;&#x6587;&#x672C;1&apos;</span>,
-      tag: <span class="hljs-string">&apos;text&apos;</span>,
-      attrs: { fontSize: <span class="hljs-number">20</span>px },
-      children: [
-        <span class="hljs-string">&apos;&#x6587;&#x672C;1&apos;</span> <span class="hljs-comment">// &#x6587;&#x672C;&#x5185;&#x5BB9;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x653E;&#x5728;attrs&#x6216;props&#x4E2D;&#xFF0C;&#x6CA1;&#x6709;&#x6807;&#x51C6;&#xFF0C;&#x770B;&#x60C5;&#x51B5;&#x800C;&#x5B9A;</span>
-      ]
-    },
-    {
-      id: <span class="hljs-string">&apos;yyy&apos;</span>,
-      name: <span class="hljs-string">&apos;&#x56FE;&#x7247;1&apos;</span>,
-      tag: <span class="hljs-string">&apos;image&apos;</span>,
-      attrs: { src: <span class="hljs-string">&apos;xxx.png&apos;</span>, width: <span class="hljs-string">&apos;100px&apos;</span> },
-      children: <span class="hljs-literal">null</span>
-    }
-  ]
-},
-
-<span class="hljs-comment">// &#x753B;&#x5E03;&#x5F53;&#x524D;&#x9009;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;</span>
-activeComponentId: <span class="hljs-string">&apos;xxx&apos;</span>
-}
-</code></pre>
+<li>Yargs() - &#x6784;&#x9020;&#x51FD;&#x6570;</li>
+<li>Yargs.options - &#x6279;&#x91CF;&#x6CE8;&#x518C;&#x5168;&#x5C40;options </li>
+<li>Yargs.option - &#x5355;&#x4E2A;&#x6CE8;&#x518C;&#x5168;&#x5C40;option</li>
+<li>Yargs.group - &#x7ED9;&#x5B9A;options&#x7684;&#x952E;&#x503C; &#x5C06;&#x5176;&#x5F52;&#x4E8E;&#x4E00;&#x4E2A;&#x5206;&#x7EC4;</li>
+<li>Yargs.demandCommand - &#x5141;&#x8BB8;&#x8F93;&#x5165;&#x7684;&#x53C2;&#x6570;&#x6700;&#x5C0F;&#x4E2A;&#x6570; &#x4E0D;&#x6EE1;&#x8DB3;&#x65F6;&#x62A5;&#x9519;</li>
+<li>Yargs.recommendCommands - &#x5982;&#x679C;&#x627E;&#x4E0D;&#x5230;&#x5339;&#x914D;&#x7684;&#x547D;&#x4EE4; &#x63D0;&#x793A;&#x7C7B;&#x4F3C;&#x547D;&#x4EE4;</li>
+<li>Yargs.strict - &#x65E0;&#x6CD5;&#x8BC6;&#x522B;&#x547D;&#x4EE4;&#x4F1A;&#x62A5;&#x9519;</li>
+<li>Yargs.fail - &#x6240;&#x6709;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x51FD;&#x6570;</li>
+<li>Yargs.alias - &#x4E3A;option &#x6307;&#x5B9A;&#x522B;&#x540D;</li>
+<li>Yargs.wrap - &#x4E3A;&#x547D;&#x4EE4;&#x884C;&#x6307;&#x5B9A;&#x5BBD;&#x5EA6;</li>
+<li>Yargs.epilogue - &#x518D;&#x547D;&#x4EE4;&#x884C;&#x7ED3;&#x5C3E;&#x8F93;&#x51FA;&#x4FE1;&#x606F;<h4 id="yargscommand">Yargs.command</h4>
+</li>
+<li>Yargs.command(command, describe, builder, handler)</li>
+<li>Yargs.command({ command, describe, builder, handler })<ul>
+<li>command - &#x547D;&#x4EE4;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>describe - &#x547D;&#x4EE4;&#x63CF;&#x8FF0;</li>
+<li>builder - &#x6DFB;&#x52A0;&#x547D;&#x4EE4;&#x7684;options</li>
+<li>handler - &#x547D;&#x4EE4;&#x5904;&#x7406;&#x51FD;&#x6570;,&#x5904;&#x7406;&#x5177;&#x4F53;&#x4E1A;&#x52A1;<h1 id="lerna&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;">lerna&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;</h1>
+<h3 id="lerna&#x7B80;&#x5355;&#x8BF4;&#x660E;">lerna&#x7B80;&#x5355;&#x8BF4;&#x660E;</h3>
 </li>
 </ul>
-<h2 id="&#x6269;&#x5C55;&#x6027;&#x4FDD;&#x8BC1;">&#x6269;&#x5C55;&#x6027;&#x4FDD;&#x8BC1;</h2>
-<ul>
-<li>&#x6269;&#x5C55;&#x7EC4;&#x4EF6;  <ul>
-<li>&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5C42;&#x9762;&#x53EF;&#x6269;&#x5C55;  </li>
-<li>&#x7EC4;&#x4EF6;&#x5E93;&#x5C42;&#x9762;&#x6269;&#x5C55;  </li>
+</li>
+<li>lerna&#x662F;&#x57FA;&#x4E8E;git+npm &#x7684;&#x591A;package&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x5DE5;&#x5177;;&#x4E3B;&#x8981;&#x89E3;&#x51B3;&#x4E86;&#x591A;&#x5305;&#x7BA1;&#x7406;&#x7684;&#x91CD;&#x590D;&#x64CD;&#x4F5C;,&#x64CD;&#x4F5C;&#x7684;&#x6807;&#x51C6;&#x5316;,&#x63D0;&#x9AD8;&#x4E86;&#x6548;&#x80FD;;<ul>
+<li>&#x4E3B;&#x8981;api<ul>
+<li>lerna init&#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;</li>
+<li>lerna create &#x521B;&#x5EFA;package</li>
+<li>lerna add &#x5B89;&#x88C5;&#x4F9D;&#x8D56;  </li>
+<li>lerna link link&#x5305;&#x7684;&#x4F9D;&#x8D56;</li>
+<li>lerna publish &#x53D1;&#x5E03;&#x5230;npm&#x4E0A;</li>
 </ul>
 </li>
-<li>&#x6269;&#x5C55;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x529F;&#x80FD;  <ul>
-<li>&#x7EC4;&#x4EF6;&#x9690;&#x85CF;&#x3001;&#x9501;&#x5B9A;&#x3001;&#x6ED1;&#x52A8;&#x7FFB;&#x9875;  </li>
+<li>&#x7ED9;&#x7279;&#x5B9A;&#x7684;package&#x6267;&#x884C;&#x547D;&#x4EE4;&#x4F7F;&#x7528;filter-options --scope <glob><h3 id="lerna&#x539F;&#x7406;">lerna&#x539F;&#x7406;</h3>
+</glob></li>
 </ul>
 </li>
-<li>&#x6269;&#x5C55;&#x9875;&#x9762;&#x914D;&#x7F6E;  </li>
-</ul>
-<h2 id="&#x5F00;&#x53D1;&#x63D0;&#x6548;">&#x5F00;&#x53D1;&#x63D0;&#x6548;</h2>
-<ul>
-<li>&#x811A;&#x624B;&#x67B6;  </li>
-<li>&#x7EC4;&#x4EF6;&#x5E73;&#x53F0;  </li>
-</ul>
-<h2 id="&#x8FD0;&#x7EF4;&#x4FDD;&#x969C;">&#x8FD0;&#x7EF4;&#x4FDD;&#x969C;</h2>
-<ul>
-<li>&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x548C;&#x8FD0;&#x7EF4;&#x670D;&#x52A1;&#x7528;&#x4EC0;&#x4E48;  </li>
-<li>&#x5B89;&#x5168;  </li>
-<li>&#x76D1;&#x63A7;&#x548C;&#x62A5;&#x8B66;  </li>
-<li>&#x670D;&#x52A1;&#x6269;&#x5C55;&#x6027;&#xFF1A;&#x6D41;&#x91CF;&#x5927;&#x65F6;&#x600E;&#x4E48;&#x89E3;&#x51B3;   </li>
+<li>&#x901A;&#x8FC7;import-local&#x4F18;&#x5148;&#x8C03;&#x7528;&#x672C;&#x5730;&#x9879;&#x76EE;: lerna&#x4E2D;&#x4F7F;&#x7528;&#x5FAE;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x547D;&#x4EE4; &#x5728;&#x5168;&#x5C40;&#x5165;&#x53E3;&#x5224;&#x65AD;&#x6709;&#x672C;&#x5730;lerna&#x9879;&#x76EE;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x52A0;&#x8F7D;&#x672C;&#x5730;&#x9879;&#x76EE;&#x5E76;&#x6267;&#x884C;,&#x7136;&#x540E;&#x6267;&#x884C;&#x5B8F;&#x4EFB;&#x52A1;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x8F93;&#x51FA; using local version of lerna</li>
+<li>&#x901A;&#x8FC7;yargs&#x751F;&#x6210;&#x811A;&#x624B;&#x67B6;</li>
+<li>lerna &#x901A;&#x8FC7;&#x914D;&#x7F6E;package.json&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x672C;&#x5730;&#x5F00;&#x53D1;,&#x5199;&#x6CD5;&quot;module-name&quot;:&apos;file:your-local-module-path&apos;,lerna&#x518D;&#x53D1;&#x5E03;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x66FF;&#x6362;&#x8BE5;&#x8DEF;&#x5F84;<h1 id="requireresolve-&#x5B9E;&#x73B0;&#x539F;&#x7406;">require.resolve &#x5B9E;&#x73B0;&#x539F;&#x7406;</h1>
+</li>
+<li>&#x901A;&#x8FC7;Module._resolveFileName &#x89E3;&#x6790;&#x6587;&#x4EF6;&#x540D; &#x89E3;&#x6790;&#x51FA;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;;&#x9996;&#x5148;&#x8C03;&#x7528;Module._resolveLookupPaths&#x9010;&#x5C42;&#x5F80;&#x4E0A;&#x7EA7;&#x76EE;&#x5F55;&#x627E;&#x5E76;&#x62FC;&#x63A5;/node_modules&#x5B58;&#x5230;paths&#x6570;&#x7EC4;&#x4E2D;&#x8FD4;&#x56DE;paths;&#x7136;&#x540E;&#x901A;&#x8FC7;Module._findPath&#x627E;&#x5230;&#x771F;&#x5B9E;&#x6A21;&#x5757;&#x8DEF;&#x5F84;;</li>
 </ul>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; imooc-lego (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
 2021-01-17 08:58:01
@@ -2838,8 +2812,12 @@ activeComponentId: <span class="hljs-string">&apos;xxx&apos;</span>
 
             
                 
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 猛男落泪">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="week-02-cli.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Week 02 Cli">
+                
+                <a href="../诸神の黄昏/" class="navigation navigation-next " aria-label="Next page: 诸神の黄昏">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2850,7 +2828,7 @@ activeComponentId: <span class="hljs-string">&apos;xxx&apos;</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 01 技术方案设计文档","level":"1.17.2","depth":2,"next":{"title":"Week 02 Cli","level":"1.17.3","depth":2,"path":"pages/joge/week-02-cli.md","ref":"pages/joge/week-02-cli.md","articles":[]},"previous":{"title":"Images","level":"1.17.1","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/joge/week-01-技术方案设计文档.md","mtime":"2021-01-17T08:58:01.542Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-17T08:58:44.910Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二周作业","level":"1.38.1","depth":2,"next":{"title":"诸神の黄昏","level":"1.39","depth":1,"path":"pages/诸神の黄昏/README.md","ref":"pages/诸神の黄昏/README.md","articles":[{"title":"项目研发流程","level":"1.39.1","depth":2,"path":"pages/诸神の黄昏/01-项目研发流程.md","ref":"pages/诸神の黄昏/01-项目研发流程.md","articles":[]}]},"previous":{"title":"猛男落泪","level":"1.38","depth":1,"path":"pages/猛男落泪/README.md","ref":"pages/猛男落泪/README.md","articles":[{"title":"第二周作业","level":"1.38.1","depth":2,"path":"pages/猛男落泪/01-第二周作业.md","ref":"pages/猛男落泪/01-第二周作业.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/猛男落泪/01-第二周作业.md","mtime":"2021-01-17T08:58:01.650Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-17T08:58:44.910Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
