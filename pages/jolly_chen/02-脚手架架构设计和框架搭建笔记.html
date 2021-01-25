@@ -1,0 +1,3889 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>脚手架架构设计和框架搭建笔记 · Web 前端架构师课-学员分享</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lego-team">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-extra-html/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="01-技术方案设计文档.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Pages</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Abaddon/">
+            
+                <a href="../Abaddon/">
+            
+                    
+                    Abaddon
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Abaddon/01-week01 需求分析与架构设计.html">
+            
+                <a href="../Abaddon/01-week01 需求分析与架构设计.html">
+            
+                    
+                    Week01 需求分析与架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Baran/">
+            
+                <a href="../Baran/">
+            
+                    
+                    Baran
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Baran/01-需求分析和架构设计.html">
+            
+                <a href="../Baran/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Berners/">
+            
+                <a href="../Berners/">
+            
+                    
+                    Berners
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Berners/01-第一周笔记和作业.html">
+            
+                <a href="../Berners/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Berners/02-第二周笔记和作业.html">
+            
+                <a href="../Berners/02-第二周笔记和作业.html">
+            
+                    
+                    第二周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Berners/03-第三周笔记和作业.html">
+            
+                <a href="../Berners/03-第三周笔记和作业.html">
+            
+                    
+                    第三周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Beyond/">
+            
+                <a href="../Beyond/">
+            
+                    
+                    Beyond
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Beyond/01-week01-作业.html">
+            
+                <a href="../Beyond/01-week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Daiyan/">
+            
+                <a href="../Daiyan/">
+            
+                    
+                    Daiyan
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Daiyan/01-week01-整体架构设计.html">
+            
+                <a href="../Daiyan/01-week01-整体架构设计.html">
+            
+                    
+                    Week01 整体架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Daiyan/02-week02-脚手架基础.html">
+            
+                <a href="../Daiyan/02-week02-脚手架基础.html">
+            
+                    
+                    Week02 脚手架基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Daiyan/03-week03-脚手架核心流程开发.html">
+            
+                <a href="../Daiyan/03-week03-脚手架核心流程开发.html">
+            
+                    
+                    Week03 脚手架核心流程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Devil/">
+            
+                <a href="../Devil/">
+            
+                    
+                    Devil
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Devil/01-week1-需求分析.html">
+            
+                <a href="../Devil/01-week1-需求分析.html">
+            
+                    
+                    Week1 需求分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../EddieCookie/">
+            
+                <a href="../EddieCookie/">
+            
+                    
+                    EddieCookie
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../EddieCookie/01-week01.html">
+            
+                <a href="../EddieCookie/01-week01.html">
+            
+                    
+                    Week01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../EditYJ/">
+            
+                <a href="../EditYJ/">
+            
+                    
+                    EditYJ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../EditYJ/01-Week01-作业.html">
+            
+                <a href="../EditYJ/01-Week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../EditYJ/02-Week02-笔记-脚手架是什么.html">
+            
+                <a href="../EditYJ/02-Week02-笔记-脚手架是什么.html">
+            
+                    
+                    Week02 笔记 脚手架是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Joker_Yao/">
+            
+                <a href="../Joker_Yao/">
+            
+                    
+                    Joker Yao
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Joker_Yao/01-需求分析和架构设计.html">
+            
+                <a href="../Joker_Yao/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Q小白/">
+            
+                <a href="../Q小白/">
+            
+                    
+                    Q小白
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Q小白/01-第一周需求分析.html">
+            
+                <a href="../Q小白/01-第一周需求分析.html">
+            
+                    
+                    第一周需求分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Q小白/02-第二周笔记.html">
+            
+                <a href="../Q小白/02-第二周笔记.html">
+            
+                    
+                    第二周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Sunshine/">
+            
+                <a href="../Sunshine/">
+            
+                    
+                    Sunshine
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Sunshine/01-第一周笔记和作业.html">
+            
+                <a href="../Sunshine/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Sunshine/02-第二周作业和笔记.html">
+            
+                <a href="../Sunshine/02-第二周作业和笔记.html">
+            
+                    
+                    第二周作业和笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../apple/">
+            
+                <a href="../apple/">
+            
+                    
+                    Apple
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../apple/01-week1.html">
+            
+                <a href="../apple/01-week1.html">
+            
+                    
+                    Week1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../apple/02-week2-脚手架.html">
+            
+                <a href="../apple/02-week2-脚手架.html">
+            
+                    
+                    Week2 脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../apple/03-week2-lerna.html">
+            
+                <a href="../apple/03-week2-lerna.html">
+            
+                    
+                    Week2 Lerna
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../clqyfe/">
+            
+                <a href="../clqyfe/">
+            
+                    
+                    Clqyfe
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../clqyfe/01-Week01-作业.html">
+            
+                <a href="../clqyfe/01-Week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../clqyfe/02-Week02-理解脚手架.html">
+            
+                <a href="../clqyfe/02-Week02-理解脚手架.html">
+            
+                    
+                    Week02 理解脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../clqyfe/03-Week02-基于原生开发脚手架.html">
+            
+                <a href="../clqyfe/03-Week02-基于原生开发脚手架.html">
+            
+                    
+                    Week02 基于原生开发脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../clqyfe/04-Week02-基于lerna开发脚手架.html">
+            
+                <a href="../clqyfe/04-Week02-基于lerna开发脚手架.html">
+            
+                    
+                    Week02 基于Lerna开发脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../clqyfe/05-Week02-yargs使用.html">
+            
+                <a href="../clqyfe/05-Week02-yargs使用.html">
+            
+                    
+                    Week02 Yargs使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../clqyfe/06-Week02-lerna源码分析.html">
+            
+                <a href="../clqyfe/06-Week02-lerna源码分析.html">
+            
+                    
+                    Week02 Lerna源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../clqyfe/07-Week03-脚手架核心流程开发.html">
+            
+                <a href="../clqyfe/07-Week03-脚手架核心流程开发.html">
+            
+                    
+                    Week03 脚手架核心流程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../coderzlh/">
+            
+                <a href="../coderzlh/">
+            
+                    
+                    Coderzlh
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../coderzlh/01-week01-note.html">
+            
+                <a href="../coderzlh/01-week01-note.html">
+            
+                    
+                    Week01 Note
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../ifreeOvO/">
+            
+                <a href="../ifreeOvO/">
+            
+                    
+                    IfreeOvO
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../ifreeOvO/week01 笔记和作业.html">
+            
+                <a href="../ifreeOvO/week01 笔记和作业.html">
+            
+                    
+                    Week01 笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../jia林_286621855/">
+            
+                <a href="../jia林_286621855/">
+            
+                    
+                    Jia林 286621855
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../jindong/">
+            
+                <a href="../jindong/">
+            
+                    
+                    Jindong
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../jindong/01-需求分析和架构设计.html">
+            
+                <a href="../jindong/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" data-path="../jindong/02-脚手架架构设计和框架搭建.html">
+            
+                <a href="../jindong/02-脚手架架构设计和框架搭建.html">
+            
+                    
+                    脚手架架构设计和框架搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../joge/">
+            
+                <a href="../joge/">
+            
+                    
+                    Joge
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="../joge/week-01-技术方案设计文档.html">
+            
+                <a href="../joge/week-01-技术方案设计文档.html">
+            
+                    
+                    Week 01 技术方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" data-path="../joge/week-02-cli.html">
+            
+                <a href="../joge/week-02-cli.html">
+            
+                    
+                    Week 02 Cli
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Jolly Chen
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="01-技术方案设计文档.html">
+            
+                <a href="01-技术方案设计文档.html">
+            
+                    
+                    技术方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.20.2" data-path="02-脚手架架构设计和框架搭建笔记.html">
+            
+                <a href="02-脚手架架构设计和框架搭建笔记.html">
+            
+                    
+                    脚手架架构设计和框架搭建笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.4" data-path="javascript事件循环.html">
+            
+                <a href="javascript事件循环.html">
+            
+                    
+                    Javascript事件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../linlei/">
+            
+                <a href="../linlei/">
+            
+                    
+                    Linlei
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../linlei/01-需求分析.html">
+            
+                <a href="../linlei/01-需求分析.html">
+            
+                    
+                    需求分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../linlei/02-脚手架架构设计和搭建.html">
+            
+                <a href="../linlei/02-脚手架架构设计和搭建.html">
+            
+                    
+                    脚手架架构设计和搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../linlei/03-脚手架核心开发流程.html">
+            
+                <a href="../linlei/03-脚手架核心开发流程.html">
+            
+                    
+                    脚手架核心开发流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.4.1" >
+            
+                <span>
+            
+                    
+                    Week
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4.2" >
+            
+                <span>
+            
+                    
+                    Week
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../littlefish1900/">
+            
+                <a href="../littlefish1900/">
+            
+                    
+                    Littlefish1900
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../littlefish1900/01-week01-作业.html">
+            
+                <a href="../littlefish1900/01-week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../liwen/">
+            
+                <a href="../liwen/">
+            
+                    
+                    Liwen
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../liwen/01-需求分析和架构设计.html">
+            
+                <a href="../liwen/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../lwjcjmx123/">
+            
+                <a href="../lwjcjmx123/">
+            
+                    
+                    Lwjcjmx123
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../lwjcjmx123/01-技术方案设计文档.html">
+            
+                <a href="../lwjcjmx123/01-技术方案设计文档.html">
+            
+                    
+                    技术方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.2" data-path="../lwjcjmx123/01-第一周笔记.html">
+            
+                <a href="../lwjcjmx123/01-第一周笔记.html">
+            
+                    
+                    第一周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="../mazy/">
+            
+                <a href="../mazy/">
+            
+                    
+                    Mazy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../mazy/01-week01.html">
+            
+                <a href="../mazy/01-week01.html">
+            
+                    
+                    Week01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="../renderman/">
+            
+                <a href="../renderman/">
+            
+                    
+                    Renderman
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.26.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="../ricky94/">
+            
+                <a href="../ricky94/">
+            
+                    
+                    Ricky94
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.27.1" data-path="../ricky94/01-第一周.html">
+            
+                <a href="../ricky94/01-第一周.html">
+            
+                    
+                    第一周
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="../yhtx1997/">
+            
+                <a href="../yhtx1997/">
+            
+                    
+                    Yhtx1997
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.28.1" data-path="../yhtx1997/01-第一周作业.html">
+            
+                <a href="../yhtx1997/01-第一周作业.html">
+            
+                    
+                    第一周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28.2" data-path="../yhtx1997/01-第一周笔记.html">
+            
+                <a href="../yhtx1997/01-第一周笔记.html">
+            
+                    
+                    第一周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28.3" data-path="../yhtx1997/02-第二周作业.html">
+            
+                <a href="../yhtx1997/02-第二周作业.html">
+            
+                    
+                    第二周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28.4" data-path="../yhtx1997/02-第二周笔记.html">
+            
+                <a href="../yhtx1997/02-第二周笔记.html">
+            
+                    
+                    第二周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28.5" data-path="../yhtx1997/03-第三周作业.html">
+            
+                <a href="../yhtx1997/03-第三周作业.html">
+            
+                    
+                    第三周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28.6" data-path="../yhtx1997/03-第三周笔记.html">
+            
+                <a href="../yhtx1997/03-第三周笔记.html">
+            
+                    
+                    第三周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28.7" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="../い狂奔的蜗牛/">
+            
+                <a href="../い狂奔的蜗牛/">
+            
+                    
+                    い狂奔的蜗牛
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.29.1" data-path="../い狂奔的蜗牛/01.Node.js中经典算法（一）.html">
+            
+                <a href="../い狂奔的蜗牛/01.Node.js中经典算法（一）.html">
+            
+                    
+                    01.Node.Js中经典算法（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.2" data-path="../い狂奔的蜗牛/02.Node.js中使用ES Module的两种方式.html">
+            
+                <a href="../い狂奔的蜗牛/02.Node.js中使用ES Module的两种方式.html">
+            
+                    
+                    02.Node.Js中使用ES Module的两种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.3" data-path="../い狂奔的蜗牛/03.sim-cli核心图集.html">
+            
+                <a href="../い狂奔的蜗牛/03.sim-cli核心图集.html">
+            
+                    
+                    03.Sim Cli核心图集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.4" data-path="../い狂奔的蜗牛/04.第四周-Node.js多进程源码分析.html">
+            
+                <a href="../い狂奔的蜗牛/04.第四周-Node.js多进程源码分析.html">
+            
+                    
+                    04.第四周 Node.Js多进程源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.5" data-path="../い狂奔的蜗牛/05.第四周-import-local源码分析及node模块加载流程源码分析.html">
+            
+                <a href="../い狂奔的蜗牛/05.第四周-import-local源码分析及node模块加载流程源码分析.html">
+            
+                    
+                    05.第四周 Import Local源码分析及Node模块加载流程源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.6" data-path="../い狂奔的蜗牛/06.第五周-如何解决安装模板时控制台动画闪烁问题.html">
+            
+                <a href="../い狂奔的蜗牛/06.第五周-如何解决安装模板时控制台动画闪烁问题.html">
+            
+                    
+                    06.第五周 如何解决安装模板时控制台动画闪烁问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.7" data-path="../い狂奔的蜗牛/07.第五周-readline源码阅读及实现简易版readline.html">
+            
+                <a href="../い狂奔的蜗牛/07.第五周-readline源码阅读及实现简易版readline.html">
+            
+                    
+                    07.第五周 Readline源码阅读及实现简易版Readline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.8" data-path="../い狂奔的蜗牛/08.第五周-类似inquirer列表类型交互实现.html">
+            
+                <a href="../い狂奔的蜗牛/08.第五周-类似inquirer列表类型交互实现.html">
+            
+                    
+                    08.第五周 类似Inquirer列表类型交互实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.9" data-path="../い狂奔的蜗牛/09.第六周-ejs源码分析.html">
+            
+                <a href="../い狂奔的蜗牛/09.第六周-ejs源码分析.html">
+            
+                    
+                    09.第六周 Ejs源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.10" data-path="../い狂奔的蜗牛/10.第六周-require源码分析.html">
+            
+                <a href="../い狂奔的蜗牛/10.第六周-require源码分析.html">
+            
+                    
+                    10.第六周 Require源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.11" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="../一点/">
+            
+                <a href="../一点/">
+            
+                    
+                    一点
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.30.1" data-path="../一点/01-需求和架构设计.html">
+            
+                <a href="../一点/01-需求和架构设计.html">
+            
+                    
+                    需求和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="../六个周/">
+            
+                <a href="../六个周/">
+            
+                    
+                    六个周
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="../六玥/">
+            
+                <a href="../六玥/">
+            
+                    
+                    六玥
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.32.1" data-path="../六玥/01-第一周笔记和作业.html">
+            
+                <a href="../六玥/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="../凹凸曼/">
+            
+                <a href="../凹凸曼/">
+            
+                    
+                    凹凸曼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.33.1" data-path="../凹凸曼/01-Week01-作业.html">
+            
+                <a href="../凹凸曼/01-Week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.2" data-path="../凹凸曼/02-Week02-作业.html">
+            
+                <a href="../凹凸曼/02-Week02-作业.html">
+            
+                    
+                    Week02 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.3" data-path="../凹凸曼/03-Week03-作业.html">
+            
+                <a href="../凹凸曼/03-Week03-作业.html">
+            
+                    
+                    Week03 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="../前端菜鸟/">
+            
+                <a href="../前端菜鸟/">
+            
+                    
+                    前端菜鸟
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.34.1" data-path="../前端菜鸟/1、第一周作业.html">
+            
+                <a href="../前端菜鸟/1、第一周作业.html">
+            
+                    
+                    1、第一周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="../十三/">
+            
+                <a href="../十三/">
+            
+                    
+                    十三
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.35.1" data-path="../十三/01-Week01-作业.html">
+            
+                <a href="../十三/01-Week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35.2" data-path="../十三/02-Week02-作业.html">
+            
+                <a href="../十三/02-Week02-作业.html">
+            
+                    
+                    Week02 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.35.3.1" >
+            
+                <span>
+            
+                    
+                    Week01
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="../奕初/">
+            
+                <a href="../奕初/">
+            
+                    
+                    奕初
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.36.1" data-path="../奕初/01-整体架构设计 V1.0.html">
+            
+                <a href="../奕初/01-整体架构设计 V1.0.html">
+            
+                    
+                    整体架构设计 V1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36.2" data-path="../奕初/02-脚手架开发入门知识.html">
+            
+                <a href="../奕初/02-脚手架开发入门知识.html">
+            
+                    
+                    脚手架开发入门知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36.3" data-path="../奕初/03-脚手架开发流程详解.html">
+            
+                <a href="../奕初/03-脚手架开发流程详解.html">
+            
+                    
+                    脚手架开发流程详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="../左子穆/">
+            
+                <a href="../左子穆/">
+            
+                    
+                    左子穆
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.37.1" data-path="../左子穆/01-自我学习-web第一周札记.html">
+            
+                <a href="../左子穆/01-自我学习-web第一周札记.html">
+            
+                    
+                    自我学习 Web第一周札记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="../彩笔/">
+            
+                <a href="../彩笔/">
+            
+                    
+                    彩笔
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.38.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38.2" data-path="../彩笔/作业-01-架构方案设计文档.html">
+            
+                <a href="../彩笔/作业-01-架构方案设计文档.html">
+            
+                    
+                    作业 01 架构方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38.3" data-path="../彩笔/作业-02-脚手架架构设计和框架搭建.html">
+            
+                <a href="../彩笔/作业-02-脚手架架构设计和框架搭建.html">
+            
+                    
+                    作业 02 脚手架架构设计和框架搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38.4" data-path="../彩笔/作业-03-脚手架核心流程开发.html">
+            
+                <a href="../彩笔/作业-03-脚手架核心流程开发.html">
+            
+                    
+                    作业 03 脚手架核心流程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38.5" data-path="../彩笔/作业-04-脚手架命令注册和执行过程开发.html">
+            
+                <a href="../彩笔/作业-04-脚手架命令注册和执行过程开发.html">
+            
+                    
+                    作业 04 脚手架命令注册和执行过程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38.6" data-path="../彩笔/作业-05-脚手架创建项目流程设计和开发.html">
+            
+                <a href="../彩笔/作业-05-脚手架创建项目流程设计和开发.html">
+            
+                    
+                    作业 05 脚手架创建项目流程设计和开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38.7" data-path="../彩笔/作业-06-脚手架项目和组件初始化开发.html">
+            
+                <a href="../彩笔/作业-06-脚手架项目和组件初始化开发.html">
+            
+                    
+                    作业 06 脚手架项目和组件初始化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="../点点/">
+            
+                <a href="../点点/">
+            
+                    
+                    点点
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.39.1" data-path="../点点/01-需求分析和架构设计.html">
+            
+                <a href="../点点/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39.2" data-path="../点点/02-脚手架架构设计和框架搭建.html">
+            
+                <a href="../点点/02-脚手架架构设计和框架搭建.html">
+            
+                    
+                    脚手架架构设计和框架搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="../猛男落泪/">
+            
+                <a href="../猛男落泪/">
+            
+                    
+                    猛男落泪
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.40.1" data-path="../猛男落泪/01-第二周作业.html">
+            
+                <a href="../猛男落泪/01-第二周作业.html">
+            
+                    
+                    第二周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="../落叶无声xcm/">
+            
+                <a href="../落叶无声xcm/">
+            
+                    
+                    落叶无声Xcm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.41.1" data-path="../落叶无声xcm/01-week01_学习笔记.html">
+            
+                <a href="../落叶无声xcm/01-week01_学习笔记.html">
+            
+                    
+                    Week01 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.41.2.1" >
+            
+                <span>
+            
+                    
+                    01
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="../诸神の黄昏/">
+            
+                <a href="../诸神の黄昏/">
+            
+                    
+                    诸神の黄昏
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.42.1" data-path="../诸神の黄昏/01-项目研发流程.html">
+            
+                <a href="../诸神の黄昏/01-项目研发流程.html">
+            
+                    
+                    项目研发流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="../郭二蛋/">
+            
+                <a href="../郭二蛋/">
+            
+                    
+                    郭二蛋
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.43.1" data-path="../郭二蛋/01-第一周笔记和作业.html">
+            
+                <a href="../郭二蛋/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43.2" data-path="../郭二蛋/02-第二周笔记和作业.html">
+            
+                <a href="../郭二蛋/02-第二周笔记和作业.html">
+            
+                    
+                    第二周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43.3" data-path="../郭二蛋/03-第三周学习笔记.html">
+            
+                <a href="../郭二蛋/03-第三周学习笔记.html">
+            
+                    
+                    第三周学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43.4" data-path="../郭二蛋/04-第四周笔记.html">
+            
+                <a href="../郭二蛋/04-第四周笔记.html">
+            
+                    
+                    第四周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43.5" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="../野火/">
+            
+                <a href="../野火/">
+            
+                    
+                    野火
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.44.1" data-path="../野火/01-作业-架构设计方案.html">
+            
+                <a href="../野火/01-作业-架构设计方案.html">
+            
+                    
+                    作业 架构设计方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="../點滴心宇/">
+            
+                <a href="../點滴心宇/">
+            
+                    
+                    點滴心宇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.45.1" data-path="../點滴心宇/01-第一周笔记和作业.html">
+            
+                <a href="../點滴心宇/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45.2" data-path="../點滴心宇/02-第二周笔记和作业.html">
+            
+                <a href="../點滴心宇/02-第二周笔记和作业.html">
+            
+                    
+                    第二周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45.3" data-path="../點滴心宇/03-第三周笔记和作业.html">
+            
+                <a href="../點滴心宇/03-第三周笔记和作业.html">
+            
+                    
+                    第三周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.45.4.1" >
+            
+                <span>
+            
+                    
+                    第一周
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45.4.2" >
+            
+                <span>
+            
+                    
+                    第三周
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="../🐟红鲤驴与绿驴鱼/">
+            
+                <a href="../🐟红鲤驴与绿驴鱼/">
+            
+                    
+                    🐟红鲤驴与绿驴鱼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.46.1" data-path="../🐟红鲤驴与绿驴鱼/01-作业-架构方案设计.html">
+            
+                <a href="../🐟红鲤驴与绿驴鱼/01-作业-架构方案设计.html">
+            
+                    
+                    作业 架构方案设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="../👨‍🎓风情炀/">
+            
+                <a href="../👨‍🎓风情炀/">
+            
+                    
+                    👨‍🎓风情炀
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.47.1" data-path="../👨‍🎓风情炀/01-weak01学习笔记.html">
+            
+                <a href="../👨‍🎓风情炀/01-weak01学习笔记.html">
+            
+                    
+                    Weak01学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" >
+            
+                <span>
+            
+                    
+                    👨‍🏫Sam老师
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.48.1" data-path="../👨‍🏫Sam老师/01-前端未来趋势分析.html">
+            
+                <a href="../👨‍🏫Sam老师/01-前端未来趋势分析.html">
+            
+                    
+                    前端未来趋势分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48.2" data-path="../👨‍🏫Sam老师/02-为什么要学习前端架构.html">
+            
+                <a href="../👨‍🏫Sam老师/02-为什么要学习前端架构.html">
+            
+                    
+                    为什么要学习前端架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48.3" data-path="../👨‍🏫Sam老师/03-脚手架入门.html">
+            
+                <a href="../👨‍🏫Sam老师/03-脚手架入门.html">
+            
+                    
+                    脚手架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="../👨‍🏫双越老师/">
+            
+                <a href="../👨‍🏫双越老师/">
+            
+                    
+                    👨‍🏫双越老师
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.49.1" data-path="../👨‍🏫双越老师/01-我如何理解Web前端架构师的角色和职责.html">
+            
+                <a href="../👨‍🏫双越老师/01-我如何理解Web前端架构师的角色和职责.html">
+            
+                    
+                    我如何理解Web前端架构师的角色和职责
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49.2" data-path="../👨‍🏫双越老师/02-Web 前端架构师课 vs 普通实战课.html">
+            
+                <a href="../👨‍🏫双越老师/02-Web 前端架构师课 vs 普通实战课.html">
+            
+                    
+                    Web 前端架构师课 Vs 普通实战课
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49.3" data-path="../👨‍🏫双越老师/03-动真格的了！为做一门课程花费 1.5万 购买云服务.html">
+            
+                <a href="../👨‍🏫双越老师/03-动真格的了！为做一门课程花费 1.5万 购买云服务.html">
+            
+                    
+                    动真格的了！为做一门课程花费 1.5万 购买云服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49.4" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="../👨‍🏫张轩老师/">
+            
+                <a href="../👨‍🏫张轩老师/">
+            
+                    
+                    👨‍🏫张轩老师
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.50.1" data-path="../👨‍🏫张轩老师/01-在学习了一门技术的基础知识后，怎样持续提升这门技术达到更高水平？.html">
+            
+                <a href="../👨‍🏫张轩老师/01-在学习了一门技术的基础知识后，怎样持续提升这门技术达到更高水平？.html">
+            
+                    
+                    在学习了一门技术的基础知识后，怎样持续提升这门技术达到更高水平？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50.2" data-path="../👨‍🏫张轩老师/02-Typescript 是不是前端开发必备的技能？一个 ts 黑到 ts 粉的心路历程.html">
+            
+                <a href="../👨‍🏫张轩老师/02-Typescript 是不是前端开发必备的技能？一个 ts 黑到 ts 粉的心路历程.html">
+            
+                    
+                    Typescript 是不是前端开发必备的技能？一个 Ts 黑到 Ts 粉的心路历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >脚手架架构设计和框架搭建笔记</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <header><!-- 百度统计的代码 -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?61947f514f582d72a9e2d67390dd1ab0";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+</header><h2 id="&#x7AD9;&#x5728;&#x524D;&#x7AEF;&#x7814;&#x53D1;&#x89C6;&#x89D2;&#xFF0C;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;&#x7684;&#x5FC5;&#x8981;&#x6027;">&#x7AD9;&#x5728;&#x524D;&#x7AEF;&#x7814;&#x53D1;&#x89C6;&#x89D2;&#xFF0C;&#x5206;&#x6790;&#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;&#x7684;&#x5FC5;&#x8981;&#x6027;</h2>
+<p>&#x67B6;&#x6784;&#x5E08;&#x89C6;&#x89D2;&#xFF1A;&#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;&#x7684;&#x76EE;&#x6807;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x80FD;&#x5E26;&#x6765;&#x4EC0;&#x4E48;&#x4EF7;&#x503C;</p>
+<p>&#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;&#x7684;&#x6838;&#x5FC3;&#x76EE;&#x6807;&#x662F;&#xFF1A; <strong>&#x63D0;&#x5347;&#x524D;&#x7AEF;&#x7814;&#x53D1;&#x6548;&#x80FD;</strong></p>
+<h3 id="&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x7684;&#x5171;&#x6709;&#x64CD;&#x4F5C;">&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x7684;&#x5171;&#x6709;&#x64CD;&#x4F5C;</h3>
+<ul>
+<li><p>&#x521B;&#x5EFA;&#x9879;&#x76EE;</p>
+<p>&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x4E00;&#x822C;&#x90FD;&#x4F1A;&#x6709;&#x901A;&#x7528;&#x4EE3;&#x7801;</p>
+</li>
+<li><p>git&#x64CD;&#x4F5C;</p>
+<p>&#x521B;&#x5EFA;&#x4ED3;&#x5E93;&#x3001;&#x5904;&#x7406;&#x4EE3;&#x7801;&#x51B2;&#x7A81;&#x3001;&#x540C;&#x6B65;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x3001;&#x521B;&#x5EFA;&#x7248;&#x672C;&#x3001;&#x53D1;&#x5E03;&#x540E;&#x7684;tag&#x7B49;&#xFF0C;&#x8017;&#x65F6;&#x8017;&#x529B;</p>
+</li>
+<li><p>&#x6784;&#x5EFA;&#x548C;&#x53D1;&#x5E03;&#x4E0A;&#x7EBF;</p>
+<p>&#x672C;&#x5730;&#x6784;&#x5EFA;&#x3001;&#x8D44;&#x6E90;&#x53D1;&#x5E03;&#x5230;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x3001;&#x540C;&#x6B65;CDN&#x3001;&#x57DF;&#x540D;&#x7ED1;&#x5B9A;&#x3001;&#x533A;&#x5206;&#x6B63;&#x5F0F;&#x548C;&#x6D4B;&#x8BD5;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4EBA;&#x4E3A;&#x64CD;&#x4F5C;&#x8017;&#x65F6;&#x591A;</p>
+</li>
+</ul>
+<p>&#x89E3;&#x51B3;&#x4E0A;&#x8FF0;&#x95EE;&#x9898;&#xFF0C;&#x5373;&#x53EF;&#x63D0;&#x6548;&#x3002;&#x7A81;&#x51FA;&#x811A;&#x624B;&#x67B6;&#x7684;&#x6838;&#x5FC3;&#x4EF7;&#x503C;</p>
+<h3 id="&#x811A;&#x624B;&#x67B6;&#x7684;&#x6838;&#x5FC3;&#x4EF7;&#x503C;">&#x811A;&#x624B;&#x67B6;&#x7684;&#x6838;&#x5FC3;&#x4EF7;&#x503C;</h3>
+<p>&#x5C06;&#x7814;&#x53D1;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ul>
+<li><p>&#x81EA;&#x52A8;&#x5316;</p>
+<p>&#x4ECE;&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x5230;git&#x64CD;&#x4F5C;&#xFF0C;&#x5230;&#x53D1;&#x5E03;&#x4E0A;&#x7EBF;&#x7684;&#x81EA;&#x52A8;&#x5316;&#xFF0C;&#x51CF;&#x5C11;&#x4EBA;&#x5DE5;&#x7684;&#x8017;&#x65F6;</p>
+</li>
+<li><p>&#x6807;&#x51C6;&#x5316;</p>
+<p>&#x4EA4;&#x7ED9;&#x811A;&#x624B;&#x67B6;&#x5B8C;&#x6210;&#x5171;&#x6709;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x7EDF;&#x4E00;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#xFF0C;&#x89C4;&#x907F;git flow&#x6DF7;&#x4E71;&#xFF1A;&#x6742;&#x4E71;&#x65E0;&#x7AE0;&#x7684;commit&#x3002;&#x7EDF;&#x4E00;&#x53D1;&#x5E03;&#x548C;&#x56DE;&#x6EDA;&#x6D41;&#x7A0B;</p>
+</li>
+<li><p>&#x6570;&#x636E;&#x5316;</p>
+<p>&#x7EDF;&#x8BA1;&#x811A;&#x624B;&#x67B6;&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x3001;git&#x64CD;&#x4F5C;&#x3001;&#x6784;&#x5EFA;&#x548C;&#x53D1;&#x5E03;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x7814;&#x53D1;&#x8FC7;&#x7A0B;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;&#x53EF;&#x4EE5;&#x628A;&#x7814;&#x53D1;&#x8FC7;&#x7A0B;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;</p>
+</li>
+</ul>
+<h3 id="&#x548C;&#x81EA;&#x52A8;&#x5316;&#x5DE5;&#x5177;&#x7684;&#x533A;&#x522B;">&#x548C;&#x81EA;&#x52A8;&#x5316;&#x5DE5;&#x5177;&#x7684;&#x533A;&#x522B;</h3>
+<ul>
+<li><p>&#x4E0D;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#x3002;jenkins/travis&#x901A;&#x5E38;&#x9700;&#x8981;&#x5728;git hooks&#x4E2D;&#x89E6;&#x53D1;&#xFF0C;&#x8D1F;&#x8D23;&#x4E91;&#x6784;&#x5EFA;&#xFF0C;&#x4E0D;&#x80FD;&#x8986;&#x76D6;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x672C;&#x5730;&#x529F;&#x80FD; </p>
+</li>
+<li><p>&#x5B9A;&#x5236;&#x590D;&#x6742;&#x3002;jenkins&#x3001;travis&#x5B9A;&#x5236;&#x8FC7;&#x7A0B;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x63D2;&#x4EF6;&#xFF0C;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x590D;&#x6742;&#xFF0C;&#x4E14;&#x4F7F;&#x7528;java&#x8BED;&#x8A00;&#xFF0C;&#x5BF9;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4E0D;&#x591F;&#x53CB;&#x597D;</p>
+</li>
+</ul>
+<h2 id="&#x4ECE;&#x4F7F;&#x7528;&#x7684;&#x89D2;&#x5EA6;&#x7406;&#x89E3;&#x4EC0;&#x4E48;&#x662F;&#x811A;&#x624B;&#x67B6;">&#x4ECE;&#x4F7F;&#x7528;&#x7684;&#x89D2;&#x5EA6;&#x7406;&#x89E3;&#x4EC0;&#x4E48;&#x662F;&#x811A;&#x624B;&#x67B6;</h2>
+<h3 id="&#x811A;&#x624B;&#x67B6;&#x7B80;&#x4ECB;">&#x811A;&#x624B;&#x67B6;&#x7B80;&#x4ECB;</h3>
+<p>&#x811A;&#x624B;&#x67B6;&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x53EA;&#x4E0D;&#x8FC7;&#x5B83;&#x662F;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-bash">vue create vue-test-app
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x547D;&#x4EE4;&#x7531;3&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li>&#x4E3B;&#x547D;&#x4EE4;&#xFF1A;<code>vue</code> </li>
+<li>command&#xFF1A;<code>create</code> </li>
+<li>command &#x7684; param&#xFF1A;<code>vue-test-app</code>   </li>
+</ul>
+<p>&#x547D;&#x4EE4;&#x8868;&#x793A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;vue&#x9879;&#x76EE;&#xFF0C;&#x9879;&#x76EE;&#x540D;&#x4E3A;<code>vue-test-app</code> </p>
+<pre><code class="lang-bash">vue create vue-test-app --force
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x5E76;&#x8986;&#x76D6;&#x5DF2;&#x6709;&#x540C;&#x540D;&#x76EE;&#x5F55;&#x3002;<code>--force</code> &#x79F0;&#x4E3A;option&#x3002;&#x7528;&#x6765;&#x8F85;&#x52A9;&#x811A;&#x624B;&#x67B6;&#x786E;&#x8BA4;&#x5728;&#x7279;&#x5B9A;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x7528;&#x6237;&#x7684;&#x9009;&#x62E9;&#x3002;</p>
+<pre><code class="lang-bash">vue create vue-test-app --fore -r https://registry.npm.taobao.org
+</code></pre>
+<p>&#x8FD9;&#x91CC;<code>-r</code> &#x4E5F;&#x662F;option&#xFF0C;--registry&#x7684;&#x7B80;&#x5199;&#x3002;<code>-r https://registry.npm.taobao.org</code> &#x540E;&#x9762;&#x7684;<code>https://registry.npm.taobao.org</code> &#x662F;<code>-r</code> &#x7684;param. <code>--force</code>&#x7B80;&#x5199;&#x662F; <code>-f</code> &#x3002; <code>--force</code> &#x4E5F;&#x6709;param&#xFF1A;<code>--force</code> <code>-f</code> &#x662F; <code>--force true</code> &#x7684;&#x7F29;&#x5199;&#x3002;</p>
+<h3 id="&#x811A;&#x624B;&#x67B6;&#x6267;&#x884C;&#x539F;&#x7406;">&#x811A;&#x624B;&#x67B6;&#x6267;&#x884C;&#x539F;&#x7406;</h3>
+<p><code>vue create vue-test-app</code>  &#x547D;&#x4EE4;&#x5E72;&#x4E86;&#x4E9B;&#x5565;&#xFF1F;</p>
+<ol>
+<li><p>&#x7EC8;&#x7AEF;&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x627E;&#x5230;vue&#x6307;&#x4EE4;&#xFF0C;<code>which vue</code>  &#x6307;&#x4EE4;&#x5BFB;&#x627E;&#xFF08;mac&#x7CFB;&#x7EDF;&#x4E0B;&#xFF09;&#x672C;&#x673A;&#x8FD0;&#x884C;which vue&#x7684;&#x5230;&#x7ED3;&#x679C;&#xFF1A;    <code>/usr/local/bin/vue</code> </p>
+</li>
+<li><p>&#x8FDB;&#x5165;node&#x8DEF;&#x5F84;&#xFF0C;&#x56FE;1&#xFF0C;&#x5173;&#x6CE8;bin&#x548C;lib&#x6587;&#x4EF6;&#x5939;(&#x672C;&#x673A;&#x662F;&#x8FDB;&#x5165;<code>/usr/local/</code> )&#xFF0C;&#x8FDB;&#x5165;bin&#x8DEF;&#x5F84;&#x540E;&#xFF0C;ls -la&#x5F97;&#x5230;vue&#x4FE1;&#x606F;&#xFF1A;<code>lrwxr-xr-x  1 root wheel  39  9 19 15:15 vue -&gt; ../lib/node_modules/@vue/cli/bin/vue.js</code> &#x5F97;&#x5230;vue&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x5411;<code>/usr/local/lib/node_modules/@vue/cli/bin/vue.js</code> &#x7684;&#x8F6F;&#x8FDE;&#x63A5;</p>
+<p><img src="images/usr_local.png" alt=""></p>
+<p>&#x56FE;1&#xFF1A;bin&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x662F;&#x8F6F;&#x94FE;&#x63A5;&#x3002;lib&#x4E2D;&#x662F;&#x8F6F;&#x94FE;&#x63A5;&#x6307;&#x5411;&#x7684;&#x5168;&#x5C40;&#x6587;&#x4EF6;&#xFF08;npm&#x5305;&#xFF09;</p>
+</li>
+<li><p>&#x4EE5;&#x4E0A;&#xFF0C;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x7684;&#x662F;<code>/usr/local/lib/node_modules/@vue/cli/bin/vue.js</code> &#x6587;&#x4EF6;&#x3002;&#x89E3;&#x6790;command&#x540E;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x65B9;&#x6CD5;(create)&#x6267;&#x884C;&#x3002;</p>
+</li>
+</ol>
+<p><strong>&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x56FE;&#x89E3;&#xFF1A;</strong></p>
+<p><img src="images/&#x547D;&#x4EE4;&#x6267;&#x884C;&#x8FC7;&#x7A0B;.png" alt=""></p>
+<ul>
+<li>&#x7EC8;&#x7AEF;&#x4E2D;&#x8F93;&#x5165; <code>vue create vue-test-app</code></li>
+<li>&#x7EC8;&#x7AEF;&#x89E3;&#x6790;&#x51FA;<code>vue</code> &#x547D;&#x4EE4;</li>
+<li>&#x7EC8;&#x7AEF;&#x5728;&#x73AF;&#x5883;&#x4E2D;&#x627E;&#x5230;<code>vue</code> &#x547D;&#x4EE4;&#xFF08;&#x4F7F;&#x7528;which vue&#x6307;&#x4EE4;&#xFF09;</li>
+<li>&#x7EC8;&#x7AEF;&#x6839;&#x636E;<code>vue</code> &#x547D;&#x4EE4;&#x94FE;&#x63A5;&#x5230;&#x5B9E;&#x9645;&#x6587;&#x4EF6;vue.js</li>
+<li>&#x7EC8;&#x7AEF;&#x5229;&#x7528;node &#x6267;&#x884C;vue.js</li>
+<li>vue.js&#x89E3;&#x6790;<code>command</code> /<code>opiton</code></li>
+<li>vue.js&#x6267;&#x884C;<code>command</code> (&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;)</li>
+<li>&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x9000;&#x51FA;&#x6267;&#x884C;</li>
+</ul>
+<h3 id="&#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;&#x7684;&#x6B65;&#x9AA4;">&#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;&#x7684;&#x6B65;&#x9AA4;</h3>
+<p>&#x4EE5;<code>vue-cli</code> &#x4E3A;&#x4F8B;</p>
+<ol>
+<li><p>&#x521B;&#x5EFA;npm&#x9879;&#x76EE;<code>mkdir vue-cli &amp;&amp; cd vue-cli &amp;&amp; npm init -y</code> &#x9879;&#x76EE;&#x4E2D;&#x5305;&#x542B;<code>bin/vue.js</code> &#x6587;&#x4EF6;&#xFF0C;<code>package.json</code> &#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;bin&quot;</span>: {
+  <span class="hljs-string">&quot;vue&quot;</span>: <span class="hljs-string">&quot;bin/vue.js&quot;</span>
+}
+</code></pre>
+<p>&#x6700;&#x540E;&#xFF0C;&#x628A;&#x9879;&#x76EE;&#x53D1;&#x5E03;&#x5230;npm&#x3002;</p>
+</li>
+<li><p>&#x5C06;<code>vue-cli</code> &#x5B89;&#x88C5;&#x5230;<code>node</code> &#x7684;<code>lib/node_modules</code> &#x4E2D;&#xFF1A;<code>npm i -g @vue/cli</code></p>
+</li>
+<li>&#x5728;<code>node</code> &#x7684;<code>bin</code> &#x76EE;&#x5F55;&#x4E0B;&#x914D;&#x7F6E;<code>vue</code> &#x8F6F;&#x94FE;&#x5230;<code>lib/node_modules/@vue/cli/bin/vue.js</code> &#x3002;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;npm&#x5B89;&#x88C5;&#x65F6;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x3002;</li>
+</ol>
+<h3 id="&#x9700;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;">&#x9700;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;</h3>
+<ol>
+<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x5168;&#x5C40;&#x5B89;&#x88C5;<code>@vue/cli</code> &#x540E;&#x4F1A;&#x6DFB;&#x52A0;&#x7684;&#x547D;&#x4EE4;&#x4E3A;vue&#xFF1F;</p>
+<p><code>package.json</code> &#x4E2D;<code>bin</code> &#x914D;&#x7F6E;&#x4E86;key<code>vue</code>&#xFF0C;<code>npm</code> &#x5168;&#x5C40;&#x5B89;&#x88C5;&#x65F6;&#xFF0C;&#x4F1A;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x751F;&#x6210;&#x8F6F;&#x94FE;&#x63A5;&#x3002;</p>
+</li>
+<li><p>&#x5168;&#x5C40;&#x5B89;&#x88C5;<code>@vue/cli</code> &#x65F6;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p>&#x5168;&#x5C40;&#x5B89;&#x88C5;@vue/cli&#x65F6;</p>
+<ul>
+<li><p>&#x4E0B;&#x8F7D;npm&#x5305;&#x5230;&#x5168;&#x5C40;&#x7684;node_modules&#x6587;&#x4EF6;&#x5939;&#x4E0B;</p>
+</li>
+<li><p>&#x6309;<code>package.json</code> &#x4E2D;<code>bin</code> &#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x751F;&#x6210;&#x8F6F;&#x94FE;&#x63A5;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x4E3A;&#x4EC0;&#x4E48;<code>vue</code> &#x6307;&#x5411;&#x4E00;&#x4E2A;<code>js</code> &#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5374;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>vue</code> &#x547D;&#x4EE4;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x5B83;&#xFF1F;</p>
+<ul>
+<li><code>vue.js</code> &#x6587;&#x4EF6;&#x7B2C;&#x4E00;&#x884C;&#x6DFB;&#x52A0;<code>#! /usr/bin/env node</code> &#x544A;&#x8BC9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5728;&#x76F4;&#x63A5;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x4ECE;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x627E;&#x5BFB;<code>node</code> &#x547D;&#x4EE4;&#xFF0C;&#x4F7F;&#x7528;<code>node</code> &#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002;<code>/usr/bin/env</code> &#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x6253;&#x5370;&#x51FA;&#x6765;&#x7684;&#x662F;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002;</li>
+<li><code>npm</code> &#x6309;&#x7167;<code>package.json</code> &#x4E2D;<code>bin</code> &#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x751F;&#x6210;&#x4E86;&#x8F6F;&#x94FE;&#x63A5;<code>vue</code> &#x6307;&#x5411;&#x4E86;<code>vue.js</code> &#x3002;&#x6240;&#x4EE5;&#x8F93;&#x5165;<code>vue</code> &#x5C31;&#x53EF;&#x4EE5;&#x6267;<code>vue,js</code> &#x3002;</li>
+</ul>
+</li>
+</ol>
+<p><strong>&#x6D89;&#x53CA;&#x5230;&#x7684;bash&#x547D;&#x4EE4;</strong></p>
+<ul>
+<li><p><code>chmod 777 filename</code> &#x53EF;&#x4EE5;&#x5C06;&#x6587;&#x4EF6;&#x6539;&#x4E3A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</p>
+<p><code>drwxr-xr-x</code>  &#x6700;&#x540E;&#x4E00;&#x4E2A;<code>x</code> &#x8868;&#x793A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</p>
+</li>
+<li><p><code>echo $PATH</code> &#x6253;&#x5370;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+</li>
+</ul>
+<p><strong>&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x8F6F;&#x8FDE;&#x63A5;</strong></p>
+<p>&#x521B;&#x5EFA;&#x8F6F;&#x8FDE;&#x63A5;&#x6307;&#x5411;js&#xFF1A;&#x5728;node bin&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8FD0;&#x884C;&#x547D;&#x4EE4; <code>ln -s js&#x8DEF;&#x5F84; name</code>&#x3002;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#xFF0C;&#x6267;&#x884C;<code>name</code> &#x547D;&#x4EE4;</p>
+<h2 id="&#x811A;&#x624B;&#x67B6;&#x539F;&#x7406;&#x8FDB;&#x9636;">&#x811A;&#x624B;&#x67B6;&#x539F;&#x7406;&#x8FDB;&#x9636;</h2>
+<ol>
+<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x8BF4;&#x811A;&#x624B;&#x67B6;&#x672C;&#x8D28;&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF1F;&#x5B83;&#x548C;&#x6211;&#x4EEC;&#x5728;PC&#x4E0A;&#x5B89;&#x88C5;&#x7684;&#x5E94;&#x7528;/&#x8F6F;&#x4EF6;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#xFF1F;</p>
+<p>&#x56E0;&#x4E3A;node&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x4E0D;&#x662F;&#x7F16;&#x5199;&#x7684;&#x5BF9;&#x5E94;&#x811A;&#x624B;&#x67B6;js&#x6587;&#x4EF6;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x533A;&#x522B;&#x662F;&#x6CA1;&#x6709;gui&#xFF0C;node&#x662F;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x65B9;&#x5F0F;&#xFF0C;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x6267;&#x884C;</p>
+</li>
+<li><p>&#x5982;&#x4F55;&#x4E3A;node&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x521B;&#x5EFA;&#x522B;&#x540D;&#xFF1F;</p>
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x4E3A;&#x73B0;&#x6709;&#x7684;vue &#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x5728;&#x6DFB;&#x52A0;&#x4E2A;&#x522B;&#x540D;&#xFF1A;&#x65B0;&#x5EFA;&#x8F6F;&#x8FDE;&#x63A5;&#x6307;&#x5411;&#x4ED6;&#x5C31;&#x597D;&#x4E86;&#x3002;&#x5728;<code>node/bin</code> &#x4E0B;&#x6267;&#x884C;&#xFF1A;<code>ln -s /vue vue2</code> &#x5373;&#x53EF;&#x4F7F;&#x7528;<code>vue2</code> &#x6307;&#x5411;<code>vue</code> &#x3002;<code>windows</code> &#x7CFB;&#x7EDF;&#x662F;&#x901A;&#x8FC7;&#x65B0;&#x5EFA;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;</p>
+</li>
+<li><p>&#x63CF;&#x8FF0;&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x7684;&#x5168;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p><img src="images/&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x8FC7;&#x7A0B;.png" alt=""></p>
+</li>
+</ol>
+<h2 id="&#x811A;&#x624B;&#x67B6;&#x7684;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;">&#x811A;&#x624B;&#x67B6;&#x7684;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;</h2>
+<h3 id="&#x5F00;&#x53D1;&#x6D41;&#x7A0B;">&#x5F00;&#x53D1;&#x6D41;&#x7A0B;</h3>
+<ol>
+<li><p>&#x521B;&#x5EFA;<code>npm</code> &#x9879;&#x76EE;</p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x811A;&#x624B;&#x67B6;&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF0C;&#x6700;&#x4E0A;&#x65B9;&#x6DFB;&#x52A0;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-meta">#!/usr/bin/env node</span>
+</code></pre>
+</li>
+<li><p>&#x914D;&#x7F6E;<code>package.json</code> &#xFF0C;&#x6DFB;&#x52A0;<code>bin</code> &#x5C5E;&#x6027;</p>
+</li>
+<li><p>&#x7F16;&#x5199;&#x811A;&#x624B;&#x67B6;&#x4EE3;&#x7801;</p>
+</li>
+<li><p>&#x5C06;&#x811A;&#x624B;&#x67B6;&#x53D1;&#x5E03;&#x5230;<code>npm</code> </p>
+</li>
+</ol>
+<h3 id="&#x5B89;&#x88C5;&#x4F7F;&#x7528;">&#x5B89;&#x88C5;&#x4F7F;&#x7528;</h3>
+<p><strong>&#x4F5C;&#x4E1A;1</strong></p>
+<ul>
+<li><p>&#x5B89;&#x88C5;</p>
+<pre><code class="lang-bash">npm i -g jolly-test
+</code></pre>
+</li>
+<li><p>&#x4F7F;&#x7528;</p>
+<pre><code class="lang-bash">$ jolly-test -V
+1.0.1
+$ jolly-test --version
+1.0.1
+$ jolly-test init <span class="hljs-built_in">test</span> --option
+&#x6267;&#x884C;init&#x6D41;&#x7A0B; <span class="hljs-built_in">test</span> --option
+</code></pre>
+</li>
+</ul>
+<h2 id="&#x811A;&#x624B;&#x67B6;&#x5F00;&#x53D1;&#x96BE;&#x70B9;">&#x811A;&#x624B;&#x67B6;&#x5F00;&#x53D1;&#x96BE;&#x70B9;</h2>
+<ul>
+<li><p>&#x5206;&#x5305;&#xFF1A;&#x5C06;&#x590D;&#x6742;&#x7684;&#x7CFB;&#x7EDF;&#x62C6;&#x5206;&#x6210;&#x82E5;&#x5E72;&#x4E2A;&#x6A21;&#x5757;</p>
+</li>
+<li><p>&#x547D;&#x4EE4;&#x6CE8;&#x518C;&#xFF0C;&#x4F7F;&#x7528;&#x82E5;&#x5E72;&#x547D;&#x4EE4;&#x5B9E;&#x73B0;&#x5BF9;&#x5E94;&#x529F;&#x80FD;</p>
+<pre><code class="lang-bash">vue create
+vue add
+vue invoke
+</code></pre>
+</li>
+<li><p>&#x53C2;&#x6570;&#x89E3;&#x6790;</p>
+<pre><code class="lang-bash">vue <span class="hljs-built_in">command</span> [options] &lt;params&gt;
+</code></pre>
+<p>&#x4E3B;&#x547D;&#x4EE4;&#x3001;command&#x3001;&#x5E26;params&#x7684;options&#x7B49;</p>
+</li>
+<li><p>options&#x6709;&#x5168;&#x79F0; <code>--version</code> &#x6709;&#x7B80;&#x5199;<code>-v</code> <code>-h</code> &#x600E;&#x4E48;&#x5B9E;&#x73B0;</p>
+</li>
+<li><p>&#x5E2E;&#x52A9;&#x6587;&#x6863;</p>
+<ul>
+<li>Global help (&#x9488;&#x5BF9;&#x4E3B;&#x547D;&#x4EE4;)<ul>
+<li>Usage</li>
+<li>Options</li>
+<li>Commands</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-bash">jolly@JollydeMacBook-Pro % vue -h
+Usage: vue &lt;<span class="hljs-built_in">command</span>&gt; [options]
+
+Options:
+  -V, --version                              output the version number
+  -h, --help                                 output usage information
+
+Commands:
+  create [options] &lt;app-name&gt;                create a new project powered by vue-cli-service
+  add [options] &lt;plugin&gt; [pluginOptions]     install a plugin and invoke its generator <span class="hljs-keyword">in</span> an already created project
+  invoke [options] &lt;plugin&gt; [pluginOptions]  invoke the generator of a plugin <span class="hljs-keyword">in</span> an already created project
+  inspect [options] [paths...]               inspect the webpack config <span class="hljs-keyword">in</span> a project with vue-cli-service
+  serve [options] [entry]                    serve a .js or .vue file <span class="hljs-keyword">in</span> development mode with zero config
+  build [options] [entry]                    build a .js or .vue file <span class="hljs-keyword">in</span> production mode with zero config
+  ui [options]                               start and open the vue-cli ui
+  init [options] &lt;template&gt; &lt;app-name&gt;       generate a project from a remote template (legacy API, requires @vue/cli-init)
+  config [options] [value]                   inspect and modify the config
+  outdated [options]                         (experimental) check <span class="hljs-keyword">for</span> outdated vue cli service / plugins
+  upgrade [options] [plugin-name]            (experimental) upgrade vue cli service / plugins
+  migrate [options] [plugin-name]            (experimental) run migrator <span class="hljs-keyword">for</span> an already-installed cli plugin
+  info                                       <span class="hljs-built_in">print</span> debugging information about your environment
+
+  Run vue &lt;<span class="hljs-built_in">command</span>&gt; --help <span class="hljs-keyword">for</span> detailed usage of given command.
+</code></pre>
+</li>
+</ul>
+<p>&#x8FD8;&#x6709;</p>
+<ul>
+<li>&#x4EA4;&#x4E92;&#x5F0F;&#x547D;&#x4EE4;&#x884C;</li>
+<li>&#x65E5;&#x5FD7;&#x6253;&#x5370;</li>
+<li>&#x547D;&#x4EE4;&#x884C;&#x6587;&#x5B57;&#x989C;&#x8272;&#x53D8;&#x5316;</li>
+<li>&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#xFF1A;HTTP/WebSocket</li>
+<li>&#x6587;&#x4EF6;&#x5904;&#x7406;</li>
+</ul>
+<p>......</p>
+<h3 id="&#x811A;&#x624B;&#x67B6;&#x672C;&#x5730;&#x8C03;&#x8BD5;">&#x811A;&#x624B;&#x67B6;&#x672C;&#x5730;&#x8C03;&#x8BD5;</h3>
+<p><strong>&#x6CA1;&#x6709;&#x5206;&#x5305;&#x7684;&#x672C;&#x5730;&#x8C03;&#x8BD5;</strong></p>
+<p>&#x5047;&#x5B9A;&#x5728;&#x5F00;&#x53D1;jolly-test&#x811A;&#x624B;&#x67B6;&#xFF0C;&#x8981;&#x672C;&#x5730;&#x8C03;&#x8BD5;<code>jolly-test</code>&#x547D;&#x4EE4;</p>
+<ul>
+<li><p>&#x5728;<code>package.json</code> &#x6240;&#x5728;&#x76EE;&#x5F55;&#x4E0B;<code>npm link</code> </p>
+<ul>
+<li>&#x6B64;&#x65F6;&#x4F1A;&#x6309;&#x7167; <code>package.json</code> &#x4E2D;<code>bin</code> &#x914D;&#x7F6E;&#x5728;<code>/usr/local/bin</code> &#x4E2D;&#x751F;&#x6210;&#x8F6F;&#x94FE;<code>jolly-test</code>&#xFF08;<code>bin</code> &#x914D;&#x7F6E;&#x7684;&#xFF09;</li>
+<li>&#x5148;&#x6307;&#x5411;/usr/local/lib/node_modules/jolly-test&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x8F6F;&#x8FDE;&#x63A5;</li>
+<li>/node_modules/jolly-test &#x6307;&#x5411;&#x9879;&#x76EE;&#x7684;&#x672C;&#x5730;&#x5B9E;&#x9645;&#x8DEF;&#x5F84;</li>
+</ul>
+</li>
+<li><p>&#x5728;<code>package.json</code> &#x6240;&#x5728;&#x76EE;&#x5F55;&#x7684;&#x4E0A;&#x7EA7;<code>npm i -g &#x6587;&#x4EF6;&#x5939;&#x540D;</code> &#x4E5F;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;<code>npm link</code> &#x7684;&#x6548;&#x679C;&#x3002;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;<code>node_modules</code> &#x4E2D;&#x8F6F;&#x94FE;&#x6307;&#x5411;&#x7684;&#x5730;&#x5740;&#x5199;&#x6CD5;&#xFF1A;<code>npm link</code> <code>node_modules</code> &#x4E2D;&#x8F6F;&#x94FE;&#x6307;&#x5411;&#x7684;&#x5730;&#x5740;&#x662F;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<pre><code class="lang-bash">lrwxr-xr-x   1 jolly  wheel    37  1 10 20:42 jolly-test -&gt; /Users/jolly/Desktop/imooc/jolly-test
+</code></pre>
+<p>&#x800C;<code>npm i -g jolly-test</code> <code>node_modules</code> &#x4E2D;&#x8F6F;&#x94FE;&#x6307;&#x5411;&#x7684;&#x5730;&#x5740;&#x662F;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<pre><code class="lang-bash">lrwxr-xr-x  1 jolly wheel  48 1 10 16:24 jolly-test -&gt; ../../../../Users/jolly/Desktop/imooc/jolly-test
+</code></pre>
+</li>
+</ul>
+<p><strong>&#x5206;&#x5305;&#x7684;&#x672C;&#x5730;&#x8C03;&#x8BD5;</strong></p>
+<p>&#x5047;&#x5B9A;&#x5F00;&#x53D1;<code>jolly-cli</code>&#xFF0C;&#x548C;<code>jolly-utils</code>&#x4F4D;&#x4E8E;<code>jolly-cli-dev</code>&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x3002;<code>jolly-cli</code>&#x5F15;&#x5165;&#x4F9D;&#x8D56;<code>jolly-utils</code> </p>
+<ul>
+<li><p>&#x9996;&#x5148;&#x5728;<code>jolly-utils</code>&#x4E2D;<code>npm link</code> &#x653E;&#x5230;&#x5168;&#x5C40;<code>node_modules</code> &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF0C; &#x7136;&#x540E;&#x5728;<code>jolly-cli</code> &#x8FD0;&#x884C;&#x6307;&#x4EE4;<code>npm link jolly-utils</code>&#xFF0C;&#x5E76;&#x5728; <code>package.json</code> &#x4E2D;&#x624B;&#x52A8;&#x914D;&#x7F6E;&#x4F9D;&#x8D56;&#x3002;</p>
+</li>
+<li><p><code>npm</code> <code>package</code> &#x7684;&#x5F62;&#x5F0F;&#x4E4B;&#x4E00;&#xFF0C;&#x5C31;&#x662F;&#x672C;&#x5730;&#x7684;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x3002;&#x6240;&#x4EE5;<code>npm</code> &#x63D0;&#x8FC7;&#x5982;&#x4E0B;&#x5199;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x672C;&#x5730;&#x5305;&#x7684;&#x5F15;&#x5165;&#xFF08;<code>jolly-cli</code>&#x5F15;&#x5165;&#x4F9D;&#x8D56;<code>jolly-utils</code>&#xFF09;</p>
+</li>
+</ul>
+<pre><code class="lang-json">  <span class="hljs-string">&quot;dependencies&quot;</span>: {
+    <span class="hljs-string">&quot;@jolly-cli/utils&quot;</span>: <span class="hljs-string">&quot;file:../utils&quot;</span>
+  },
+</code></pre>
+<p>&#x200B;    &#x914D;&#x7F6E;&#x4E4B;&#x540E;&#xFF0C;&#x9700;&#x8981;<code>npm install</code>&#x3002;&#x4F46;&#x53D1;&#x5E03;&#x65F6;&#x9700;&#x8981;&#x5177;&#x5907;&#x50CF;<code>lerna publish</code> &#x5C06;&#x672C;&#x5730;&#x8FDE;&#x63A5;&#x89E3;&#x6790;&#x6210;&#x7EBF;&#x4E0A;&#x8FDE;&#x63A5;&#x7684;&#x529F;&#x80FD;&#x5BF9;&#x4F9D;&#x8D56;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+<p><strong>&#x672C;&#x5730;&#x8C03;&#x8BD5;&#x540E;&#x53D1;&#x5E03;&#x4E0A;&#x7EBF;</strong></p>
+<ul>
+<li>&#x4F7F;&#x7528;<code>npm link</code> &#x7684;&#x8981;&#x5148;<code>npm unlink</code><ul>
+<li>&#x6CA1;&#x6709;&#x672C;&#x5730;&#x5206;&#x5305;&#x8C03;&#x8BD5;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53D1;&#x5E03;&#x4E86;</li>
+<li>&#x6709;&#x672C;&#x5730;&#x5206;&#x5305;&#x7684;&#xFF0C;&#x5982;&#x5F00;&#x53D1;<code>jolly-cli</code> &#xFF0C;&#x5E94;&#x5148;&#x5728; <code>jolly-cli</code> &#x4E2D;<code>npm unlink jolly-utils</code> , &#x8FD9;&#x65F6;<code>package.json</code> &#x4E2D;&#x5BF9;&#x5E94;&#x4F9D;&#x8D56;&#x4F1A;&#x88AB;&#x79FB;&#x9664;&#x3002;&#x7136;&#x540E;&#x56DE;&#x5230; <code>jolly-utils</code> &#x4E2D; <code>npm unlink</code> &#x5E76;&#x5148;&#x5BF9; <code>jolly-utils</code> &#x8FDB;&#x884C;&#x53D1;&#x5E03;&#x3002;&#x53D1;&#x5E03;&#x6210;&#x529F;&#x4E4B;&#x540E;&#xFF0C;&#x5728; <code>jolly-cli</code> &#x8FD0;&#x884C; <code>npm i -S jolly-utils</code> &#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#xFF0C;&#x518D;&#x5BF9; <code>jolly-cli</code> &#x8FDB;&#x884C;&#x53D1;&#x5E03;&#x3002;</li>
+</ul>
+</li>
+<li>&#x901A;&#x8FC7; <code>&quot;file:../utils&quot;</code> &#x5F15;&#x5165;&#x4F9D;&#x8D56;&#x7684;&#xFF0C;&#x8981;&#x4F7F;&#x7528; <code>lerna publish</code> &#x8FDB;&#x884C;&#x53D1;&#x5E03;&#x3002;</li>
+</ul>
+<h3 id="npm-link--npm-unlink">npm link &amp; npm unlink</h3>
+<p><strong>npm link</strong></p>
+<ul>
+<li><code>npm link</code> &#x5C06;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x94FE;&#x63A5;&#x5230; <code>node</code> &#x5168;&#x5C40; <code>node_modules</code> &#x4E2D;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5E93;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x89E3;&#x6790; bin &#x914D;&#x7F6E;&#x521B;&#x5EFA;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</li>
+<li><code>npm link your-lib</code> &#x5C06;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x4E2D; <code>node_modules</code> &#x4E0B;&#x6307;&#x5B9A;&#x7684;&#x5E93;&#x6587;&#x4EF6;&#x94FE;&#x63A5;&#x5230; <code>node</code> &#x5168;&#x5C40; <code>node_modules</code> &#x4E0B;&#x7684;&#x5E93;&#x6587;&#x4EF6;</li>
+</ul>
+<p><strong>npm unlink</strong></p>
+<ul>
+<li><code>npm unlink</code> &#x5C06;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x4ECE; <code>node</code> &#x5168;&#x5C40; <code>node_modules</code> &#x4E2D;&#x79FB;&#x9664;</li>
+<li><code>npm unlink your-lib</code> &#x5C06;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x5E93;&#x6587;&#x4EF6;&#x4F9D;&#x8D56;&#x79FB;&#x9664;</li>
+</ul>
+<h2 id="&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x6CE8;&#x518C;&#x548C;&#x53C2;&#x6570;&#x89E3;&#x6790;">&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x6CE8;&#x518C;&#x548C;&#x53C2;&#x6570;&#x89E3;&#x6790;</h2>
+<p><strong>&#x4E0D;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x8FDB;&#x884C;&#x89E3;&#x6790;</strong></p>
+<p>&#x4F7F;&#x7528; <code>node</code> <code>process</code> &#x6A21;&#x5757;&#x3002;<code>process</code> &#x662F; <code>node</code> &#x7684;&#x8FDB;&#x7A0B;&#x4E8B;&#x4EF6;&#xFF0C;<code>process.argv</code>  &#x5C5E;&#x6027;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x5F53; <code>Node.js</code> &#x8FDB;&#x7A0B;&#x88AB;&#x542F;&#x52A8;&#x65F6;&#x4F20;&#x5165;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F; <code>process.execPath</code>&#xFF08;&#x542F;&#x52A8; <code>Node.js</code> &#x8FDB;&#x7A0B;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x540D;&#xFF09;&#x3002; &#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x6B63;&#x88AB;&#x6267;&#x884C;&#x7684; <code>JavaScript</code> &#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002; &#x5176;&#x4F59;&#x7684;&#x5143;&#x7D20;&#x662F;&#x4EFB;&#x4F55;&#x989D;&#x5916;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E0B;&#x56FE;&#x662F;&#x8F93;&#x5165; <code>imooc-test init</code> &#x540E;&#x7684; <code>process.argv</code></p>
+<p><img src="images/process.argv.jpg" alt=""></p>
+<h2 id="&#x4F7F;&#x7528;lerna&#x8FDB;&#x884C;&#x811A;&#x624B;&#x67B6;&#x5F00;&#x53D1;">&#x4F7F;&#x7528;lerna&#x8FDB;&#x884C;&#x811A;&#x624B;&#x67B6;&#x5F00;&#x53D1;</h2>
+<p>lerna &#x662F;&#x4E00;&#x4E2A;&#x4F18;&#x5316;&#x57FA;&#x4E8E; git + npm &#x7684;&#x591A; package &#x9879;&#x76EE;&#x7684;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</p>
+<h3 id="lerna&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;">lerna&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;</h3>
+<ul>
+<li><p>&#x5927;&#x578B;&#x9879;&#x76EE;&#x3001;&#x591A; <code>packages</code> &#x7684;&#x91CD;&#x590D;&#x64CD;&#x4F5C;</p>
+<ul>
+<li><p>&#x672C;&#x5730;&#x5206;&#x5305;&#x4E4B;&#x95F4;&#x7684;link</p>
+</li>
+<li><p>&#x4F9D;&#x8D56;&#x5B89;&#x88C5;</p>
+</li>
+<li><p>&#x5355;&#x5143;&#x6D4B;&#x8BD5;</p>
+</li>
+<li><p>&#x4EE3;&#x7801;&#x63D0;&#x4EA4;</p>
+<p>&#x6240;&#x6709; <code>package</code> &#x63D0;&#x4EA4;&#x5230;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;</p>
+</li>
+<li><p>&#x4EE3;&#x7801;&#x53D1;&#x5E03;</p>
+<p>&#x6BCF;&#x4E00;&#x4E2A; <code>package</code> &#x90FD;&#x8981;&#x53D1;&#x5E03;&#x6210;&#x72EC;&#x7ACB;&#x7684; <code>npm</code> &#x5305;&#xFF0C;version &#x5347;&#x7EA7;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x5927;&#x578B;&#x9879;&#x76EE;&#x3001;&#x591A; <code>packages</code> &#x7684;&#x7248;&#x672C;&#x4E00;&#x81F4;&#x6027;</p>
+<ul>
+<li><p>&#x53D1;&#x5E03;&#x65F6;&#x7248;&#x672C;&#x4E00;&#x81F4;&#x6027;</p>
+<p><code>packages</code> &#x4E4B;&#x95F4;&#x7248;&#x672C;&#x4E00;&#x81F4;&#xFF0C;&#x53EA;&#x9700;&#x4FDD;&#x8BC1;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x4E0B;&#x7684; <code>packages</code> &#x53EF;&#x4EE5;&#x534F;&#x540C;&#x5DE5;&#x4F5C;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x5FC5;&#x8003;&#x8651;&#x5411;&#x4E0B;&#x517C;&#x5BB9;</p>
+</li>
+<li><p>&#x53D1;&#x5E03;&#x540E;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x7684;&#x7248;&#x672C;&#x5347;&#x7EA7;</p>
+<p>&#x4E00;&#x4E2A;&#x5305;&#x5347;&#x7EA7;&#x540E;&#xFF0C;&#x4F9D;&#x8D56;&#x8FD9;&#x4E2A;&#x5305;&#x7684;&#x5176;&#x4ED6;&#x5305;&#xFF0C;&#x4E5F;&#x8981;&#x8FDB;&#x884C;&#x5347;&#x7EA7;</p>
+</li>
+</ul>
+</li>
+<li><p>leran &#x63D0;&#x5347;&#x64CD;&#x4F5C;&#x7684;&#x6807;&#x51C6;&#x5316;</p>
+<p>&#x6807;&#x51C6;&#x7684;&#x53D1;&#x5E03;&#x6D41;&#x7A0B;&#xFF1A;&#x53D1;&#x5E03;&#x524D;&#x7684; bump version&#xFF0C;&#x68C0;&#x67E5;&#x4EE3;&#x7801;&#x662F;&#x5426;&#x63D0;&#x4EA4;&#x4E86;&#xFF0C;&#x751F;&#x6210;&#x4ED3;&#x5E93;&#x7684; tag &#x6807;&#x7B7E;&#x7B49;&#xFF0C;&#x6700;&#x540E;&#x8FDB;&#x884C; npm &#x53D1;&#x5E03;</p>
+</li>
+</ul>
+<h3 id="lerna&#x4E0E;&#x67B6;&#x6784;">lerna&#x4E0E;&#x67B6;&#x6784;</h3>
+<p>lerna &#x662F;&#x4E00;&#x4E2A;&#x67B6;&#x6784;&#x4F18;&#x5316;&#x7684;&#x4EA7;&#x7269;&#xFF0C;&#x5B83;&#x63ED;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x67B6;&#x6784;&#x771F;&#x7406;&#xFF1A;&#x9879;&#x76EE;&#x590D;&#x6742;&#x5EA6;&#x63D0;&#x5347;&#x540E;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5BF9;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x67B6;&#x6784;&#x4F18;&#x5316;&#x3002;&#x67B6;&#x6784;&#x4F18;&#x5316;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x6807;&#x5F80;&#x5F80;&#x90FD;&#x662F;&#x4EE5;&#x6548;&#x80FD;&#x4E3A;&#x6838;&#x5FC3;&#x3002;</p>
+<p>&#x6807;&#x690E;&#x5316;&#x5E26;&#x6765;&#x7684;&#x597D;&#x5904;&#x662F;&#x51CF;&#x5C11;&#x51FA;&#x9519;&#xFF0C;&#x51CF;&#x5C11;&#x6392;&#x67E5;&#x9519;&#x8BEF;&#x7684;&#x6210;&#x672C;&#x3002;</p>
+<h3 id="lerna-&#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;&#x6D41;&#x7A0B;">lerna &#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;&#x6D41;&#x7A0B;</h3>
+<p>&#x7D2B;&#x8272;&#x4E3A;&#x5E38;&#x7528;&#x547D;&#x4EE4;</p>
+<p><img src="images/lerna&#x5F00;&#x53D1;&#x6D41;&#x7A0B;.png" alt=""></p>
+<h3 id="&#x521B;&#x5EFA;-npm-organazition">&#x521B;&#x5EFA; npm Organazition</h3>
+<p><code>pakage.json</code> &#x4E2D; <code>name</code> &#x4EE5; <code>@</code> &#x5F00;&#x5934;&#xFF0C;&#x8BF4;&#x660E;&#x662F;&#x4E2A; <code>group</code> &#xFF0C;&#x9700;&#x8981;&#x5148;&#x6CE8;&#x518C;&#x4E00;&#x4E2A; <code>group</code> &#xFF0C;&#x5426;&#x5219;&#x540E;&#x9762;&#x6CA1;&#x6CD5;&#x53D1;&#x5E03;&#x548C;&#x83B7;&#x53D6;</p>
+<p><strong>&#x6DFB;&#x52A0; Organization</strong></p>
+<ul>
+<li>&#x70B9;&#x51FB; add Organization</li>
+</ul>
+<p><img src="images/add_organization.jpg" alt=""></p>
+<ul>
+<li><p>&#x521B;&#x5EFA; group</p>
+<p><img src="images/create_group.png" alt=""></p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x5728;packages&#x4E2D;&#x67E5;&#x770B;</p>
+<p><img src="images/packages.png" alt=""></p>
+</li>
+</ul>
+<h3 id="&#x521B;&#x5EFA;-lerna-repo">&#x521B;&#x5EFA; lerna repo</h3>
+<pre><code class="lang-bash">npm i -g lerna
+mkdir lerna-test &amp;&amp; lerna-test
+npm init -y
+lerna init
+npm i
+</code></pre>
+<h3 id="lerna-&#x547D;&#x4EE4;&#x89E3;&#x91CA;">lerna &#x547D;&#x4EE4;&#x89E3;&#x91CA;</h3>
+<ul>
+<li><p><code>lerna init</code></p>
+<p>&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#xFF0C;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x3002;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;lerna&#x4ED3;&#x5E93;(lerna repo)&#xFF0C;&#x751F;&#x6210; <code>lerna.josn</code> &#x5E76;&#x4E14;&#x5728; <code>package.json</code> &#x4E2D;&#x5199;&#x5165;&#x5F00;&#x53D1;&#x4F9D;&#x8D56;</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;devDependencies&quot;</span>: {
+  <span class="hljs-string">&quot;lerna&quot;</span>: <span class="hljs-string">&quot;^3.22.1&quot;</span>
+}
+</code></pre>
+</li>
+<li><p><code>lerna create packageName</code></p>
+<p>&#x521B;&#x5EFA;&#x65B0;&#x7684; <code>package</code> &#x5E76;&#x6839;&#x636E;&#x4EA4;&#x4E92;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#x751F;&#x6210; <code>package.json</code> </p>
+</li>
+<li><p><code>lerna add</code> </p>
+<pre><code class="lang-bash">lerna add &lt;package&gt;[@version] [--dev] [--exact] [--peer]
+</code></pre>
+<p>&#x5411;packages&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#xFF0C;&#x4E0D;&#x4F20;package&#xFF0C;&#x8868;&#x793A;&#x5411;&#x6240;&#x6709;package&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#x3002; <strong><code>&lt;package&gt;</code> &#x662F;&#x8DEF;&#x5F84;&#xFF0C;&#x4E0D;&#x662F;&#x5305;&#x540D;</strong></p>
+</li>
+<li><p><code>lerna link</code></p>
+<p>&#x5C06;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x7684;&#x672C;&#x5730;&#x5305;&#x8FDB;&#x884C;&#x94FE;&#x63A5;</p>
+</li>
+<li><p><code>lerna exec</code></p>
+<p>&#x5BF9;&#x6BCF;&#x4E2A;package&#x6267;&#x884C;&#x4EFB;&#x610F; <code>shell</code> &#x547D;&#x4EE4;&#xFF0C;&#x4E0A;&#x4E0B;&#x6587;&#x5728;package&#x6587;&#x4EF6;&#x5939;&#x4E2D;</p>
+<pre><code class="lang-bash">lerna <span class="hljs-built_in">exec</span> -- rm -rf ./node_modules
+</code></pre>
+<pre><code class="lang-bash"> lerna <span class="hljs-built_in">exec</span> --scope @imooc-cli-dev/core&#xFF08;&#x5305;&#x540D;&#xFF09; -- ls -la
+</code></pre>
+<p>&#x901A;&#x8FC7; <code>--scope</code> &#x6307;&#x5B9A;&#x5305;&#x540D;&#xFF0C;&#x5BF9;&#x7279;&#x5B9A;&#x5305;&#x6267;&#x884C; <code>shell</code> &#x811A;&#x672C;</p>
+</li>
+<li><p><code>lerna run</code></p>
+<p>&#x6267;&#x884C;<strong>&#x5B58;&#x5728;</strong>&#x4E8E;&#x6BCF;&#x4E2A;&#x5305;&#x4E2D;&#x7684; npm script</p>
+<pre><code class="lang-bash">lerna run <span class="hljs-built_in">test</span>
+</code></pre>
+<pre><code class="lang-bash">lerna run --scope @imooc-cil-dev/utils <span class="hljs-built_in">test</span>
+</code></pre>
+<p>&#x901A;&#x8FC7; <code>--scope</code> &#x6307;&#x5B9A;&#x5305;&#x540D;&#xFF0C;&#x5BF9;&#x7279;&#x5B9A;&#x5305;&#x6267;&#x884C; <code>npm</code> &#x547D;&#x4EE4;</p>
+</li>
+<li><p><code>lerna clean</code></p>
+<p>&#x5220;&#x9664;&#x6240;&#x6709;packages&#x7684;node_modules&#x76EE;&#x5F55;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;package.json&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x4E14;&#x59CB;&#x7EC8;&#x4E0D;&#x4F1A;&#x5220;&#x9664;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <code>node_modules</code> &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x5939;</p>
+</li>
+<li><p><code>lerna boorstrap</code></p>
+<p>&#x5B89;&#x88C5; <code>lerna repo</code> &#x4E2D;&#x6240;&#x6709;&#x5305;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5305;&#x62EC;&#x5305;&#x4E0E;&#x5305;&#x7684;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;</p>
+</li>
+<li><p><code>lerna version</code>
+bump version&#x3002;1.0.1 -&gt; 1.0.2 / 1.1.0 ...</p>
+</li>
+<li><p><code>lerna changed</code>
+&#x8868;&#x793A;&#x81EA;&#x4E0A;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x6709;&#x54EA;&#x4E9B;package&#x505A;&#x4E86;&#x53D8;&#x66F4;</p>
+</li>
+<li><p><code>lerna diff</code>
+&#x68C0;&#x67E5;&#x505A;&#x51FA;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x6709;&#x63D0;&#x4EA4;&#x4ED3;&#x5E93;&#x6216;&#x8005;&#x6709;<code>git commite</code></p>
+</li>
+<li><p><code>lerna publish</code></p>
+<p>&#x53D1;&#x5E03; <code>npm</code> &#x5305;&#xFF0C;&#x767B;&#x5F55;&#x90E8;&#x5206;&#xFF0C;&#x8DDF; <code>npm publish</code> &#x4E00;&#x81F4;&#x3002; </p>
+</li>
+</ul>
+<h3 id="lerna&#x9879;&#x76EE;&#x53D1;&#x5E03;&#x95EE;&#x9898;&#x8BF4;&#x660E;">lerna&#x9879;&#x76EE;&#x53D1;&#x5E03;&#x95EE;&#x9898;&#x8BF4;&#x660E;</h3>
+<p>&#x5728;&#x53D1;&#x5E03;&#x4E4B;&#x524D;&#xFF0C;&#x786E;&#x4FDD;&#x5DF2;&#x7ECF;&#x521D;&#x59CB;&#x5316;&#x4E86;git&#x4ED3;&#x5E93;</p>
+<ol>
+<li><p><code>lerna version</code>
+<em><code>leran version</code> bump &#x7248;&#x672C;&#x53F7;&#x540E;&#xFF0C;&#x4F1A;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x5E76;&#x5728;&#x8FDC;&#x7A0B;&#x4E0A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;tag&#x3002;<code>leran version</code> &#x6210;&#x529F;&#x4E4B;&#x540E;&#xFF0C;&#x662F;&#x4E0D;&#x80FD;<code>lerna publish</code> &#x53D1;&#x5E03;&#x6210;&#x529F;&#x7684;&#xFF0C;&#x4F1A;&#x8BF4;&#x6CA1;&#x6709;&#x4FEE;&#x6539;</em></p>
+</li>
+<li><p><code>lerna publish</code></p>
+<ul>
+<li><p>&#x5982;&#x679C;&#x8981;&#x53D1;&#x5E03;&#xFF0C;&#x4E0D;&#x8981;&#x5148;&#x4F7F;&#x7528;<code>lerna version</code> &#x3002;&#x63D0;&#x4EA4;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>lerna publish</code> &#x7B2C;&#x4E00;&#x6B65;&#x5C31;&#x4F1A; bump &#x7248;&#x672C;&#x53F7;&#x3002;</p>
+</li>
+<li><p><strong>&#x5220;&#x9664;&#x591A;&#x4F59;&#x6216;&#x8005;&#x8C03;&#x8BD5;&#x4EA7;&#x751F;&#x7684;tag&#x7684;&#x65B9;&#x6CD5;</strong>&#xFF0C;&#x5927;&#x80C6;&#x8C03;&#x8BD5;&#x53D1;&#x5E03;&#x6D41;&#x7A0B;</p>
+<ul>
+<li>&#x5148;&#x5728;&#x8FDC;&#x7A0B;&#x4E0A;&#x5220;&#x9664;tag </li>
+<li>&#x5728;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x6839;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x627E;&#x5230;&#x6587;&#x4EF6;&#x5939;<code>./git/refs/tags</code> &#x4E2D;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x5728;&#x8FDC;&#x7A0B;&#x4E0A;&#x5220;&#x9664;&#x7684;tag</li>
+<li>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x4FEE;&#x6539;<code>lerna.josn</code>&#x4E2D;&#x7684;version&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x53D1;&#x4E0D;&#x8FC7;&#x7684;&#x8F83;&#x4F4E;&#x7684;&#x7248;&#x672C;&#x53F7; <code>lerna publish</code> &#x4E86;</li>
+</ul>
+</li>
+<li><p>&#x4F7F;&#x7528; group &#x53D1;&#x5E03;&#x7684;&#x5305;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x90FD;&#x662F;&#x79C1;&#x6709;&#x7684;&#xFF0C;publish&#x4E0D;&#x4E86;&#x3002;&#x9700;&#x8981;&#x5728; <code>package.json</code> &#x4E2D;&#x8FFD;&#x52A0;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;publishConfig&quot;</span>: {
+  <span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;public&quot;</span>
+}
+</code></pre>
+</li>
+<li><p><code>lerna publish</code> &#x6210;&#x529F;&#x4E4B;&#x540E;&#x7684;&#x65E5;&#x5FD7;</p>
+<p><img src="images/publishSucc.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="lerna-&#x6E90;&#x7801;&#x9605;&#x8BFB;">lerna &#x6E90;&#x7801;&#x9605;&#x8BFB;</h2>
+<h3 id="&#x51C6;&#x5907;&#x6E90;&#x7801;">&#x51C6;&#x5907;&#x6E90;&#x7801;</h3>
+<p>&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</p>
+<ul>
+<li>&#x4E0B;&#x8F7D;&#x6E90;&#x7801;</li>
+<li>&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</li>
+<li>IDE&#x6253;&#x5F00;</li>
+</ul>
+<p>&#x51C6;&#x5907;&#x5B8C;&#x6210;&#x7684;&#x6807;&#x51C6;</p>
+<ul>
+<li>&#x627E;&#x5230;&#x5165;&#x53E3;&#x6587;&#x6863;</li>
+<li>&#x80FD;&#x591F;&#x672C;&#x5730;&#x8C03;&#x8BD5;</li>
+</ul>
+<p>&#x5B66;&#x4E60;&#x76EE;&#x6807;</p>
+<ul>
+<li>lerna &#x6E90;&#x7801;&#x7ED3;&#x6784;&#x548C;&#x6267;&#x884C;&#x6D41;&#x7A0B;</li>
+<li><code>import-local</code> </li>
+</ul>
+<h3 id="&#x6E90;&#x7801;&#x5B66;&#x5230;&#x7684;&#x77E5;&#x8BC6;&#x70B9;">&#x6E90;&#x7801;&#x5B66;&#x5230;&#x7684;&#x77E5;&#x8BC6;&#x70B9;</h3>
+<ul>
+<li><p><code>require(&apos;.&apos;)</code> === <code>require(&apos;./&apos;)</code></p>
+</li>
+<li><p><code>npm</code> <code>file:</code> &#x63A5;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x7684;&#x5904;&#x7406;</p>
+<p><code>commands/publish/index.js</code> <code>resolveLocalDependencyLinks()</code> &#x5C06;&#x672C;&#x5730;&#x8FDE;&#x63A5;&#x89E3;&#x6790;&#x6210;&#x7EBF;&#x4E0A;&#x8FDE;&#x63A5;&#x3002;</p>
+<p><img src="images/resolveLocalDependencyLinks.jpg" alt=""></p>
+</li>
+</ul>
+<h3 id="yargs-&#x7528;&#x6CD5;">yargs &#x7528;&#x6CD5;</h3>
+<p>yargs &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5E2E;&#x52A9;&#x6784;&#x5EFA;&#x4EA4;&#x4E92;&#x5F0F;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x89E3;&#x6790;&#x53C2;&#x6570;&#x3001;&#x751F;&#x6210;&#x4F18;&#x96C5;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#x3002;</p>
+<p><strong>&#x57FA;&#x672C;&#x4F7F;&#x7528;&#xFF1A;</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-meta">#!/usr/bin/env node</span>
+<span class="hljs-keyword">const</span> yargs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;yargs/yargs&apos;</span>);
+<span class="hljs-keyword">const</span> { hideBin } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;yargs/yargs&apos;</span>); <span class="hljs-comment">// &#x7528;&#x4F5C;&#x53C2;&#x6570;&#x89E3;&#x6790;</span>
+
+<span class="hljs-keyword">const</span> arg = hideBin(process.argv); <span class="hljs-comment">// &#x83B7;&#x5F97;&#x53C2;&#x6570;&#x5217;&#x8868;(Array)</span>
+
+yargs(arg)
+        .argv;
+</code></pre>
+<p><strong>Api&#x89E3;&#x8BFB;</strong></p>
+<ul>
+<li><p><code>yargs(arg).strict()</code> &#x5728;&#x8F93;&#x5165;&#x7684;&#x547D;&#x4EE4;&#x627E;&#x4E0D;&#x5230;&#x65F6;&#xFF0C;&#x62A5;&#x9519;&#x3002;&#x9ED8;&#x8BA4;&#x4F1A;&#x8F93;&#x51FA; <code>--help</code> &#x7684;&#x5185;&#x5BB9;&#x53CA;&#x9ED8;&#x8BA4;&#x62A5;&#x9519;</p>
+</li>
+<li><p><code>yargs(arg).usage(msg)</code> &#x5C55;&#x793A;&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6CD5;&#x3002;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6210;&#xFF0C;&#x8F93;&#x51FA;msg</p>
+<ul>
+<li><pre><code class="lang-javascript">yargs(arg).usage(<span class="hljs-string">&apos;Usage: $0 &lt;command&gt; [option]&apos;</span>)
+</code></pre>
+<p><code>$0</code> &#x6307;&#x5411;&#x7684;&#x662F; <code>command</code> &#x3002;&#x5982;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x4E00;&#x4E2A; <code>yargs-test</code> &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x8F93;&#x5165; <code>yargs-test ls</code></p>
+<p><code>argv:  { _: [ &apos;ls&apos; ], cliVersion: &apos;1.0.0&apos;, &apos;$0&apos;: &apos;yargs-test&apos; }</code></p>
+</li>
+</ul>
+</li>
+<li><p><code>yargs(arg).demandCommand(1, &apos;&#x6700;&#x5C11;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&apos;)</code> &#x8868;&#x793A;&#x6700;&#x5C11;&#x9700;&#x8981;&#x51E0;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x6709; <code>.strict()</code> &#x7684;&#x8C03;&#x7528;</p>
+</li>
+<li><p><code>yargs(arg).recommendCommands()</code> &#x76F4;&#x63A5;&#x8C03;&#x7528;&#xFF0C;&#x8F93;&#x5165;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x63D0;&#x793A;&#x6700;&#x8FD1;&#x4F3C;&#x7684;&#x547D;&#x4EE4;</p>
+</li>
+<li><p><code>yargs(arg).alias(&apos;h&apos;, &apos;help&apos;)</code> &#x4E3A;&#x547D;&#x4EE4;&#x8BBE;&#x7F6E;&#x522B;&#x540D;&#xFF0C;&#x4E3A; <code>--help</code> &#x4F7F;&#x7528;&#x522B;&#x540D; <code>-h</code> </p>
+</li>
+<li><p><code>yargs.wrap(yargs(arg).terminalWidth())</code> &#x8BBE;&#x7F6E;&#x811A;&#x624B;&#x67B6;&#x8F93;&#x51FA;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5BBD;&#x5EA6;&#x3002;<code>yargs(arg).terminalWidth()</code> &#x8868;&#x793A;&#x7EC8;&#x7AEF;&#x7684;&#x5BBD;&#x5EA6;&#x3002;&#x6574;&#x4F53;&#x8868;&#x793A;&#x5360;&#x6EE1;&#x6574;&#x884C;</p>
+</li>
+<li><p><code>yargs(arg).epilogue(&apos;msg&apos;)</code> &#x5728;&#x7ED3;&#x5C3E;&#x8F93;&#x51FA;&#x4FE1;&#x606F;</p>
+<ul>
+<li><p><code>dedent</code> npm &#x5305;&#x53BB;&#x6389;&#x884C;&#x7F29;&#x8FDB;&#x6216;&#x8005;&#x884C;&#x9996;&#x7A7A;&#x683C;&#xFF0C;&#x4E0D;&#x4F1A;&#x53BB;&#x6389;&#x7A7A;&#x884C;&#x3002;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-javascript">dedent<span class="hljs-string">` 111
+111`</span>
+dedent(<span class="hljs-string">`111
+111`</span>)
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><code>yargs(arg).options(obj)</code> &#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x9009;&#x9879;&#xFF0C;&#x6240;&#x6709; <code>command</code> &#x90FD;&#x80FD;&#x8BBF;&#x95EE;&#x3002;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; <code>--debug</code> option</p>
+<pre><code class="lang-javascript">yargs(arg).options({
+ debug: {
+     type: <span class="hljs-string">&apos;boolean&apos;</span>,
+     describe: <span class="hljs-string">&apos;Bootstrap debug mode&apos;</span>
+ }
+})
+</code></pre>
+<p>&#x66F4;&#x591A;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x4ECE;&#x53C2;&#x8003; <a href="https://github.com/yargs/yargs/blob/HEAD/docs/api.md#optionskey-opt" target="_blank"><code>yargs github</code></a></p>
+</li>
+<li><p><code>yargs(arg).option(&apos;opt&apos;, obj)</code> &#x548C; <code>yargs(arg).options(obj)</code> &#x4F5C;&#x7528;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x4E00;&#x6B21;&#x53EA;&#x80FD;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x547D;&#x4EE4;</p>
+</li>
+<li><p><code>yargs(arg).group(Array, str)</code> &#x4E3A;&#x547D;&#x4EE4;&#x5206;&#x7EC4;&#xFF0C;&#x5728; <code>--help</code> &#x663E;&#x793A;&#x65F6;&#xFF0C;&#x5206;&#x7EC4;&#x663E;&#x793A;&#x547D;&#x4EE4;&#x3002;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A; <code>option</code> &#x6570;&#x7EC4;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5206;&#x7EC4;&#x540D;</p>
+</li>
+<li><p><code>yargs(arg).command(cmd, desc, [builder], [handler])</code> &#x6CE8;&#x518C;&#x547D;&#x4EE4;&#xFF0C;<code>lerna --option</code> &#x4E2D;&#x7684; <code>--option</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5F88;&#x91CD;&#x8981;</p>
+<ul>
+<li><code>cmd</code> &#x662F; <code>command</code> &#x7684;&#x683C;&#x5F0F; </li>
+<li><code>desc</code> &#x662F; <code>cmd</code> &#x7684;&#x63CF;&#x8FF0;</li>
+<li><code>builder</code> &#x51FD;&#x6570;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x4E4B;&#x524D;&#x6267;&#x884C;</li>
+<li><code>handler</code> &#x51FD;&#x6570;&#xFF0C;<code>command</code> &#x7684;&#x884C;&#x4E3A;</li>
+</ul>
+<p><a href="https://www.npmjs.com/package/yargs" target="_blank"><code>npm</code></a> &#x4E0A;&#x7684;&#x4F8B;&#x5B50;</p>
+<pre><code class="lang-javascript"><span class="hljs-meta">#!/usr/bin/env node</span>
+<span class="hljs-keyword">const</span> yargs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;yargs/yargs&apos;</span>)
+<span class="hljs-keyword">const</span> { hideBin } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;yargs/helpers&apos;</span>)
+
+yargs(hideBin(process.argv))
+  .command(<span class="hljs-string">&apos;serve [port]&apos;</span>, <span class="hljs-string">&apos;start the server&apos;</span>, (yargs) =&gt; {
+    yargs
+      .positional(<span class="hljs-string">&apos;port&apos;</span>, { 
+        describe: <span class="hljs-string">&apos;port to bind on&apos;</span>,
+        <span class="hljs-keyword">default</span>: <span class="hljs-number">5000</span>
+      })
+  }, (argv) =&gt; {
+    <span class="hljs-keyword">if</span> (argv.verbose) <span class="hljs-built_in">console</span>.info(<span class="hljs-string">`start server on :<span class="hljs-subst">${argv.port}</span>`</span>)
+    serve(argv.port)
+  })
+  .option(<span class="hljs-string">&apos;verbose&apos;</span>, {
+    alias: <span class="hljs-string">&apos;v&apos;</span>,
+    type: <span class="hljs-string">&apos;boolean&apos;</span>,
+    description: <span class="hljs-string">&apos;Run with verbose logging&apos;</span>
+  })
+  .argv
+</code></pre>
+<p>  <code>.positional()</code> &#x4E3A; <code>command</code> &#x5B9A;&#x4E49;&#x53C2;&#x6570;&#xFF0C;&#x548C; <code>.option()</code> &#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x53EA;&#x5728; <code>builder</code> &#x51FD;&#x6570;&#x4E2D;&#x7684; <code>yargs</code> &#x5B9E;&#x4F8B;&#x4E0A;&#x5B58;&#x5728;&#x3002;</p>
+<ul>
+<li><p><code>lerna</code> &#x4E2D;  <code>command</code> &#x7684;&#x5BF9;&#x8C61;&#x4F20;&#x53C2;</p>
+<pre><code class="lang-javascript">yargs(arg).commamd({
+  command,
+  alias,
+  describe,
+  builder,
+  handler
+})
+</code></pre>
+</li>
+<li><p><a href="https://github.com/yargs/yargs/blob/HEAD/docs/api.md#commandcmd-desc-builder-handler" target="_blank">&#x66F4;&#x591A;</a></p>
+</li>
+</ul>
+</li>
+<li><p><code>yargs(arg).fail(err, msg)</code> &#x5904;&#x7406;&#x5728;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x8C03;&#x7528; <code>.strict()</code></p>
+</li>
+<li><p><code>yargs().parse(argv, obj)</code> &#x53C2;&#x6570;&#x89E3;&#x6790;&#x3002;<code>argv</code> &#x662F; <code>process.argv.slice(2)</code>&#xFF0C;<strong>&#x548C;&#x76F4;&#x63A5;&#x4F20;&#x5165;&#x4E2A; <code>yargs()</code> &#x7684;<code>argv</code> &#x4E0D;&#x540C;&#x2014;<code>hideBin(process.argv)</code></strong>&#xFF0C; &#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#x7684; <code>command</code> &#x540E;&#x9762;&#x7684; <code>option</code> &#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x5C06; <code>argv</code> &#x548C; <code>obj</code> &#x8FDB;&#x884C;&#x5408;&#x5E76;&#xFF0C;&#x53EF;&#x4EE5;&#x5411; <code>argv</code> &#x4E2D;&#x6CE8;&#x5165;&#x53C2;&#x6570;</p>
+<ul>
+<li><p>&#x8FD9;&#x91CC;&#x6709;&#x4E2A;&#x5730;&#x65B9;&#x8981;&#x6CE8;&#x610F;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> context = {
+  otherVersion: pak.version
+}
+yargs().parse(argv, context)
+</code></pre>
+<p><code>context</code> &#x4E2D;&#x7684;&#x7248;&#x672C;&#x53F7; <code>key</code> &#x4E0D;&#x8981;&#x7528; <code>version</code>&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x662F;&#xFF0C;&#x5C06;&#x59CB;&#x7EC8;&#x6267;&#x884C; <code>--version</code>&#x3002;&#x603B;&#x4E4B;&#xFF0C;&#x5C31;&#x662F;<strong>&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x8DDF;&#x547D;&#x4EE4;&#x91CD;&#x590D;&#x7684; <code>key</code></strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="lerna-&#x547D;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x6D41;&#x7A0B;">lerna &#x547D;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x6D41;&#x7A0B;</h3>
+<p>&#x6267;&#x884C; <code>lerna ls</code> &#xFF1A;</p>
+<ul>
+<li>&#x5165;&#x53E3;&#x6587;&#x4EF6; <code>core/lerna/cli.js</code> &#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x53F7; <code>option</code> <code>argv = process.argv.slice(2)</code> </li>
+<li>&#x8C03;&#x7528; <code>core/lerna/index.js</code> <code>mian(argv)</code> &#x65B9;&#x6CD5;</li>
+<li>&#x5728; <code>mian(argv)</code> &#x65B9;&#x6CD5;&#xFF0C;&#x6839;&#x636E; <code>option</code> <code>ls</code> &#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;<code>.command()</code>&#xFF1A;<code>commands/list/commond.js</code></li>
+<li>&#x6267;&#x884C; <code>.command()</code> &#x4E2D;&#x7684; <code>handler</code> &#xFF1A;<code>commands/list/index.js</code> <code>factory(argv)</code><ul>
+<li>&#x77E5;&#x8BC6;&#x70B9;<ul>
+<li>&#x6DF1;&#x62F7;&#x8D1D;&#xFF0C;&#x4F7F;&#x7528; <code>npm</code> &#x5305; <code>clone-deep</code></li>
+<li><code>this.constructor.name</code></li>
+<li><code>runner</code> </li>
+<li><code>Promise.then</code> &#x5FAE;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x6808;</li>
+<li><code>Promise.resolve</code> &#x65B9;&#x6CD5;&#x5141;&#x8BB8;&#x8C03;&#x7528;&#x65F6;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>resolved</code> &#x72B6;&#x6001;&#x7684; <code>Promise</code> &#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="import-local">import-local</h2>
+<p>&#x7528;&#x9014;&#xFF1A;&#x5F53;&#x5168;&#x5C40; <code>node_modules</code> &#x548C; &#x5F53;&#x524D;&#x9879;&#x76EE; <code>node_modules</code> &#x5F53;&#x4E2D;&#x540C;&#x65F6;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x7684;&#x811A;&#x624B;&#x67B6;&#x3002;&#x5728; <code>lerna</code> &#x9879;&#x76EE;&#x4E0B;&#xFF0C;&#x6267;&#x884C;&#x547D;&#x4EE4; <code>lerna ls</code>&#xFF0C;&#x4F1A;&#x8F93;&#x51FA; <code>info cli using local version of lerna</code> </p>
+<pre><code class="lang-bash">jolly@JollydeMacBook-Pro lerna % lerna ls
+info cli using <span class="hljs-built_in">local</span> version of lerna
+lerna notice cli v3.22.1
+@lerna/add
+@lerna/bootstrap
+@lerna/changed
+@lerna/clean
+@lerna/create
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> localFile = resolveCwd.silent(path.join(pkg.name, relativePath));
+</code></pre>
+<p><strong>&#x4E0A;&#x9762;&#x8FD9;&#x53E5;&#x8BDD;&#xFF0C;&#x662F; <code>import-local</code> &#x4E2D;&#x7684;&#x6838;&#x5FC3;</strong>&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x4E2D;&#x6709;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684; <code>npm</code> &#x5305;</p>
+<p><code>path.relative(localFile, filename)</code> &#x627E;&#x5230;&#x548C;&#x672C;&#x5730;&#x6587;&#x4EF6; <code>localFile</code> &#x540C;&#x540D;&#x7684;&#x5168;&#x5C40;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
+<p><strong>&#x7EC6;&#x8282;</strong></p>
+<p>&#x5168;&#x5C40;&#x52A0;&#x8F7D;&#x6267;&#x884C;&#x672C;&#x5730; <code>cli.js</code> &#x548C;&#x6267;&#x884C;&#x540E;&#x7EED; <code>lerna</code> &#x6D41;&#x7A0B;&#xFF0C;&#x90FD;&#x662F;&#x5728;&#x5168;&#x5C40; <code>cli.js</code> &#x4E2D;  <code>require(&quot;npmlog&quot;).info(&quot;cli&quot;, &quot;using local version of lerna&quot;);</code> &#x4EE3;&#x7801;&#x4E4B;&#x524D;&#xFF0C;&#x4F46; <code>info cli using local version of lerna</code> &#x4F1A;&#x5148;&#x6253;&#x5370;&#xFF0C;&#x662F;&#x56E0;&#x4E3A; <code>command</code> &#x65B9;&#x6CD5;&#x7684; <code>handler</code> &#x4E2D;&#xFF0C;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x90FD;&#x662F;&#x901A;&#x8FC7; <code>Promise.resolve().then()</code> &#x6DFB;&#x52A0;&#x5230;&#x5FAE;&#x4EFB;&#x52A1;&#x4E2D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x5728;&#x5B8F;&#x4EFB;&#x52A1; <code>`require(&quot;npmlog&quot;).info()</code> &#x6267;&#x884C;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x3002;</p>
+<p><strong>&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x70B9;</strong></p>
+<ul>
+<li><code>__filename</code>&#xFF1A;&#x5F53;&#x524D;&#x6A21;&#x5757;(js)&#x7684;&#x6587;&#x4EF6;&#x540D;&#x3002; &#x8FD9;&#x662F;&#x5F53;&#x524D;&#x7684;&#x6A21;&#x5757;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF08;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x4F1A;&#x88AB;&#x89E3;&#x6790;&#xFF09;</li>
+<li>&#x8FD0;&#x884C; <code>node</code> &#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F1A;&#x6CE8;&#x5165; <code>module</code> <code>require</code> <code>__filename</code>  <code>__dirname</code> <code>exports</code> &#x4E94;&#x4E2A;&#x53D8;&#x91CF;</li>
+</ul>
+<h3 id="&#x4F18;&#x79C0;&#x7684;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x5E93;">&#x4F18;&#x79C0;&#x7684;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x5E93;</h3>
+<p><strong><code>pkg-dir</code> </strong></p>
+<p>&#x627E;&#x5230; <code>npm</code> &#x6216;&#x8005; <code>node.js</code> &#x9879;&#x76EE;&#x7684;&#x6839;&#x76EE;&#x5F55;</p>
+<p><strong><code>findup</code> </strong></p>
+<p>&#x901A;&#x8FC7;&#x904D;&#x5386;&#x7236;&#x7EA7;&#x76EE;&#x5F55;&#x67E5;&#x8D26;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;</p>
+<p><strong><code>locate-path</code> </strong></p>
+<p>&#x4ECE;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x5B58;&#x5728;&#x7684;&#x8DEF;&#x5F84;</p>
+<p><strong><code>path-exists</code></strong></p>
+<p>&#x68C0;&#x67E5;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x5B58;&#x5728;</p>
+<p><strong><code>resolve-cwd</code> </strong></p>
+<p>&#x4ECE;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x50CF; <code>require.resolve</code> &#x4E00;&#x6837;&#x89E3;&#x6790;&#x6A21;&#x5757;&#x8DEF;&#x5F84; </p>
+<p><strong><code>resolve-from</code> </strong></p>
+<p>&#x4ECE;&#x7ED9;&#x5B9A;&#x8DEF;&#x5F84;&#xFF0C;&#x50CF; <code>require.resolve</code> &#x4E00;&#x6837;&#x89E3;&#x6790;&#x6A21;&#x5757;&#x8DEF;&#x5F84; </p>
+<p><strong>&#x6D89;&#x53CA;&#x5230;&#x7684; <code>node.js</code> &#x65B9;&#x6CD5;</strong></p>
+<ul>
+<li><p><code>process.cwd()</code></p>
+<p>&#x8FD4;&#x56DE; Node.js &#x8FDB;&#x7A0B;&#x7684;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;(working directory)&#x3002;</p>
+</li>
+<li><p>path.dirname()</p>
+</li>
+<li><p><code>path.resolve()</code> &#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x8F6C;&#x6362;&#x6210;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;</p>
+</li>
+<li><p>path.parse()</p>
+</li>
+<li><p><code>fs.accessSync(filepath)</code></p>
+<p>&#x5224;&#x65AD;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF08;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#xFF09;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;</p>
+</li>
+<li><p>path.relative()</p>
+</li>
+<li><p>path.join()</p>
+</li>
+</ul>
+<h3 id="nodejs-&#x6A21;&#x5757;&#x8DEF;&#x5F84;&#x89E3;&#x6790;&#x6D41;&#x7A0B;"><code>Node.js</code> &#x6A21;&#x5757;&#x8DEF;&#x5F84;&#x89E3;&#x6790;&#x6D41;&#x7A0B;</h3>
+<ul>
+<li><p><code>Node.js</code> &#x9879;&#x76EE;&#x6A21;&#x5757;&#x8DEF;&#x5F84;&#x89E3;&#x6790;&#x662F;&#x901A;&#x8FC7; <code>require.resolve</code>  &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x7684;</p>
+</li>
+<li><p><code>require.resolve</code>  &#x5C31;&#x662F;&#x901A;&#x8FC7; <code>Module._resolveFileName</code> &#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x7684;</p>
+<ul>
+<li><p><code>Module._resolveFileName</code>  &#x65B9;&#x6CD5;&#x6838;&#x5FC3;&#x6D41;&#x7A0B;&#x6709; 3 &#x70B9;&#xFF1A; </p>
+<ul>
+<li><p>&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;&#x5185;&#x7F6E;&#x6A21;&#x5757;</p>
+<p><code>NativeModule.canBeRequireByUsers()</code> &#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x52A0;&#x8F7D;&#x7684;&#x5185;&#x7F6E;&#x6A21;&#x5757;</p>
+</li>
+<li><p>&#x901A;&#x8FC7; <code>Module._resolveLookupPaths</code>  &#x65B9;&#x6CD5;&#x751F;&#x6210; <code>node_modules</code> &#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x8DEF;&#x5F84;</p>
+<ul>
+<li>&#x5982;&#x679C;&#x8DEF;&#x5F84;&#x4E3A; <code>/</code>&#xFF08;&#x6839;&#x76EE;&#x5F55;&#xFF09;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE; <code>[&apos;/node_modules&apos;]</code> </li>
+<li>&#x5426;&#x5219;&#xFF0C;&#x5C06;&#x8DEF;&#x5F84;&#x5B57;&#x7B26;&#x4E32;&#x4ECE;&#x540E;&#x5F80;&#x524D;&#x904D;&#x5386;&#xFF0C;&#x67E5;&#x8BE2;&#x5230; <code>/</code>  &#x65F6;&#xFF0C;&#x62C6;&#x5206;&#x8DEF;&#x5F84;&#xFF0C;&#x5728;&#x540E;&#x9762;&#x52A0;&#x4E0A; <code>node_modules</code>&#xFF0C;&#x5E76;&#x4F20;&#x5165;&#x4E00;&#x4E2A; <code>paths</code> &#x6570;&#x7EC4;&#xFF0C;&#x76F4;&#x81F3;&#x67E5;&#x8BE2;&#x4E0D;&#x5230; </li>
+</ul>
+</li>
+<li><p>&#x901A;&#x8FC7; <code>zModule._findPath</code>   &#x67E5;&#x8BE2;&#x6A21;&#x5757;&#x7684;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;</p>
+</li>
+</ul>
+</li>
+<li><p><code>Module._findPath</code>  &#x6838;&#x5FC3;&#x6D41;&#x7A0B;&#x6709; 4 &#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x67E5;&#x8BE2;&#x7F13;&#x5B58;&#xFF08;&#x5C06; <code>request</code> &#x548C; <code>paths</code> &#x901A;&#x8FC7; <code>\x00</code> &#x5408;&#x5E76;&#x6210; <code>cacheKey</code>&#xFF09;</li>
+<li>&#x904D;&#x5386; <code>paths</code>&#xFF0C;&#x5C06; <code>path</code> &#x4E0E; <code>request</code> &#x7EC4;&#x6210;&#x6587;&#x4EF6;&#x8DEF;&#x5F84; <code>basePath</code></li>
+<li>&#x5982;&#x679C; basePath &#x5B58;&#x5728;&#x5219;&#x8C03;&#x7528; <code>fs.realPathSync</code> &#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;</li>
+<li>&#x5C06;&#x6587;&#x4EF6;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;&#x7F13;&#x5B58;&#x5230; <code>Module._pathCache</code>&#xFF08;key &#x5C31;&#x662F;&#x524D;&#x9762;&#x751F;&#x6210;&#x7684; cacheKey&#xFF09;</li>
+</ul>
+</li>
+<li><p><code>fs.realPathSync</code> &#x6838;&#x5FC3;&#x6D41;&#x7A0B;&#x6709; 3 &#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x67E5;&#x8BE2;&#x7F13;&#x5B58;&#xFF08;&#x7F13;&#x5B58;&#x7684; key &#x4E3A; p&#xFF0C;&#x5373; <code>Module._findPath</code> &#x4E2D;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF09;</li>
+<li>&#x4ECE;&#x5DE6;&#x5F80;&#x53F3;&#x904D;&#x5386;&#x8DEF;&#x5F84;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x67E5;&#x8BE2;&#x5230; <code>/</code>&#x65F6;&#xFF0C;&#x62C6;&#x5206;&#x8DEF;&#x5F84;&#xFF0C;&#x5224;&#x65AD;&#x8BE5;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x4E3A;&#x8F6F;&#x94FE;&#x63A5;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x8F6F;&#x94FE;&#x63A5;&#x5219;&#x67E5;&#x8BE2;&#x771F;&#x5B9E;&#x94FE;&#x63A5;&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x65B0;&#x8DEF;_&#x5F84; p&#xFF0C;&#x7136;&#x540E;&#x7EE7;&#x7EED;&#x5F80;&#x540E;&#x904D;&#x5386;&#xFF0C;&#x8FD9;&#x91CC;&#x6709; 1 &#x4E2A;&#x7EC6;&#x8282;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#xFF1A;</li>
+<li>&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#x751F;&#x6210;&#x7684;&#x5B50;&#x8DEF;&#x5F84; base &#x4F1A;&#x7F13;&#x5B58;&#x5728; knownHard &#x548C; cache &#x4E2D;&#xFF0C;&#x907F;&#x514D;&#x91CD;&#x590D;&#x67E5;&#x8BE2;</li>
+<li>&#x904D;&#x5386;&#x5B8C;&#x6210;&#x5F97;&#x5230;&#x6A21;&#x5757;&#x5BF9;&#x5E94;&#x7684;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;&#xFF0C;&#x6B64;&#x65F6;&#x4F1A;&#x5C06;&#x539F;&#x59CB;&#x8DEF;&#x5F84; original &#x4F5C;&#x4E3A; key&#xFF0C;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;&#x4F5C;&#x4E3A; value&#xFF0C;&#x4FDD;&#x5B58;&#x5230;&#x7F13;&#x5B58;&#x4E2D;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>require.resolve.paths</code>  &#x7B49;&#x4EF7;&#x4E8E; <code>Module._resolveLookupPaths</code> &#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x6240;&#x6709; <code>node_modules</code> &#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x8DEF;&#x5F84;</p>
+</li>
+</ul>
+<p><img src="images/node_Module.png" alt=""></p>
+<p>&#x56FE;&#x4E2D;&#x77E5;&#x8BC6;&#x70B9;&#x5217;&#x8868;&#xFF1A;</p>
+<ul>
+<li><p>&#x901A;&#x8FC7; <code>require</code> &#x52A0;&#x8F7D;&#x6A21;&#x5757;&#x4EE5;&#x540E;&#xFF0C;&#x4F1A;&#x5411; <code>Module._pathCache</code> &#x5BF9;&#x8C61;&#x4E2D;&#x6DFB;&#x52A0;&#x8BE5;&#x6A21;&#x5757;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;key&#xFF1A;&#x6A21;&#x5757;&#x540D;&#x79F0;&#x52A0; <code>\x00</code> &#x8DEF;&#x5F84;&#xFF0C;value&#xFF1A;&#x5B9E;&#x9645;&#x8DEF;&#x5F84;</p>
+</li>
+<li><p><code>stat(path)</code> &#xFF1A;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x72B6;&#x6001;&#x3002;-2 &#x4E0D;&#x5B58;&#x5728;&#xFF0C; 0 &#x6587;&#x4EF6;&#xFF0C;1 &#x6587;&#x4EF6;&#x5939;</p>
+</li>
+<li><code>realPathCache</code> &#x662F;&#x4E00;&#x4E2A; <code>Map</code> &#x5BF9;&#x8C61;</li>
+<li><code>linux</code> <code>stat</code> &#x547D;&#x4EE4;&#x6253;&#x5370;&#x6587;&#x4EF6;&#x76F8;&#x5173;&#x4FE1;&#x606F; <code>dev_t</code> &#x8BBE;&#x5907;&#x7F16;&#x53F7;&#x3001;<code>ino_t</code> &#x6587;&#x4EF6;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;</li>
+<li><code>fs.realPathSync</code> &#x5728;&#x62FF;&#x5230;&#x8F6F;&#x8FDE;&#x63A5;&#x6307;&#x5411;&#x7684;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;&#x540E;&#xFF0C;&#x8FD8;&#x4F1A;&#x5728;&#x904D;&#x5386;&#xFF0C;&#x67E5;&#x770B;&#x6307;&#x5411;&#x7684;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x8FD8;&#x662F;&#x4E00;&#x4E2A;&#x8F6F;&#x8FDE;&#x63A5;</li>
+</ul>
+<h3 id="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;">&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h3>
+<p><code>Modules._findPath()</code> &#x4E2D;&#x7684;&#x6B63;&#x5219; <code>/(?:^|\/)\.?\$/</code> &#x5339;&#x914D; ..&#x3001;/..&#x3002;&#x5305;&#x542B;&#x77E5;&#x8BC6;&#x70B9;</p>
+<ul>
+<li><code>?</code> &#x5339;&#x914D;0&#x5230;1&#x4E2A;</li>
+<li><code>(?:)</code> &#x8868;&#x793A;&#x975E;&#x5339;&#x914D;&#x5206;&#x7EC4;&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x4E0D;&#x4FDD;&#x5B58;&#x62EC;&#x53F7;&#x4E2D;&#x5339;&#x914D;&#x7684;&#x5185;&#x5BB9;</li>
+<li><code>/^/</code>  &#x5339;&#x914D;&#x7684;&#x662F;&#x4E2A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&apos;&apos;&#xFF0C;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x90FD;&#x80FD;&#x5339;&#x914D;&#x6210;&#x529F;&#xFF0C;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E2D;&#x90FD;&#x6709;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</li>
+<li><code>/[^]/</code> &#x8868;&#x793A;&#x975E;</li>
+</ul>
+<h2 id="&#x7B80;&#x5386;&#x548C;&#x603B;&#x7ED3;">&#x7B80;&#x5386;&#x548C;&#x603B;&#x7ED3;</h2>
+<p><strong>&#x7B80;&#x5386;&#x8981;&#x6709;&#x201C;&#x7B80;&#x5386;&#x7B80;&#x4ECB;&#x201D;</strong></p>
+<h3 id="&#x9762;&#x8BD5;&#x5B98;&#x8BE2;&#x95EE;&#x7EC6;&#x8282;&#x7684;&#x56DE;&#x7B54;">&#x9762;&#x8BD5;&#x5B98;&#x8BE2;&#x95EE;&#x7EC6;&#x8282;&#x7684;&#x56DE;&#x7B54;</h3>
+<p><strong> yargs &#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;</strong></p>
+<ol>
+<li>&#x9610;&#x8FF0;&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x6784;&#x6210;<ol>
+<li><code>command</code>&#xFF1A;&#x547D;&#x4EE4; vue</li>
+<li><code>option</code> &#x53CA; <code>param</code></li>
+<li>js &#x6587;&#x4EF6;&#x9876;&#x90E8;</li>
+</ol>
+</li>
+<li>&#x9610;&#x8FF0;&#x811A;&#x624B;&#x67B6;&#x521D;&#x59CB;&#x5316;&#x6D41;&#x7A0B;<ol>
+<li><code>package.json</code> &#x4E2D;&#x914D;&#x7F6E; <code>bin</code> &#x5C5E;&#x6027;&#xFF0C;<code>npm link</code> &#x672C;&#x5730;&#x5B89;&#x88C5;&#xFF0C;&#x751F;&#x6210;&#x811A;&#x624B;&#x67B6;&#x547D;&#x4EE4;&#x884C;</li>
+<li><code>#! /usr/bin/env node</code></li>
+<li><code>yargs()</code></li>
+<li>&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x5E38;&#x7528;&#x65B9;&#x6CD5;</li>
+</ol>
+</li>
+<li>&#x811A;&#x624B;&#x67B6;&#x53C2;&#x6570;&#x7684;&#x89E3;&#x6790;<ol>
+<li><code>hideBin(process.argv) / Yargs.argv</code></li>
+<li><code>Yargs.parse(argv, options)</code></li>
+</ol>
+</li>
+<li>&#x547D;&#x4EE4;&#x7684;&#x6CE8;&#x518C; <ol>
+<li><code>Yargs.command(command, describe, builder, handler)</code></li>
+<li><code>Yargs.command({ command, describe, builder, handler })</code></li>
+</ol>
+</li>
+</ol>
+<p><strong>lerna</strong></p>
+<ul>
+<li>Lerna &#x662F;&#x57FA;&#x4E8E; git+npm &#x7684;&#x591A;<code>package</code> &#x9879;&#x76EE;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</li>
+<li>&#x5B9E;&#x73B0;&#x539F;&#x7406; <ul>
+<li>&#x901A;&#x8FC7; <code>import-local</code> &#x4F18;&#x5148;&#x8C03;&#x7528;&#x672C;&#x5730; lerna &#x547D;&#x4EE4;</li>
+<li>&#x901A;&#x8FC7; <code>Yargs</code> &#x751F;&#x6210;&#x811A;&#x624B;&#x67B6;&#xFF0C;&#x5148;&#x6CE8;&#x518C;&#x5168;&#x5C40;&#x5C5E;&#x6027;&#xFF0C;&#x518D;&#x6CE8;&#x518C;&#x547D;&#x4EE4;&#xFF0C;&#x6700;&#x540E;&#x901A;&#x8FC7; <code>parse</code> &#x65B9;&#x6CD5;&#x89E3;&#x6790;&#x53C2;&#x6570;</li>
+<li><code>lerna</code> &#x547D;&#x4EE4;&#x6CE8;&#x518C;&#x65F6;&#x9700;&#x8981;&#x4F20;&#x5165; <code>builder</code> &#x548C; <code>handler</code> &#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;<code>builder</code> &#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x6CE8;&#x518C;&#x547D;&#x4EE4;&#x4E13;&#x5C5E;&#x7684; <code>options</code>&#xFF0C;<code>handler</code> &#x7528;&#x6765;&#x5904;&#x7406;&#x547D;&#x4EE4;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;</li>
+<li><code>lerna</code> &#x901A;&#x8FC7;&#x914D;&#x7F6E; <code>npm</code> &#x672C;&#x5730;&#x4F9D;&#x8D56;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#x672C;&#x5730;&#x5F00;&#x53D1;&#xFF0C;&#x5177;&#x4F53;&#x5199;&#x6CD5;&#x662F;&#x5728; <code>package.json</code> &#x7684;&#x4F9D;&#x8D56;&#x4E2D;&#x5199;&#x5165;&#xFF1A;<code>file:your-local-module-path</code> &#xFF0C;&#x5728; <code>lerna publish</code> &#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x8BE5;&#x8DEF;&#x5F84;&#x66FF;&#x6362;</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>Node.js</code> &#x6A21;&#x5757;&#x8DEF;&#x5F84;&#x89E3;&#x6790;&#x6D41;&#x7A0B;</strong></p>
+<p>&#x89C1;&#x4E0A; </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; imooc-lego (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
+2021-01-25 11:03:03
+</span></footer><footer></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-技术方案设计文档.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 技术方案设计文档">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"脚手架架构设计和框架搭建笔记","level":"1.20.2","depth":2,"next":{"title":"Images","level":"1.20.3","depth":2,"ref":"","articles":[]},"previous":{"title":"技术方案设计文档","level":"1.20.1","depth":2,"path":"pages/jolly_chen/01-技术方案设计文档.md","ref":"pages/jolly_chen/01-技术方案设计文档.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/jolly_chen/02-脚手架架构设计和框架搭建笔记.md","mtime":"2021-01-25T11:03:03.800Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-25T11:04:05.554Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-extra-html/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
