@@ -77,7 +77,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../jolly_chen/" />
+    <link rel="next" href="week-03-cli.html" />
     
     
     <link rel="prev" href="week-01-技术方案设计文档.html" />
@@ -871,7 +871,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.19.1" data-path="week-01-技术方案设计文档.html">
+        <li class="chapter " data-level="1.19.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" data-path="week-01-技术方案设计文档.html">
             
                 <a href="week-01-技术方案设计文档.html">
             
@@ -884,12 +897,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.19.2" data-path="week-02-cli.html">
+        <li class="chapter active" data-level="1.19.3" data-path="week-02-cli.html">
             
                 <a href="week-02-cli.html">
             
                     
                     Week 02 Cli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.4" data-path="week-03-cli.html">
+            
+                <a href="week-03-cli.html">
+            
+                    
+                    Week 03 Cli
             
                 </a>
             
@@ -2632,9 +2658,6 @@
 <h2 id="&#x811A;&#x624B;&#x67B6;&#x5F00;&#x53D1;&#x5165;&#x95E8;">&#x811A;&#x624B;&#x67B6;&#x5F00;&#x53D1;&#x5165;&#x95E8;</h2>
 <h3 id="&#x811A;&#x624B;&#x67B6;&#x7684;&#x5FC5;&#x8981;&#x6027;">&#x811A;&#x624B;&#x67B6;&#x7684;&#x5FC5;&#x8981;&#x6027;</h3>
 <ul>
-<li>&#x5F00;&#x6E90;&#x9879;&#x76EE;  </li>
-<li><p>&#x771F;&#x5B9E;&#x9879;&#x76EE;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x811A;&#x624B;&#x67B6;  </p>
-</li>
 <li><p><em>&#x63D0;&#x5347;&#x7814;&#x53D1;&#x6548;&#x80FD;</em>  </p>
 <ul>
 <li>&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x548C;&#x901A;&#x7528;&#x4EE3;&#x7801;  </li>
@@ -2644,8 +2667,8 @@
 </li>
 <li><p>&#x4EF7;&#x503C;</p>
 <ul>
-<li>&#x7814;&#x53D1;&#x8FC7;&#x7A0B;&#x81EA;&#x52A8;&#x5316; &#x62F7;&#x8D1D;&#x91CD;&#x590D;&#x4EE3;&#x7801;/git&#x64CD;&#x4F5C;/&#x53D1;&#x5E03;&#x4E0A;&#x7EBF;  </li>
-<li>&#x7814;&#x53D1;&#x8FC7;&#x7A0B;&#x6807;&#x51C6;&#x5316; &#x521B;&#x5EFA;&#x9879;&#x76EE;/git flow/&#x53D1;&#x5E03;&#x6D41;&#x7A0B;/&#x56DE;&#x6EDA;&#x6D41;&#x7A0B;  </li>
+<li>&#x81EA;&#x52A8;&#x5316; &#x62F7;&#x8D1D;&#x91CD;&#x590D;&#x4EE3;&#x7801;/git&#x64CD;&#x4F5C;/&#x53D1;&#x5E03;&#x4E0A;&#x7EBF;  </li>
+<li>&#x6807;&#x51C6;&#x5316; &#x521B;&#x5EFA;&#x9879;&#x76EE;/git flow/&#x53D1;&#x5E03;&#x6D41;&#x7A0B;/&#x56DE;&#x6EDA;&#x6D41;&#x7A0B;  </li>
 <li>&#x6570;&#x636E;&#x5316; &#x4F7F;&#x7814;&#x53D1;&#x6D41;&#x7A0B;&#x53EF;&#x91CF;&#x5316;  </li>
 </ul>
 </li>
@@ -2654,14 +2677,20 @@
 <ul>
 <li><p>&#x4ECE;&#x4F7F;&#x7528;&#x7684;&#x89D2;&#x5EA6;  </p>
 <ul>
-<li>&#x5230;&#x5E95;&#x4EC0;&#x4E48;&#x662F;&#x811A;&#x624B;&#x67B6;<br>&#x672C;&#x8D28;&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5BA2;&#x6237;&#x7AEF;<br>(vue create xxxx --focus -r xxxx)  vue&#x4E3B;&#x547D;&#x4EE4; create&#x5B50;&#x547D;&#x4EE4;(command) xxxx(&#x53C2;&#x6570;) --focus&#x548C;-r&#x53EB;option&#xFF0C; &#x5B50;&#x547D;&#x4EE4;&#x5411;&#x4E3B;&#x547D;&#x4EE4;&#x53D1;&#x9001;&#x8BF7;&#x6C42;  </li>
-<li>&#x6574;&#x4F53;&#x6267;&#x884C;&#x8FC7;&#x7A0B;<br>vue create <app-name> &#x7EC8;&#x7AEF;&#x5230;&#x5E95;&#x662F;&#x600E;&#x4E48;&#x6267;&#x884C;&#x7684;  <ul>
+<li><p>&#x5230;&#x5E95;&#x4EC0;&#x4E48;&#x662F;&#x811A;&#x624B;&#x67B6;<br>&#x672C;&#x8D28;&#x662F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x6267;&#x884C;  </p>
+<pre><code class="lang-javascript">vue create my-vue-object --force -r xxxx
+</code></pre>
+<p>&#x4E3B;&#x547D;&#x4EE4;: vue<br>command: create - &#x5B50;&#x547D;&#x4EE4; &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6210;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;<br>command&#x7684;param: my-vue-object - command&#x7684;&#x53C2;&#x6570;<br>option: force  r - &#x9009;&#x9879; &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6210;&#x914D;&#x7F6E;<br>option&#x7684;param: xxxx  </p>
+</li>
+<li><p>&#x6574;&#x4F53;&#x6267;&#x884C;&#x8FC7;&#x7A0B;<br>&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x540E; -&gt; &#x89E3;&#x6790;&#x51FA;&#x547D;&#x4EE4;&#x6240;&#x5728;&#x7684;&#x771F;&#x5B9E;&#x7684;&#x4F4D;&#x7F6E; -&gt; &#x6267;&#x884C;&#x771F;&#x5B9E;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x6587;&#x4EF6;&#x9876;&#x90E8;&#x83B7;&#x53D6;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x7684;node&#xFF09;-&gt; &#x901A;&#x8FC7;node&#x6267;&#x884C;&#x6587;&#x4EF6; -&gt; &#x6587;&#x4EF6;&#x518D;&#x89E3;&#x6790;&#x547D;&#x4EE4; &#x6267;&#x884C;&#x76F8;&#x5173;&#x64CD;&#x4F5C; -&gt; &#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x9000;&#x51FA;</p>
+<p>&#x4EE5;vue create <app-name> &#x4E3A;&#x4F8B;&#x5B50;  </app-name></p>
+<ul>
 <li>&#x7EC8;&#x7AEF;&#x4F1A;&#x4ECE;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x627E;&#x5230;vue&#x7136;&#x540E;&#x89E3;&#x6790;&#x51FA;vue.js  </li>
 <li>vue.js&#x89E3;&#x6790;command options  </li>
 <li>vue.js&#x6267;&#x884C;command<br><img src="images/week_02_node_vuejs.png" alt="&#x5982;&#x4F55;&#x89E3;&#x6790;&#x51FA;vue.js" title="&#x5982;&#x4F55;&#x89E3;&#x6790;&#x51FA;vue.js">  </li>
 <li>&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x9000;&#x51FA;  </li>
 </ul>
-</app-name></li>
+</li>
 <li><p>&#x600E;&#x4E48;&#x5F00;&#x53D1;&#x811A;&#x624B;&#x67B6;  </p>
 <ul>
 <li>&#x5F00;&#x53D1;&#x4E00;&#x4E2A;npm&#x9879;&#x76EE;&#xFF0C;&#x5305;&#x542B;&#x4E00;&#x4E2A;bin/vue.js, &#x53D1;&#x5E03;&#x5230;npm  </li>
@@ -2670,12 +2699,15 @@
 </ul>
 </li>
 <li><p>&#x7591;&#x95EE;  </p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="&#x5B9E;&#x73B0;&#x539F;&#x7406;">&#x5B9E;&#x73B0;&#x539F;&#x7406;</h3>
 <ul>
+<li>&#x5982;&#x4F55;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x547D;&#x4EE4;<br>&#x901A;&#x8FC7;package.json&#x91CC;&#x7684;bin&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;  </li>
+<li>&#x5168;&#x5C40;&#x5B89;&#x88C5;&#x811A;&#x624B;&#x67B6;&#x65F6;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;<br>&#x5B89;&#x88C5;&#x4F9D;&#x8D56; -&gt; &#x8BBE;&#x7F6E;&#x8F6F;&#x8FDE;&#x63A5;&#xFF08;bin&#xFF09;  </li>
+<li>&#x6267;&#x884C;&#x547D;&#x4EE4;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x7528;&#x8F93;&#x5165;node&#x5C31;&#x53EF;&#x4EE5;&#x6267;&#x884C;<br>js&#x6587;&#x4EF6;&#x7684;&#x9876;&#x90E8;&#x8BBE;&#x7F6E;&#x4E86;&#x901A;&#x8FC7;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x91CC;&#x7684;node&#x6765;&#x6267;&#x884C;  <h3 id="&#x5B9E;&#x73B0;&#x539F;&#x7406;">&#x5B9E;&#x73B0;&#x539F;&#x7406;</h3>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>&#x4F9D;&#x8D56;node  </li>
 <li>&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x6709;&#x5173; - &#x73AF;&#x5883;&#x53D8;&#x91CF; root&#x8D26;&#x6237;  </li>
 <li>&#x4E3A;&#x811A;&#x624B;&#x67B6;&#x8BBE;&#x7F6E;&#x522B;&#x540D;  <ul>
@@ -2749,7 +2781,7 @@ options: &#x5168;&#x5C40;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x6709;&#x7684;common&
 <h2 id="&#x67B6;&#x6784;">&#x67B6;&#x6784;</h2>
 <p>&#x6548;&#x80FD;&#x4E3A;&#x6838;&#x5FC3;&#x76EE;&#x6807;   </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; imooc-lego (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
-2021-01-30 12:28:06
+2021-01-30 12:28:38
 </span></footer><footer></footer>
                                 
                                 </section>
@@ -2782,7 +2814,7 @@ options: &#x5168;&#x5C40;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x6709;&#x7684;common&
                 </a>
                 
                 
-                <a href="../jolly_chen/" class="navigation navigation-next " aria-label="Next page: Jolly Chen">
+                <a href="week-03-cli.html" class="navigation navigation-next " aria-label="Next page: Week 03 Cli">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2793,7 +2825,7 @@ options: &#x5168;&#x5C40;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x6709;&#x7684;common&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 02 Cli","level":"1.19.2","depth":2,"next":{"title":"Jolly Chen","level":"1.20","depth":1,"path":"pages/jolly_chen/README.md","ref":"pages/jolly_chen/README.md","articles":[{"title":"技术方案设计文档","level":"1.20.1","depth":2,"path":"pages/jolly_chen/01-技术方案设计文档.md","ref":"pages/jolly_chen/01-技术方案设计文档.md","articles":[]},{"title":"脚手架架构设计和框架搭建笔记","level":"1.20.2","depth":2,"path":"pages/jolly_chen/02-脚手架架构设计和框架搭建笔记.md","ref":"pages/jolly_chen/02-脚手架架构设计和框架搭建笔记.md","articles":[]},{"title":"Javascript事件循环","level":"1.20.3","depth":2,"path":"pages/jolly_chen/javascript事件循环.md","ref":"pages/jolly_chen/javascript事件循环.md","articles":[]}]},"previous":{"title":"Week 01 技术方案设计文档","level":"1.19.1","depth":2,"path":"pages/joge/week-01-技术方案设计文档.md","ref":"pages/joge/week-01-技术方案设计文档.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/joge/week-02-cli.md","mtime":"2021-01-30T12:28:06.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T12:28:52.204Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 02 Cli","level":"1.19.3","depth":2,"next":{"title":"Week 03 Cli","level":"1.19.4","depth":2,"path":"pages/joge/week-03-cli.md","ref":"pages/joge/week-03-cli.md","articles":[]},"previous":{"title":"Week 01 技术方案设计文档","level":"1.19.2","depth":2,"path":"pages/joge/week-01-技术方案设计文档.md","ref":"pages/joge/week-01-技术方案设计文档.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/joge/week-02-cli.md","mtime":"2021-01-30T12:28:38.920Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T12:29:26.757Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
