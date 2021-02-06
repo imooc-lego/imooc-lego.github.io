@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>点点 · Web 前端架构师课-学员分享</title>
+        <title>脚手架设计和框架搭建 · Web 前端架构师课-学员分享</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01-需求分析和架构设计.html" />
     
-    
-    <link rel="prev" href="../彩笔/作业-09-项目整体搭建.html" />
+    <link rel="prev" href="01-需求和架构设计.html" />
     
 
     </head>
@@ -1715,9 +1713,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.33" data-path="../一点/">
+        <li class="chapter " data-level="1.33" data-path="./">
             
-                <a href="../一点/">
+                <a href="./">
             
                     
                     一点
@@ -1729,9 +1727,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.33.1" data-path="../一点/01-需求和架构设计.html">
+        <li class="chapter " data-level="1.33.1" data-path="01-需求和架构设计.html">
             
-                <a href="../一点/01-需求和架构设计.html">
+                <a href="01-需求和架构设计.html">
             
                     
                     需求和架构设计
@@ -1742,9 +1740,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.33.2" data-path="../一点/02-脚手架设计和框架搭建.html">
+        <li class="chapter active" data-level="1.33.2" data-path="02-脚手架设计和框架搭建.html">
             
-                <a href="../一点/02-脚手架设计和框架搭建.html">
+                <a href="02-脚手架设计和框架搭建.html">
             
                     
                     脚手架设计和框架搭建
@@ -2237,9 +2235,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.42" data-path="./">
+        <li class="chapter " data-level="1.42" data-path="../点点/">
             
-                <a href="./">
+                <a href="../点点/">
             
                     
                     点点
@@ -2251,9 +2249,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.42.1" data-path="01-需求分析和架构设计.html">
+        <li class="chapter " data-level="1.42.1" data-path="../点点/01-需求分析和架构设计.html">
             
-                <a href="01-需求分析和架构设计.html">
+                <a href="../点点/01-需求分析和架构设计.html">
             
                     
                     需求分析和架构设计
@@ -2264,9 +2262,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.42.2" data-path="02-脚手架架构设计和框架搭建.html">
+        <li class="chapter " data-level="1.42.2" data-path="../点点/02-脚手架架构设计和框架搭建.html">
             
-                <a href="02-脚手架架构设计和框架搭建.html">
+                <a href="../点点/02-脚手架架构设计和框架搭建.html">
             
                     
                     脚手架架构设计和框架搭建
@@ -2846,7 +2844,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >点点</a>
+        <a href="../.." >脚手架设计和框架搭建</a>
     </h1>
 </div>
 
@@ -2871,13 +2869,139 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script>
-</header><h1 id="&#x1F408;&#x70B9;&#x70B9;---&#x4F5C;&#x4E1A;">&#x1F408;&#x70B9;&#x70B9; - &#x4F5C;&#x4E1A;</h1>
-<h2 id="&#x7B2C;&#x4E00;&#x5468;">&#x7B2C;&#x4E00;&#x5468;</h2>
+</header><h2 id="1-&#x811A;&#x624B;&#x67B6;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#xFF0C;&#x57FA;&#x4E8E;-lerna-&#x642D;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x811A;&#x624B;&#x67B6;&#x5E76;&#x53D1;&#x5E03;&#x5230;npm">1. &#x811A;&#x624B;&#x67B6;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#xFF0C;&#x57FA;&#x4E8E; Lerna &#x642D;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x811A;&#x624B;&#x67B6;&#x5E76;&#x53D1;&#x5E03;&#x5230;npm</h2>
+<h3 id="11&#x811A;&#x624B;&#x67B6;&#x7B80;&#x8FF0;">1.1&#x811A;&#x624B;&#x67B6;&#x7B80;&#x8FF0;</h3>
+<p>&#x811A;&#x624B;&#x67B6;&#x672C;&#x8D28;&#x662F;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5F97;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x6267;&#x884C;</p>
+<pre><code class="lang-js">vue create vue-test-app
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x4E3B;&#x8981;&#x7531;3&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;</p>
 <ul>
-<li><a href="01-&#x9700;&#x6C42;&#x5206;&#x6790;&#x548C;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;.html">01-&#x9700;&#x6C42;&#x5206;&#x6790;&#x548C;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;</a><h2 id="&#x7B2C;&#x4E8C;&#x5468;">&#x7B2C;&#x4E8C;&#x5468;</h2>
-</li>
-<li><a href="02-&#x811A;&#x624B;&#x67B6;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#x548C;&#x6846;&#x67B6;&#x642D;&#x5EFA;.html">02-&#x811A;&#x624B;&#x67B6;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#x548C;&#x6846;&#x67B6;&#x642D;&#x5EFA;</a></li>
+<li>&#x4E3B;&#x547D;&#x4EE4; <code>vue</code></li>
+<li>command <code>create</code></li>
+<li>command&#x7684; param <code>vue-test-app</code></li>
 </ul>
+<h3 id="12&#x811A;&#x624B;&#x67B6;&#x7684;&#x6267;&#x884C;&#x539F;&#x7406;&#x56FE;">1.2&#x811A;&#x624B;&#x67B6;&#x7684;&#x6267;&#x884C;&#x539F;&#x7406;&#x56FE;</h3>
+<p><img src="images/2.png" alt=""></p>
+<p>&#x811A;&#x624B;&#x67B6;&#x7684;&#x6267;&#x884C;&#x539F;&#x7406;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165; <code>vue create vue-test-app</code></li>
+<li>&#x7EC8;&#x7AEF;&#x89E3;&#x6790;&#x51FA; <code>vue</code> &#x547D;&#x4EE4;</li>
+<li>&#x7EC8;&#x7AEF;&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x627E;&#x5230; <code>vue</code> &#x547D;&#x4EE4;</li>
+<li>&#x7EC8;&#x7AEF;&#x6839;&#x636E; <code>vue</code> &#x547D;&#x4EE4;&#x94FE;&#x63A5;&#x5012;&#x5B9E;&#x9645;&#x6587;&#x4EF6; <code>vue.js</code></li>
+<li>&#x7EC8;&#x7AEF;&#x5229;&#x7528; <code>node</code> &#x6267;&#x884C; <code>vue.js</code></li>
+<li><code>vue.js</code>&#x89E3;&#x6790; command / options</li>
+<li><code>vue.js</code>&#x6267;&#x884C; command</li>
+<li>&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#xFF0C;&#x9000;&#x51FA;&#x6267;&#x884C;</li>
+</ul>
+<h3 id="13&#x4E3A;&#x4EC0;&#x4E48;&#x5168;&#x5C40;&#x5B89;&#x88C5;-vuecli-&#x540E;&#x4F1A;&#x6DFB;&#x52A0;&#x7684;&#x547D;&#x4EE4;&#x4E3A;-vue">1.3&#x4E3A;&#x4EC0;&#x4E48;&#x5168;&#x5C40;&#x5B89;&#x88C5; <code>@vue/cli</code> &#x540E;&#x4F1A;&#x6DFB;&#x52A0;&#x7684;&#x547D;&#x4EE4;&#x4E3A; <code>vue</code>?</h3>
+<p>&#x5168;&#x5C40;&#x5B89;&#x88C5;&#x811A;&#x624B;&#x67B6;&#xFF0C;&#x4F1A;&#x6839;&#x636E;&#x811A;&#x624B;&#x67B6;&#x6839;&#x76EE;&#x5F55;&#x7684;package.json &#x4E2D;&#x7684; bin &#x6765;&#x51B3;&#x5B9A;&#x811A;&#x624B;&#x67B6;&#x7684;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-js"><span class="hljs-string">&quot;bin&quot;</span>: {
+    <span class="hljs-string">&quot;vue&quot;</span>: <span class="hljs-string">&quot;bin/vue.js&quot;</span>
+}
+</code></pre>
+<h3 id="14&#x5168;&#x5C40;&#x5B89;&#x88C5;-vuecli-&#x65F6;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;">1.4&#x5168;&#x5C40;&#x5B89;&#x88C5; <code>@vue/cli</code> &#x65F6;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<p>&#x5168;&#x5C40;&#x5B89;&#x88C5;&#x811A;&#x624B;&#x67B6;&#x540E;&#xFF0C;&#x4F1A;&#x5728;node&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x7684;node_modules&#x751F;&#x6210; <code>@vue</code> &#x7684;&#x811A;&#x624B;&#x67B6;&#x5305;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x5728; node&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B;&#x751F;&#x6210;&#x4E00;&#x4E2A;vue&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x5B57;&#x5C31;&#x53D6;&#x51B3;&#x4E8E; <code>@vue</code> &#x7684;&#x811A;&#x624B;&#x67B6;&#x5305;&#x6839;&#x76EE;&#x5F55;&#x7684; package.json &#x4E2D;&#x7684;bin</p>
+<h3 id="15&#x4E3A;&#x4EC0;&#x4E48;-vue-&#x6267;&#x884C;&#x4E00;&#x4E2A;-js-&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5374;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;vue&#x547D;&#x4EE4;&#x53BB;&#x6267;&#x884C;&#x5B83;&#xFF1F;">1.5&#x4E3A;&#x4EC0;&#x4E48; <code>vue</code> &#x6267;&#x884C;&#x4E00;&#x4E2A; <code>js</code> &#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5374;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;vue&#x547D;&#x4EE4;&#x53BB;&#x6267;&#x884C;&#x5B83;&#xFF1F;</h3>
+<p>&#x56E0;&#x4E3A;&#x5728;&#x811A;&#x624B;&#x67B6;&#x6839;&#x76EE;&#x5F55;&#x7684; package.json &#x4E2D;&#x7684;bin &#x6240;&#x6307;&#x5411;&#x7684;&#x771F;&#x6B63;&#x6267;&#x884C;&#x7684; <code>vue.js</code> &#x4E2D;&#x6709;</p>
+<pre><code>#!/usr/bin/env node
+</code></pre><p>&#x76F8;&#x5F53;&#x4E8E;&#x6211;&#x4EEC;&#x6267;&#x884C; <code>node vue.js</code></p>
+<h2 id="2-&#x7406;&#x89E3;-yargs-&#x5E38;&#x7528;-api-&#x548C;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;">2. &#x7406;&#x89E3; Yargs &#x5E38;&#x7528; API &#x548C;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> yargs  = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;yargs/yargs&apos;</span>)
+<span class="hljs-comment">// &#x4E00;&#x4E2A;ES6&#x5B57;&#x7B26;&#x4E32;&#x6807;&#x7B7E;&#xFF0C;&#x4ECE;&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x53BB;&#x9664;&#x7F29;&#x8FDB;&#x3002;</span>
+<span class="hljs-keyword">const</span> dedent = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;dedent&quot;</span>);
+
+<span class="hljs-keyword">const</span> cli = yargs()
+<span class="hljs-keyword">const</span> argv = process.argv.slice(<span class="hljs-number">2</span>)
+
+<span class="hljs-comment">// &#x6CE8;&#x5165;&#x989D;&#x5916;&#x53C2;&#x6570;</span>
+<span class="hljs-keyword">const</span> context = {
+  diaoVersion: <span class="hljs-string">&apos;1.0.0&apos;</span>,
+};
+cli
+  <span class="hljs-comment">// &#x5F00;&#x542F;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#xFF0C;&#x8F93;&#x5165;&#x65E0;&#x6548;&#x547D;&#x4EE4;&#x4F1A;&#x62A5;&#x9519;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;&#x547D;&#x4EE4;</span>
+  .strict()
+  <span class="hljs-comment">// &#x5728;&#x5934;&#x90E8;&#x8F93;&#x51FA;&#x4E00;&#x6BB5;&#x4FE1;&#x606F;</span>
+  .usage(<span class="hljs-string">&apos;Usage: diao-cli [command] &lt;options&gt;&apos;</span>)
+  <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x9700;&#x8981;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x6700;&#x5C11;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x5426;&#x5219;&#x5219;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</span>
+  .demandCommand(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;A command is required. Pass --help to see all available commands and options.&quot;</span>)
+  <span class="hljs-comment">// &#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x5339;&#x914D;&#x7684;&#x547D;&#x4EE4;&#xFF0C;yargs&#x63D0;&#x4F9B;&#x5173;&#x4E8E;&#x7C7B;&#x4F3C;&#x547D;&#x4EE4;&#x7684;&#x5EFA;&#x8BAE;</span>
+  .recommendCommands()
+  <span class="hljs-comment">// &#x5728;&#x6709;&#x9519;&#x8BEF;&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x81EA;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</span>
+  .fail((err, msg) =&gt; {
+    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;err:&apos;</span>, err)
+  })
+  <span class="hljs-comment">// &#x8BBE;&#x7F6E; command &#x7684;&#x522B;&#x540D;</span>
+  .alias(<span class="hljs-string">&apos;h&apos;</span>, <span class="hljs-string">&apos;help&apos;</span>)
+  .alias(<span class="hljs-string">&apos;v&apos;</span>, <span class="hljs-string">&apos;version&apos;</span>)
+  <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x51FA;&#x65F6;&#x5019;&#x7684;&#x5BBD;&#x5EA6;</span>
+  .wrap(cli.terminalWidth())
+  <span class="hljs-comment">// &#x5728;&#x547D;&#x4EE4;&#x884C;&#x672B;&#x5C3E;&#x6253;&#x5370;&#x7684;&#x6D88;&#x606F;</span>
+  .epilogue(dedent<span class="hljs-string">`
+    When a command fails, all logs are written to lerna-debug.log in the current working directory.
+
+    For more information, find our manual at https://github.com/lerna/lerna
+  `</span>)
+  <span class="hljs-comment">// &#x914D;&#x7F6E;&#x989D;&#x5916;&#x9009;&#x9879;</span>
+  .options({
+    debug: {
+      type: <span class="hljs-string">&apos;boolean&apos;</span>,
+      describe: <span class="hljs-string">&apos;Bootstrap debug mode&apos;</span>,
+      alias: <span class="hljs-string">&apos;d&apos;</span>
+    }
+  })
+  <span class="hljs-comment">// &#x914D;&#x7F6E;&#x989D;&#x5916;&#x9009;&#x9879;</span>
+  .option(<span class="hljs-string">&quot;registry&quot;</span>, {
+    type: <span class="hljs-string">&quot;string&quot;</span>,
+    describe: <span class="hljs-string">&apos;Define global registry&apos;</span>,
+    alias: <span class="hljs-string">&apos;r&apos;</span>
+  })
+  <span class="hljs-comment">// &#x5BF9;&#x9009;&#x9879;&#x8FDB;&#x884C;&#x5206;&#x7EC4;</span>
+  .group([<span class="hljs-string">&apos;debug&apos;</span>], <span class="hljs-string">&apos;Dev Options&apos;</span>)
+  .group([<span class="hljs-string">&apos;registry&apos;</span>], <span class="hljs-string">&apos;Extra Options&apos;</span>)
+  <span class="hljs-comment">// &#x6CE8;&#x518C;&#x547D;&#x4EE4;</span>
+  .command(<span class="hljs-string">&apos;init [name]&apos;</span>, <span class="hljs-string">&apos;Do init a project&apos;</span>, (yargs) =&gt; {
+    yargs
+      .option(<span class="hljs-string">&apos;name&apos;</span>, {
+        type: <span class="hljs-string">&apos;string&apos;</span>,
+        describe: <span class="hljs-string">&apos;Name of a project&apos;</span>,
+        alias: <span class="hljs-string">&apos;n&apos;</span>
+      })
+  }, (argv) =&gt; {
+    <span class="hljs-built_in">console</span>.log(argv)
+  })
+  <span class="hljs-comment">// &#x6CE8;&#x518C;&#x547D;&#x4EE4;</span>
+  .command({
+    command: <span class="hljs-string">&apos;list&apos;</span>,
+    aliases: [<span class="hljs-string">&apos;ls&apos;</span>, <span class="hljs-string">&apos;la&apos;</span>, <span class="hljs-string">&apos;ll&apos;</span>],
+    describe: <span class="hljs-string">&apos;List local packages&apos;</span>,
+    builder: (yargs) =&gt; {},
+    handler: (argv) =&gt; {
+      <span class="hljs-built_in">console</span>.log(argv)
+    }
+  })
+  <span class="hljs-comment">// &#x89E3;&#x6790;&#x547D;&#x4EE4;&#x8F93;&#x5165;&#x53C2;&#x6570;</span>
+  .parse(argv, context)
+</code></pre>
+<h2 id="3-&#x7406;&#x89E3;-lerna-&#x5B9E;&#x73B0;&#x539F;&#x7406;">3. &#x7406;&#x89E3; Lerna &#x5B9E;&#x73B0;&#x539F;&#x7406;</h2>
+<blockquote>
+<p>Lerna &#x662F;&#x57FA;&#x4E8E; git+npm &#x7684;&#x591A;package&#x9879;&#x76EE;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</p>
+</blockquote>
+<h3 id="31&#x5E38;&#x7528;&#x547D;&#x4EE4;">3.1&#x5E38;&#x7528;&#x547D;&#x4EE4;</h3>
+<pre><code>npm init -y
+npm install -g lerna (// &#x5168;&#x5C40;&#x5B89;&#x88C5;)
+npm install lerna
+lerna -v ( // &#x8F93;&#x51FA;&#x7248;&#x672C;&#x53F7;&#x8BF4;&#x660E;&#x5B89;&#x88C5;&#x6210;&#x529F;)
+lerna init (// &#x521D;&#x59CB;&#x5316;lerna&#x9879;&#x76EE;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;lerna.json)
+// &#x7ECF;&#x8FC7;&#x4E0A;&#x9762;init&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x4F1A;&#x521D;&#x59CB;&#x5316;git&#x4ED3;&#x5E93;&#xFF0C;&#x518D;&#x641E;&#x4E00;&#x4E2A;.gitignore &#x914D;&#x7F6E;&#x4E00;&#x4E9B;&#x4E0D;&#x7528;&#x4E0A;&#x4F20;&#x7684;&#x76EE;&#x5F55;
+git remote xxx (// &#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;)
+lerna create core (// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;package)
+lerna create utils(// &#x53C8;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;package)
+lerna add (// &#x6279;&#x91CF;&#x7ED9;&#x4E24;&#x4E2A;package&#x90FD;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;)
+lerna publish (// &#x53D1;&#x5E03;&#x9879;&#x76EE;)
+</code></pre><h3 id="32lerna-&#x5B9E;&#x73B0;&#x539F;&#x7406;">3.2Lerna &#x5B9E;&#x73B0;&#x539F;&#x7406;</h3>
+<p>&#x61F5;&#x903C;&#x4E2D;&#xFF0C;&#x540E;&#x9762;&#x56DE;&#x8FC7;&#x5934;&#x518D;&#x770B;~</p>
+<h2 id="4-&#x7406;&#x89E3;-import-local-&#x5B9E;&#x73B0;&#x539F;&#x7406;&#xFF0C;&#x7406;&#x89E3;-requireresolve-&#x5B9E;&#x73B0;&#x539F;&#x7406;">4. &#x7406;&#x89E3; <code>import-local</code> &#x5B9E;&#x73B0;&#x539F;&#x7406;&#xFF0C;&#x7406;&#x89E3; <code>require.resolve</code> &#x5B9E;&#x73B0;&#x539F;&#x7406;</h2>
+<p>&#x61F5;&#x903C;&#x4E2D;&#xFF0C;&#x540E;&#x9762;&#x56DE;&#x8FC7;&#x5934;&#x518D;&#x770B;~</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; imooc-lego (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
 2021-02-06 00:45:57
 </span></footer><footer></footer>
@@ -2907,14 +3031,10 @@
 
             
                 
-                <a href="../彩笔/作业-09-项目整体搭建.html" class="navigation navigation-prev " aria-label="Previous page: 作业 09 项目整体搭建">
+                <a href="01-需求和架构设计.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 需求和架构设计">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="01-需求分析和架构设计.html" class="navigation navigation-next " aria-label="Next page: 需求分析和架构设计">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -2923,7 +3043,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"点点","level":"1.42","depth":1,"next":{"title":"需求分析和架构设计","level":"1.42.1","depth":2,"path":"pages/点点/01-需求分析和架构设计.md","ref":"pages/点点/01-需求分析和架构设计.md","articles":[]},"previous":{"title":"作业 09 项目整体搭建","level":"1.41.9","depth":2,"path":"pages/彩笔/作业-09-项目整体搭建.md","ref":"pages/彩笔/作业-09-项目整体搭建.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/点点/README.md","mtime":"2021-02-06T00:45:57.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-06T00:46:51.717Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"脚手架设计和框架搭建","level":"1.33.2","depth":2,"next":{"title":"Images","level":"1.33.3","depth":2,"ref":"","articles":[]},"previous":{"title":"需求和架构设计","level":"1.33.1","depth":2,"path":"pages/一点/01-需求和架构设计.md","ref":"pages/一点/01-需求和架构设计.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/一点/02-脚手架设计和框架搭建.md","mtime":"2021-02-06T00:45:57.287Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-06T00:46:51.717Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
