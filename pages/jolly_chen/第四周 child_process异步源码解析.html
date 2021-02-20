@@ -1,0 +1,3506 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第四周 Child Process异步源码解析 · Web 前端架构师课-学员分享</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lego-team">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-extra-html/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第四周 cluster深入浅出.html" />
+    
+    
+    <link rel="prev" href="第四周 child_process同步源码解析.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Pages</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Abaddon/">
+            
+                <a href="../Abaddon/">
+            
+                    
+                    Abaddon
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Abaddon/01-week01 需求分析与架构设计.html">
+            
+                <a href="../Abaddon/01-week01 需求分析与架构设计.html">
+            
+                    
+                    Week01 需求分析与架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Baran/">
+            
+                <a href="../Baran/">
+            
+                    
+                    Baran
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Baran/01-需求分析和架构设计.html">
+            
+                <a href="../Baran/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Berners/">
+            
+                <a href="../Berners/">
+            
+                    
+                    Berners
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Berners/01-第一周笔记和作业.html">
+            
+                <a href="../Berners/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Berners/02-第二周笔记和作业.html">
+            
+                <a href="../Berners/02-第二周笔记和作业.html">
+            
+                    
+                    第二周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Berners/03-第三周笔记和作业.html">
+            
+                <a href="../Berners/03-第三周笔记和作业.html">
+            
+                    
+                    第三周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Beyond/">
+            
+                <a href="../Beyond/">
+            
+                    
+                    Beyond
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Beyond/01-week01-作业.html">
+            
+                <a href="../Beyond/01-week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Daiyan/">
+            
+                <a href="../Daiyan/">
+            
+                    
+                    Daiyan
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Daiyan/01-week01-整体架构设计.html">
+            
+                <a href="../Daiyan/01-week01-整体架构设计.html">
+            
+                    
+                    Week01 整体架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Daiyan/02-week02-脚手架基础.html">
+            
+                <a href="../Daiyan/02-week02-脚手架基础.html">
+            
+                    
+                    Week02 脚手架基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Daiyan/03-week03-脚手架核心流程开发.html">
+            
+                <a href="../Daiyan/03-week03-脚手架核心流程开发.html">
+            
+                    
+                    Week03 脚手架核心流程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Devil/">
+            
+                <a href="../Devil/">
+            
+                    
+                    Devil
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Devil/01-week1-需求分析.html">
+            
+                <a href="../Devil/01-week1-需求分析.html">
+            
+                    
+                    Week1 需求分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../EddieCookie/">
+            
+                <a href="../EddieCookie/">
+            
+                    
+                    EddieCookie
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../EddieCookie/01-week01.html">
+            
+                <a href="../EddieCookie/01-week01.html">
+            
+                    
+                    Week01
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../EditYJ/">
+            
+                <a href="../EditYJ/">
+            
+                    
+                    EditYJ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../EditYJ/01-Week01-作业.html">
+            
+                <a href="../EditYJ/01-Week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../EditYJ/02-Week02-笔记-脚手架是什么.html">
+            
+                <a href="../EditYJ/02-Week02-笔记-脚手架是什么.html">
+            
+                    
+                    Week02 笔记 脚手架是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Joker_Yao/">
+            
+                <a href="../Joker_Yao/">
+            
+                    
+                    Joker Yao
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Joker_Yao/01-需求分析和架构设计.html">
+            
+                <a href="../Joker_Yao/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Q小白/">
+            
+                <a href="../Q小白/">
+            
+                    
+                    Q小白
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Q小白/01-第一周需求分析.html">
+            
+                <a href="../Q小白/01-第一周需求分析.html">
+            
+                    
+                    第一周需求分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Q小白/02-第二周笔记.html">
+            
+                <a href="../Q小白/02-第二周笔记.html">
+            
+                    
+                    第二周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Sunshine/">
+            
+                <a href="../Sunshine/">
+            
+                    
+                    Sunshine
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Sunshine/01-第一周笔记和作业.html">
+            
+                <a href="../Sunshine/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Sunshine/02-第二周作业和笔记.html">
+            
+                <a href="../Sunshine/02-第二周作业和笔记.html">
+            
+                    
+                    第二周作业和笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Wu/">
+            
+                <a href="../Wu/">
+            
+                    
+                    Wu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Wu/01-技术方案设计文档.html">
+            
+                <a href="../Wu/01-技术方案设计文档.html">
+            
+                    
+                    技术方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Wu/02-xx.html">
+            
+                <a href="../Wu/02-xx.html">
+            
+                    
+                    Xx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../apple/">
+            
+                <a href="../apple/">
+            
+                    
+                    Apple
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../apple/01-week1.html">
+            
+                <a href="../apple/01-week1.html">
+            
+                    
+                    Week1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../apple/02-week2-脚手架.html">
+            
+                <a href="../apple/02-week2-脚手架.html">
+            
+                    
+                    Week2 脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../apple/03-week2-lerna.html">
+            
+                <a href="../apple/03-week2-lerna.html">
+            
+                    
+                    Week2 Lerna
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../clqyfe/">
+            
+                <a href="../clqyfe/">
+            
+                    
+                    Clqyfe
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../clqyfe/01-Week01-作业.html">
+            
+                <a href="../clqyfe/01-Week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../clqyfe/02-Week02-理解脚手架.html">
+            
+                <a href="../clqyfe/02-Week02-理解脚手架.html">
+            
+                    
+                    Week02 理解脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../clqyfe/03-Week02-基于原生开发脚手架.html">
+            
+                <a href="../clqyfe/03-Week02-基于原生开发脚手架.html">
+            
+                    
+                    Week02 基于原生开发脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../clqyfe/04-Week02-基于lerna开发脚手架.html">
+            
+                <a href="../clqyfe/04-Week02-基于lerna开发脚手架.html">
+            
+                    
+                    Week02 基于Lerna开发脚手架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../clqyfe/05-Week02-yargs使用.html">
+            
+                <a href="../clqyfe/05-Week02-yargs使用.html">
+            
+                    
+                    Week02 Yargs使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../clqyfe/06-Week02-lerna源码分析.html">
+            
+                <a href="../clqyfe/06-Week02-lerna源码分析.html">
+            
+                    
+                    Week02 Lerna源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="../clqyfe/07-Week03-脚手架核心流程开发.html">
+            
+                <a href="../clqyfe/07-Week03-脚手架核心流程开发.html">
+            
+                    
+                    Week03 脚手架核心流程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../coderzlh/">
+            
+                <a href="../coderzlh/">
+            
+                    
+                    Coderzlh
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="../coderzlh/01-week01-note.html">
+            
+                <a href="../coderzlh/01-week01-note.html">
+            
+                    
+                    Week01 Note
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../filway/">
+            
+                <a href="../filway/">
+            
+                    
+                    Filway
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../filway/week1.html">
+            
+                <a href="../filway/week1.html">
+            
+                    
+                    Week1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../ifreeOvO/">
+            
+                <a href="../ifreeOvO/">
+            
+                    
+                    IfreeOvO
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" data-path="../ifreeOvO/week01 笔记和作业.html">
+            
+                <a href="../ifreeOvO/week01 笔记和作业.html">
+            
+                    
+                    Week01 笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../jia林_286621855/">
+            
+                <a href="../jia林_286621855/">
+            
+                    
+                    Jia林 286621855
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../jindong/">
+            
+                <a href="../jindong/">
+            
+                    
+                    Jindong
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" data-path="../jindong/01-需求分析和架构设计.html">
+            
+                <a href="../jindong/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" data-path="../jindong/02-脚手架架构设计和框架搭建.html">
+            
+                <a href="../jindong/02-脚手架架构设计和框架搭建.html">
+            
+                    
+                    脚手架架构设计和框架搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../joge/">
+            
+                <a href="../joge/">
+            
+                    
+                    Joge
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../joge/week-01-技术方案设计文档.html">
+            
+                <a href="../joge/week-01-技术方案设计文档.html">
+            
+                    
+                    Week 01 技术方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../joge/week-02-cli.html">
+            
+                <a href="../joge/week-02-cli.html">
+            
+                    
+                    Week 02 Cli
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../joge/week-03-cli.html">
+            
+                <a href="../joge/week-03-cli.html">
+            
+                    
+                    Week 03 Cli
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Jolly Chen
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="01-技术方案设计文档.html">
+            
+                <a href="01-技术方案设计文档.html">
+            
+                    
+                    技术方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="02-脚手架架构设计和框架搭建笔记.html">
+            
+                <a href="02-脚手架架构设计和框架搭建笔记.html">
+            
+                    
+                    脚手架架构设计和框架搭建笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.4" data-path="javascript事件循环.html">
+            
+                <a href="javascript事件循环.html">
+            
+                    
+                    Javascript事件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.5" data-path="第三周 Node支持ES Module.html">
+            
+                <a href="第三周 Node支持ES Module.html">
+            
+                    
+                    第三周 Node支持ES Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.6" data-path="第三周 commander使用.html">
+            
+                <a href="第三周 commander使用.html">
+            
+                    
+                    第三周 Commander使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.7" data-path="第三周 脚手架核心流程开发笔记.html">
+            
+                <a href="第三周 脚手架核心流程开发笔记.html">
+            
+                    
+                    第三周 脚手架核心流程开发笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.8" data-path="第四周 Node多进程入门.html">
+            
+                <a href="第四周 Node多进程入门.html">
+            
+                    
+                    第四周 Node多进程入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.9" data-path="第四周 child_process同步源码解析.html">
+            
+                <a href="第四周 child_process同步源码解析.html">
+            
+                    
+                    第四周 Child Process同步源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.22.10" data-path="第四周 child_process异步源码解析.html">
+            
+                <a href="第四周 child_process异步源码解析.html">
+            
+                    
+                    第四周 Child Process异步源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.11" data-path="第四周 cluster深入浅出.html">
+            
+                <a href="第四周 cluster深入浅出.html">
+            
+                    
+                    第四周 Cluster深入浅出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.12" data-path="第四周 脚手架命令注册和执行过程开发.html">
+            
+                <a href="第四周 脚手架命令注册和执行过程开发.html">
+            
+                    
+                    第四周 脚手架命令注册和执行过程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../linlei/">
+            
+                <a href="../linlei/">
+            
+                    
+                    Linlei
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.23.1" data-path="../linlei/01-需求分析.html">
+            
+                <a href="../linlei/01-需求分析.html">
+            
+                    
+                    需求分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.2" data-path="../linlei/02-脚手架架构设计和搭建.html">
+            
+                <a href="../linlei/02-脚手架架构设计和搭建.html">
+            
+                    
+                    脚手架架构设计和搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23.3" data-path="../linlei/03-脚手架核心开发流程.html">
+            
+                <a href="../linlei/03-脚手架核心开发流程.html">
+            
+                    
+                    脚手架核心开发流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../littlefish1900/">
+            
+                <a href="../littlefish1900/">
+            
+                    
+                    Littlefish1900
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.24.1" data-path="../littlefish1900/01-week01-作业.html">
+            
+                <a href="../littlefish1900/01-week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="../liwen/">
+            
+                <a href="../liwen/">
+            
+                    
+                    Liwen
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.25.1" data-path="../liwen/01-需求分析和架构设计.html">
+            
+                <a href="../liwen/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="../lwjcjmx123/">
+            
+                <a href="../lwjcjmx123/">
+            
+                    
+                    Lwjcjmx123
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.26.1" data-path="../lwjcjmx123/01-技术方案设计文档.html">
+            
+                <a href="../lwjcjmx123/01-技术方案设计文档.html">
+            
+                    
+                    技术方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26.2" data-path="../lwjcjmx123/01-第一周笔记.html">
+            
+                <a href="../lwjcjmx123/01-第一周笔记.html">
+            
+                    
+                    第一周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="../mazy/">
+            
+                <a href="../mazy/">
+            
+                    
+                    Mazy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.27.1" data-path="../mazy/01-week01.html">
+            
+                <a href="../mazy/01-week01.html">
+            
+                    
+                    Week01
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="../renderman/">
+            
+                <a href="../renderman/">
+            
+                    
+                    Renderman
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="../ricky94/">
+            
+                <a href="../ricky94/">
+            
+                    
+                    Ricky94
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.29.1" data-path="../ricky94/01-第一周.html">
+            
+                <a href="../ricky94/01-第一周.html">
+            
+                    
+                    第一周
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="../xggg/">
+            
+                <a href="../xggg/">
+            
+                    
+                    Xggg
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.30.1" data-path="../xggg/01-第一周作业.html">
+            
+                <a href="../xggg/01-第一周作业.html">
+            
+                    
+                    第一周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="../yhtx1997/">
+            
+                <a href="../yhtx1997/">
+            
+                    
+                    Yhtx1997
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.31.1" data-path="../yhtx1997/01-第一周作业.html">
+            
+                <a href="../yhtx1997/01-第一周作业.html">
+            
+                    
+                    第一周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31.2" data-path="../yhtx1997/01-第一周笔记.html">
+            
+                <a href="../yhtx1997/01-第一周笔记.html">
+            
+                    
+                    第一周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31.3" data-path="../yhtx1997/02-第二周作业.html">
+            
+                <a href="../yhtx1997/02-第二周作业.html">
+            
+                    
+                    第二周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31.4" data-path="../yhtx1997/02-第二周笔记.html">
+            
+                <a href="../yhtx1997/02-第二周笔记.html">
+            
+                    
+                    第二周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31.5" data-path="../yhtx1997/03-第三周作业.html">
+            
+                <a href="../yhtx1997/03-第三周作业.html">
+            
+                    
+                    第三周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31.6" data-path="../yhtx1997/03-第三周笔记.html">
+            
+                <a href="../yhtx1997/03-第三周笔记.html">
+            
+                    
+                    第三周笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="../zcyan2013/">
+            
+                <a href="../zcyan2013/">
+            
+                    
+                    Zcyan2013
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.32.1" data-path="../zcyan2013/01-第一周笔记和作业.html">
+            
+                <a href="../zcyan2013/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="../い狂奔的蜗牛/">
+            
+                <a href="../い狂奔的蜗牛/">
+            
+                    
+                    い狂奔的蜗牛
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.33.1" data-path="../い狂奔的蜗牛/01.Node.js中经典算法（一）.html">
+            
+                <a href="../い狂奔的蜗牛/01.Node.js中经典算法（一）.html">
+            
+                    
+                    01.Node.Js中经典算法（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.2" data-path="../い狂奔的蜗牛/02.Node.js中使用ES Module的两种方式.html">
+            
+                <a href="../い狂奔的蜗牛/02.Node.js中使用ES Module的两种方式.html">
+            
+                    
+                    02.Node.Js中使用ES Module的两种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.3" data-path="../い狂奔的蜗牛/03.sim-cli核心图集.html">
+            
+                <a href="../い狂奔的蜗牛/03.sim-cli核心图集.html">
+            
+                    
+                    03.Sim Cli核心图集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.4" data-path="../い狂奔的蜗牛/04.第四周-Node.js多进程源码分析.html">
+            
+                <a href="../い狂奔的蜗牛/04.第四周-Node.js多进程源码分析.html">
+            
+                    
+                    04.第四周 Node.Js多进程源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.5" data-path="../い狂奔的蜗牛/05.第四周-import-local源码分析及node模块加载流程源码分析.html">
+            
+                <a href="../い狂奔的蜗牛/05.第四周-import-local源码分析及node模块加载流程源码分析.html">
+            
+                    
+                    05.第四周 Import Local源码分析及Node模块加载流程源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.6" data-path="../い狂奔的蜗牛/06.第五周-如何解决安装模板时控制台动画闪烁问题.html">
+            
+                <a href="../い狂奔的蜗牛/06.第五周-如何解决安装模板时控制台动画闪烁问题.html">
+            
+                    
+                    06.第五周 如何解决安装模板时控制台动画闪烁问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.7" data-path="../い狂奔的蜗牛/07.第五周-readline源码阅读及实现简易版readline.html">
+            
+                <a href="../い狂奔的蜗牛/07.第五周-readline源码阅读及实现简易版readline.html">
+            
+                    
+                    07.第五周 Readline源码阅读及实现简易版Readline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.8" data-path="../い狂奔的蜗牛/08.第五周-类似inquirer列表类型交互实现.html">
+            
+                <a href="../い狂奔的蜗牛/08.第五周-类似inquirer列表类型交互实现.html">
+            
+                    
+                    08.第五周 类似Inquirer列表类型交互实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.9" data-path="../い狂奔的蜗牛/09.第六周-ejs源码分析.html">
+            
+                <a href="../い狂奔的蜗牛/09.第六周-ejs源码分析.html">
+            
+                    
+                    09.第六周 Ejs源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.10" data-path="../い狂奔的蜗牛/10.第六周-require源码分析.html">
+            
+                <a href="../い狂奔的蜗牛/10.第六周-require源码分析.html">
+            
+                    
+                    10.第六周 Require源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.11" data-path="../い狂奔的蜗牛/11.第八周-为clipboard.js库写类型文件.html">
+            
+                <a href="../い狂奔的蜗牛/11.第八周-为clipboard.js库写类型文件.html">
+            
+                    
+                    11.第八周 为Clipboard.Js库写类型文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.12" data-path="../い狂奔的蜗牛/12.第九周-项目技术规范.html">
+            
+                <a href="../い狂奔的蜗牛/12.第九周-项目技术规范.html">
+            
+                    
+                    12.第九周 项目技术规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.13" data-path="../い狂奔的蜗牛/13.第十周-作业.html">
+            
+                <a href="../い狂奔的蜗牛/13.第十周-作业.html">
+            
+                    
+                    13.第十周 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33.14" data-path="../い狂奔的蜗牛/14.第十一周-IconSwitch组件的开发与测试.html">
+            
+                <a href="../い狂奔的蜗牛/14.第十一周-IconSwitch组件的开发与测试.html">
+            
+                    
+                    14.第十一周 IconSwitch组件的开发与测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="../一点/">
+            
+                <a href="../一点/">
+            
+                    
+                    一点
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.34.1" data-path="../一点/01-需求和架构设计.html">
+            
+                <a href="../一点/01-需求和架构设计.html">
+            
+                    
+                    需求和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34.2" data-path="../一点/02-脚手架设计和框架搭建.html">
+            
+                <a href="../一点/02-脚手架设计和框架搭建.html">
+            
+                    
+                    脚手架设计和框架搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34.3" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="../六个周/">
+            
+                <a href="../六个周/">
+            
+                    
+                    六个周
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.35.1" data-path="../六个周/01.需求分析与架构设计.html">
+            
+                <a href="../六个周/01.需求分析与架构设计.html">
+            
+                    
+                    01.需求分析与架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35.2" data-path="../六个周/02.脚手架架构设计和框架搭建.html">
+            
+                <a href="../六个周/02.脚手架架构设计和框架搭建.html">
+            
+                    
+                    02.脚手架架构设计和框架搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35.3" data-path="../六个周/03.脚手架核心流程开发.html">
+            
+                <a href="../六个周/03.脚手架核心流程开发.html">
+            
+                    
+                    03.脚手架核心流程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35.4" data-path="../六个周/99.整体架构设计文档范本V0.1.html">
+            
+                <a href="../六个周/99.整体架构设计文档范本V0.1.html">
+            
+                    
+                    99.整体架构设计文档范本V0.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="../六玥/">
+            
+                <a href="../六玥/">
+            
+                    
+                    六玥
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.36.1" data-path="../六玥/01-第一周笔记和作业.html">
+            
+                <a href="../六玥/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="../凹凸曼/">
+            
+                <a href="../凹凸曼/">
+            
+                    
+                    凹凸曼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.37.1" data-path="../凹凸曼/01-Week01-作业.html">
+            
+                <a href="../凹凸曼/01-Week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37.2" data-path="../凹凸曼/02-Week02-作业.html">
+            
+                <a href="../凹凸曼/02-Week02-作业.html">
+            
+                    
+                    Week02 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37.3" data-path="../凹凸曼/03-Week03-作业.html">
+            
+                <a href="../凹凸曼/03-Week03-作业.html">
+            
+                    
+                    Week03 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="../前端菜鸟/">
+            
+                <a href="../前端菜鸟/">
+            
+                    
+                    前端菜鸟
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.38.1" data-path="../前端菜鸟/1、第一周作业.html">
+            
+                <a href="../前端菜鸟/1、第一周作业.html">
+            
+                    
+                    1、第一周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="../十三/">
+            
+                <a href="../十三/">
+            
+                    
+                    十三
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.39.1" data-path="../十三/01-Week01-作业.html">
+            
+                <a href="../十三/01-Week01-作业.html">
+            
+                    
+                    Week01 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39.2" data-path="../十三/02-Week02-作业.html">
+            
+                <a href="../十三/02-Week02-作业.html">
+            
+                    
+                    Week02 作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="../奕初/">
+            
+                <a href="../奕初/">
+            
+                    
+                    奕初
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.40.1" data-path="../奕初/01-整体架构设计 V1.0.html">
+            
+                <a href="../奕初/01-整体架构设计 V1.0.html">
+            
+                    
+                    整体架构设计 V1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40.2" data-path="../奕初/02-脚手架开发入门知识.html">
+            
+                <a href="../奕初/02-脚手架开发入门知识.html">
+            
+                    
+                    脚手架开发入门知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40.3" data-path="../奕初/03-脚手架开发流程详解.html">
+            
+                <a href="../奕初/03-脚手架开发流程详解.html">
+            
+                    
+                    脚手架开发流程详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="../左子穆/">
+            
+                <a href="../左子穆/">
+            
+                    
+                    左子穆
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.41.1" data-path="../左子穆/01-自我学习-web第一周札记.html">
+            
+                <a href="../左子穆/01-自我学习-web第一周札记.html">
+            
+                    
+                    自我学习 Web第一周札记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="../彩笔/">
+            
+                <a href="../彩笔/">
+            
+                    
+                    彩笔
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.42.1" data-path="../彩笔/作业-01-架构方案设计文档.html">
+            
+                <a href="../彩笔/作业-01-架构方案设计文档.html">
+            
+                    
+                    作业 01 架构方案设计文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42.2" data-path="../彩笔/作业-02-脚手架架构设计和框架搭建.html">
+            
+                <a href="../彩笔/作业-02-脚手架架构设计和框架搭建.html">
+            
+                    
+                    作业 02 脚手架架构设计和框架搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42.3" data-path="../彩笔/作业-03-脚手架核心流程开发.html">
+            
+                <a href="../彩笔/作业-03-脚手架核心流程开发.html">
+            
+                    
+                    作业 03 脚手架核心流程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42.4" data-path="../彩笔/作业-04-脚手架命令注册和执行过程开发.html">
+            
+                <a href="../彩笔/作业-04-脚手架命令注册和执行过程开发.html">
+            
+                    
+                    作业 04 脚手架命令注册和执行过程开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42.5" data-path="../彩笔/作业-05-脚手架创建项目流程设计和开发.html">
+            
+                <a href="../彩笔/作业-05-脚手架创建项目流程设计和开发.html">
+            
+                    
+                    作业 05 脚手架创建项目流程设计和开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42.6" data-path="../彩笔/作业-06-脚手架项目和组件初始化开发.html">
+            
+                <a href="../彩笔/作业-06-脚手架项目和组件初始化开发.html">
+            
+                    
+                    作业 06 脚手架项目和组件初始化开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42.7" data-path="../彩笔/作业-07-B端项目需求分析和架构设计.html">
+            
+                <a href="../彩笔/作业-07-B端项目需求分析和架构设计.html">
+            
+                    
+                    作业 07 B端项目需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42.8" data-path="../彩笔/作业-08-前端基础技术回顾和巡礼.html">
+            
+                <a href="../彩笔/作业-08-前端基础技术回顾和巡礼.html">
+            
+                    
+                    作业 08 前端基础技术回顾和巡礼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42.9" data-path="../彩笔/作业-09-项目整体搭建.html">
+            
+                <a href="../彩笔/作业-09-项目整体搭建.html">
+            
+                    
+                    作业 09 项目整体搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="../点点/">
+            
+                <a href="../点点/">
+            
+                    
+                    点点
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.43.1" data-path="../点点/01-需求分析和架构设计.html">
+            
+                <a href="../点点/01-需求分析和架构设计.html">
+            
+                    
+                    需求分析和架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43.2" data-path="../点点/02-脚手架架构设计和框架搭建.html">
+            
+                <a href="../点点/02-脚手架架构设计和框架搭建.html">
+            
+                    
+                    脚手架架构设计和框架搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="../猛男落泪/">
+            
+                <a href="../猛男落泪/">
+            
+                    
+                    猛男落泪
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.44.1" data-path="../猛男落泪/01-第二周作业.html">
+            
+                <a href="../猛男落泪/01-第二周作业.html">
+            
+                    
+                    第二周作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="../落叶无声xcm/">
+            
+                <a href="../落叶无声xcm/">
+            
+                    
+                    落叶无声Xcm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.45.1" data-path="../落叶无声xcm/01-week01_学习笔记.html">
+            
+                <a href="../落叶无声xcm/01-week01_学习笔记.html">
+            
+                    
+                    Week01 学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="../诸神の黄昏/">
+            
+                <a href="../诸神の黄昏/">
+            
+                    
+                    诸神の黄昏
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.46.1" data-path="../诸神の黄昏/01-项目研发流程.html">
+            
+                <a href="../诸神の黄昏/01-项目研发流程.html">
+            
+                    
+                    项目研发流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="../郭二蛋/">
+            
+                <a href="../郭二蛋/">
+            
+                    
+                    郭二蛋
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.47.1" data-path="../郭二蛋/01-第一周笔记和作业.html">
+            
+                <a href="../郭二蛋/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47.2" data-path="../郭二蛋/02-第二周笔记和作业.html">
+            
+                <a href="../郭二蛋/02-第二周笔记和作业.html">
+            
+                    
+                    第二周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47.3" data-path="../郭二蛋/03-第三周笔记和作业.html">
+            
+                <a href="../郭二蛋/03-第三周笔记和作业.html">
+            
+                    
+                    第三周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47.4" data-path="../郭二蛋/04-第四周笔记和作业.html">
+            
+                <a href="../郭二蛋/04-第四周笔记和作业.html">
+            
+                    
+                    第四周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47.5" data-path="../郭二蛋/05-第五周笔记和作业.html">
+            
+                <a href="../郭二蛋/05-第五周笔记和作业.html">
+            
+                    
+                    第五周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="../野火/">
+            
+                <a href="../野火/">
+            
+                    
+                    野火
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.48.1" data-path="../野火/01-作业-架构设计方案.html">
+            
+                <a href="../野火/01-作业-架构设计方案.html">
+            
+                    
+                    作业 架构设计方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="../點滴心宇/">
+            
+                <a href="../點滴心宇/">
+            
+                    
+                    點滴心宇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.49.1" data-path="../點滴心宇/01-第一周笔记和作业.html">
+            
+                <a href="../點滴心宇/01-第一周笔记和作业.html">
+            
+                    
+                    第一周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49.2" data-path="../點滴心宇/02-第二周笔记和作业.html">
+            
+                <a href="../點滴心宇/02-第二周笔记和作业.html">
+            
+                    
+                    第二周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49.3" data-path="../點滴心宇/03-第三周笔记和作业.html">
+            
+                <a href="../點滴心宇/03-第三周笔记和作业.html">
+            
+                    
+                    第三周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49.4" data-path="../點滴心宇/04-第四周笔记和作业.html">
+            
+                <a href="../點滴心宇/04-第四周笔记和作业.html">
+            
+                    
+                    第四周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49.5" data-path="../點滴心宇/05-第五周笔记和作业.html">
+            
+                <a href="../點滴心宇/05-第五周笔记和作业.html">
+            
+                    
+                    第五周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49.6" data-path="../點滴心宇/06-第六周笔记和作业.html">
+            
+                <a href="../點滴心宇/06-第六周笔记和作业.html">
+            
+                    
+                    第六周笔记和作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="../🎮滔/">
+            
+                <a href="../🎮滔/">
+            
+                    
+                    🎮滔
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.50.1" data-path="../🎮滔/01-需求分析及架构设计.html">
+            
+                <a href="../🎮滔/01-需求分析及架构设计.html">
+            
+                    
+                    需求分析及架构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="../🐟红鲤驴与绿驴鱼/">
+            
+                <a href="../🐟红鲤驴与绿驴鱼/">
+            
+                    
+                    🐟红鲤驴与绿驴鱼
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.51.1" data-path="../🐟红鲤驴与绿驴鱼/01-作业-架构方案设计.html">
+            
+                <a href="../🐟红鲤驴与绿驴鱼/01-作业-架构方案设计.html">
+            
+                    
+                    作业 架构方案设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="../👨‍🎓风情炀/">
+            
+                <a href="../👨‍🎓风情炀/">
+            
+                    
+                    👨‍🎓风情炀
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.52.1" data-path="../👨‍🎓风情炀/01-weak01学习笔记.html">
+            
+                <a href="../👨‍🎓风情炀/01-weak01学习笔记.html">
+            
+                    
+                    Weak01学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52.2" >
+            
+                <span>
+            
+                    
+                    Images
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" >
+            
+                <span>
+            
+                    
+                    👨‍🏫Sam老师
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.53.1" data-path="../👨‍🏫Sam老师/01-前端未来趋势分析.html">
+            
+                <a href="../👨‍🏫Sam老师/01-前端未来趋势分析.html">
+            
+                    
+                    前端未来趋势分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53.2" data-path="../👨‍🏫Sam老师/02-为什么要学习前端架构.html">
+            
+                <a href="../👨‍🏫Sam老师/02-为什么要学习前端架构.html">
+            
+                    
+                    为什么要学习前端架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53.3" data-path="../👨‍🏫Sam老师/03-脚手架入门.html">
+            
+                <a href="../👨‍🏫Sam老师/03-脚手架入门.html">
+            
+                    
+                    脚手架入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="../👨‍🏫双越老师/">
+            
+                <a href="../👨‍🏫双越老师/">
+            
+                    
+                    👨‍🏫双越老师
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.54.1" data-path="../👨‍🏫双越老师/01-我如何理解Web前端架构师的角色和职责.html">
+            
+                <a href="../👨‍🏫双越老师/01-我如何理解Web前端架构师的角色和职责.html">
+            
+                    
+                    我如何理解Web前端架构师的角色和职责
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54.2" data-path="../👨‍🏫双越老师/02-Web 前端架构师课 vs 普通实战课.html">
+            
+                <a href="../👨‍🏫双越老师/02-Web 前端架构师课 vs 普通实战课.html">
+            
+                    
+                    Web 前端架构师课 Vs 普通实战课
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54.3" data-path="../👨‍🏫双越老师/03-动真格的了！为做一门课程花费 1.5万 购买云服务.html">
+            
+                <a href="../👨‍🏫双越老师/03-动真格的了！为做一门课程花费 1.5万 购买云服务.html">
+            
+                    
+                    动真格的了！为做一门课程花费 1.5万 购买云服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="../👨‍🏫张轩老师/">
+            
+                <a href="../👨‍🏫张轩老师/">
+            
+                    
+                    👨‍🏫张轩老师
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.55.1" data-path="../👨‍🏫张轩老师/01-在学习了一门技术的基础知识后，怎样持续提升这门技术达到更高水平？.html">
+            
+                <a href="../👨‍🏫张轩老师/01-在学习了一门技术的基础知识后，怎样持续提升这门技术达到更高水平？.html">
+            
+                    
+                    在学习了一门技术的基础知识后，怎样持续提升这门技术达到更高水平？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55.2" data-path="../👨‍🏫张轩老师/02-Typescript 是不是前端开发必备的技能？一个 ts 黑到 ts 粉的心路历程.html">
+            
+                <a href="../👨‍🏫张轩老师/02-Typescript 是不是前端开发必备的技能？一个 ts 黑到 ts 粉的心路历程.html">
+            
+                    
+                    Typescript 是不是前端开发必备的技能？一个 Ts 黑到 Ts 粉的心路历程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >第四周 Child Process异步源码解析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <header><!-- 百度统计的代码 -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?61947f514f582d72a9e2d67390dd1ab0";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+</header><h3 id="&#x6E90;&#x7801;&#x89E3;&#x8BFB;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;">&#x6E90;&#x7801;&#x89E3;&#x8BFB;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;</h3>
+<ul>
+<li><code>exec</code> &#x548C; <code>execFile</code> &#x5230;&#x5E95;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;</li>
+<li>&#x4E3A;&#x4EC0;&#x4E48; <code>exec</code> / <code>execFile</code> / <code>fork</code> &#x90FD;&#x662F;&#x901A;&#x8FC7; <code>spawn</code> &#x5B9E;&#x73B0;&#x7684;&#xFF0C;<code>spawn</code> &#x7684;&#x4F5C;&#x7528;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+<li>&#x4E3A;&#x4EC0;&#x4E48; <code>spawn</code> &#x8C03;&#x7528;&#x540E;&#x6CA1;&#x6709;&#x56DE;&#x8C03;&#xFF0C;&#x800C; <code>exec</code> / <code>execFile</code> &#x80FD;&#x591F;&#x56DE;&#x8C03;&#xFF1F;</li>
+<li>&#x4E3A;&#x4EC0;&#x4E48; <code>spawn</code> &#x8C03;&#x7528;&#x540E;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8C03;&#x7528; <code>child.stdout.on(&apos;data&apos;, callback)</code>&#xFF0C;&#x8FD9;&#x91CC;&#x7684; <code>child.stdio</code> / <code>child.stderr</code> &#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x6709; <code>data</code> / <code>error</code> / <code>exit</code> / <code>close</code> &#x8FD9;&#x4E48;&#x591A;&#x79CD;&#x56DE;&#x8C03;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x600E;&#x6837;&#x7684;&#xFF1F; </li>
+</ul>
+<h3 id="exec&#x6E90;&#x7801;&#x89E3;&#x8BFB;">exec&#x6E90;&#x7801;&#x89E3;&#x8BFB;</h3>
+<p><img src="images/exec&#x6267;&#x884C;&#x6D41;&#x7A0B;.png" alt="&#x6267;&#x884C;&#x6D41;&#x7A0B;"></p>
+<ul>
+<li><p><code>exec</code> &#x548C; <code>execFile</code> &#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#x53C2;&#x6570;&#x7684;&#x533A;&#x522B;</p>
+</li>
+<li><p>&#x5728; <code>execFile</code> &#x4E2D;&#x8C03;&#x7528; <code>spawn</code> &#x5E76;&#x4E14;&#x76D1;&#x542C;&#x4E86; <code>stderr</code> &#x548C; <code>stdout</code> &#x7684; <code>data</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x6267;&#x884C;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;<code>exec</code> &#x548C; <code>execFile</code> &#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;&#x6240;&#x4EE5; <code>exec</code> &#x548C; <code>execFile</code> &#x6709;&#x56DE;&#x8C03;&#x51FD;&#x6570;</p>
+</li>
+<li><p>&#x6267;&#x884C; <code>exec</code> &#x65F6;&#xFF0C;&#x6700;&#x540E;&#x8C03;&#x7528; <code>spawn</code> &#x89C4;&#x8303;&#x540E;&#x7684;&#x53C2;&#x6570;</p>
+<p><img src="images/spawn&#x89C4;&#x8303;&#x540E;&#x7684;&#x53C2;&#x6570;.png" alt=""></p>
+<ul>
+<li>&#x51FA;&#x73B0;&#x4E86; <code>/bin/sh</code></li>
+<li><code>envPairs</code> &#x662F;&#x73AF;&#x5883;&#x53D8;&#x91CF;</li>
+</ul>
+</li>
+<li><p><code>this._handle</code> &#x662F;&#x5B9E;&#x9645;&#x7684;&#x8FDB;&#x7A0B;</p>
+</li>
+<li><p>&#x6267;&#x884C; <code>child.spawn</code> &#x5B9E;&#x9645;&#x6267;&#x884C;&#x7684;&#x662F; <code>this._handle.spawn</code>&#xFF0C;&#x6267;&#x884C;&#x540E;&#x5F00;&#x542F;&#x65B0;&#x8FDB;&#x7A0B;</p>
+</li>
+<li><p><code>exec</code> &#x6267;&#x884C;&#x540E;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5B50;&#x8FDB;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;</p>
+</li>
+<li><p>&#x8BFE;&#x7A0B;&#x4E2D;&#x8C03;&#x8BD5;&#x6E90;&#x7801;&#x65F6;&#xFF0C; <code>ls -la|grep node_modules</code> &#x62A5;&#x9519;&#xFF0C;&#x800C;&#x76F4;&#x63A5;&#x5728; <code>bash</code> &#x4E2D;&#x8FD0;&#x884C;&#x4E0D;&#x62A5;&#x9519;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;<code>node</code> &#x6709;&#x6267;&#x884C;&#x7684;&#x73AF;&#x5883;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x73AF;&#x5883;&#x4E0D;&#x4E00;&#x6837;(&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x6240;&#x5728;&#x8DEF;&#x5F84;&#x4E0D;&#x4E00;&#x6837;)</p>
+<ul>
+<li>&#x7EDF;&#x4E00;&#x6267;&#x884C;&#x73AF;&#x5883;&#x540E;(&#x6CA1;&#x6709;node_modules&#x6587;&#x4EF6;&#x5939;)&#xFF0C;<code>bash</code> &#x4E2D;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x7ED3;&#x679C;&#x3002;&#x4F46;&#x8C03;&#x8BD5;&#x8FD8;&#x62A5;&#x9519;&#xFF0C;&#x662F;&#x56E0;&#x4E3A; <code>bash</code> &#x5904;&#x7406;&#x4E86;&#x9519;&#x8BEF;&#x3002;&#x6211;&#x4EEC;&#x4EE3;&#x7801;&#x4E2D;&#x8F93;&#x51FA;&#x4E86;&#x9519;&#x8BEF;&#x800C;&#x5DF2;</li>
+</ul>
+</li>
+</ul>
+<h3 id="shell-&#x7684;&#x4F7F;&#x7528;"><code>shell</code> &#x7684;&#x4F7F;&#x7528;</h3>
+<ul>
+<li><p>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x76F4;&#x63A5;&#x6267;&#x884C;shell&#x6587;&#x4EF6;</p>
+<pre><code class="lang-bash">/bin/sh test.shell
+</code></pre>
+</li>
+<li><p>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;&#x76F4;&#x63A5;&#x6267;&#x884C; <code>shell</code> &#x8BED;&#x53E5;</p>
+<pre><code class="lang-bash">/bin/sh -c <span class="hljs-string">&quot;ls -la&quot;</span>
+</code></pre>
+<ul>
+<li><p>&#x6240;&#x4EE5;&#xFF0C;&#x6CA1;&#x6709; <code>-c</code> &#x8981;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</p>
+</li>
+<li><p><code>shell</code> &#x547D;&#x4EE4; <code>ls -la</code>  === <code>/bin/sh -c &quot;ls -la&quot;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="exec-&#x6E90;&#x7801;&#x7CBE;&#x8BFB;"><code>exec</code> &#x6E90;&#x7801;&#x7CBE;&#x8BFB;</h3>
+<ul>
+<li><p>&#x5BF9;&#x8C61;&#x7684;&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x8FDB;&#x884C;&#x6D45;&#x62F7;&#x8D1D;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E; {...Object(true)}</span>
+{...true} <span class="hljs-comment">// {}</span>
+
+<span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E; {...Object(undefined)}</span>
+{...undefined} <span class="hljs-comment">// {}</span>
+
+<span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E; {...Object(null)}</span>
+{...null} <span class="hljs-comment">// {}</span>
+
+{...<span class="hljs-string">&apos;hello&apos;</span>}
+<span class="hljs-comment">// {0: &quot;h&quot;, 1: &quot;e&quot;, 2: &quot;l&quot;, 3: &quot;l&quot;, 4: &quot;o&quot;}</span>
+
+{ ...[<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>] };
+<span class="hljs-comment">// {0: &quot;a&quot;, 1: &quot;b&quot;, 2: &quot;c&quot;}</span>
+</code></pre>
+<ul>
+<li><p>&#x6D45;&#x62F7;&#x8D1D;&#x548C;&#x6DF1;&#x62F7;&#x8D1D;</p>
+<ul>
+<li>&#x6D45;&#x62F7;&#x8D1D;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6709;&#x7740;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x4E00;&#x4EFD;&#x7CBE;&#x786E;&#x62F7;&#x8D1D;&#x3002;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF0C;&#x62F7;&#x8D1D;&#x7684;&#x5C31;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x5C5E;&#x6027;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x62F7;&#x8D1D;&#x7684;&#x5C31;&#x662F;&#x5185;&#x5B58;&#x5730;&#x5740; &#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6539;&#x53D8;&#x4E86;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x5C31;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x6DF1;&#x62F7;&#x8D1D;&#xFF1A;&#x5C06;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x5B8C;&#x6574;&#x7684;&#x62F7;&#x8D1D;&#x4E00;&#x4EFD;&#x51FA;&#x6765;&#xFF0C;&#x5305;&#x62EC;&#x5C5E;&#x6027;&#x6307;&#x5411;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x4ECE;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x5F00;&#x8F9F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x533A;&#x57DF;&#x5B58;&#x653E;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x4E14;&#x4FEE;&#x6539;&#x65B0;&#x5BF9;&#x8C61;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x539F;&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+<li><p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x4EFB;&#x4F55;&#x975E; <code>function</code> &#x7C7B;&#x578B;&#xFF0C;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">normalizeExecArgs</span>(<span class="hljs-params">command, options, callback</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> options === <span class="hljs-string">&apos;function&apos;</span>) {
+    callback = options;
+    options = <span class="hljs-literal">undefined</span>;
+  }
+
+  <span class="hljs-comment">// &#x6D45;&#x62F7;&#x8D1D;</span>
+  options = { ...options }; <span class="hljs-comment">// &#x5C06;&#x4EFB;&#x610F;&#x975E; function &#x90FD;&#x5C06;&#x8F6C;&#x5316;&#x4E3A;&#x53C2;&#x6570;</span>
+  options.shell = <span class="hljs-keyword">typeof</span> options.shell === <span class="hljs-string">&apos;string&apos;</span> ? options.shell : <span class="hljs-literal">true</span>; <span class="hljs-comment">// &#x5F97;&#x5230;shell&#x5C5E;&#x6027;&#x3002;</span>
+
+  <span class="hljs-keyword">return</span> {
+    file: command,
+    options: options, <span class="hljs-comment">// options &#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;shell</span>
+    callback: callback
+  };
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><code>option.shell</code> &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7528;&#x6765;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x7684;&#x6587;&#x4EF6;&#x3002;<strong>&#x9ED8;&#x8BA4;&#x503C;:</strong> Unix &#x4E0A;&#x662F; <code>&apos;/bin/sh&apos;</code>&#xFF0C;Windows &#x4E0A;&#x662F; <code>process.env.ComSpec</code></p>
+</li>
+<li><p><code>execFile</code> &#x4E2D;&#x9996;&#x5148;&#x5BF9;&#x53C2;&#x6570;&#x9010;&#x4E2A;&#x5224;&#x65AD;&#xFF0C;&#x5224;&#x65AD;&#x903B;&#x8F91;&#x6709;&#x70B9;&#x610F;&#x601D;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execFile</span>(<span class="hljs-params">file <span class="hljs-comment">/* , args, options, callback */</span></span>) </span>{
+  <span class="hljs-keyword">let</span> args = [];
+  <span class="hljs-keyword">let</span> callback;
+  <span class="hljs-keyword">let</span> options;
+
+  <span class="hljs-comment">// &#x89E3;&#x6790;&#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF08;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F; shell &#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF09;&#xFF0C;&#x4F7F;&#x7528;argument</span>
+  <span class="hljs-keyword">let</span> pos = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">if</span> (pos &lt; <span class="hljs-built_in">arguments</span>.length &amp;&amp; <span class="hljs-built_in">Array</span>.isArray(<span class="hljs-built_in">arguments</span>[pos])) { <span class="hljs-comment">// &#x83B7;&#x5F97;&#x4F20;&#x5165;shell&#x6587;&#x4EF6;&#x7684;&#x53C2;&#x6570;</span>
+    args = <span class="hljs-built_in">arguments</span>[pos++];
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pos &lt; <span class="hljs-built_in">arguments</span>.length &amp;&amp; <span class="hljs-built_in">arguments</span>[pos] == <span class="hljs-literal">null</span>) { <span class="hljs-comment">// &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x7ED9; null &#x8DF3;&#x8FC7;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x89E3;&#x6790;</span>
+    pos++;
+  }
+
+  <span class="hljs-keyword">if</span> (pos &lt; <span class="hljs-built_in">arguments</span>.length &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">arguments</span>[pos] === <span class="hljs-string">&apos;object&apos;</span>) { <span class="hljs-comment">// &#x53C2;&#x6570;&#x662F; Object &#x7C7B;&#x578B;&#xFF0C;&#x8BA4;&#x4E3A;&#x662F;options</span>
+    options = <span class="hljs-built_in">arguments</span>[pos++];
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pos &lt; <span class="hljs-built_in">arguments</span>.length &amp;&amp; <span class="hljs-built_in">arguments</span>[pos] == <span class="hljs-literal">null</span>) { <span class="hljs-comment">// &#x53C2;&#x6570;&#x503C;&#x662F; null&#xFF0C;&#x8DF3;&#x8FC7;</span>
+    pos++;
+  }
+
+  <span class="hljs-keyword">if</span> (pos &lt; <span class="hljs-built_in">arguments</span>.length &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">arguments</span>[pos] === <span class="hljs-string">&apos;function&apos;</span>) { <span class="hljs-comment">// &#x83B7;&#x5F97;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+    callback = <span class="hljs-built_in">arguments</span>[pos++];
+  }
+
+  <span class="hljs-keyword">if</span> (!callback &amp;&amp; pos &lt; <span class="hljs-built_in">arguments</span>.length &amp;&amp; <span class="hljs-built_in">arguments</span>[pos] != <span class="hljs-literal">null</span>) { <span class="hljs-comment">// &#x7ECF;&#x8FC7;&#x4EE5;&#x4E0A;&#x6B65;&#x9AA4;&#xFF0C;&#x4F20;&#x53C2;&#x4E86;&#x4F46;&#x6CA1;&#x6709;&#x89E3;&#x6790;&#x5230;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x62A5;&#x9519;&#x3002;</span>
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ERR_INVALID_ARG_VALUE(<span class="hljs-string">&apos;args&apos;</span>, <span class="hljs-built_in">arguments</span>[pos]);
+  }
+  ...
+}
+</code></pre>
+<ul>
+<li><p>&#x8FD9;&#x6837;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#xFF0C;&#x53EF;&#x4EE5;<strong>&#x4E0D;&#x7528;&#x56FA;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x987A;&#x5E8F;</strong></p>
+</li>
+<li><p>&#x67E5;&#x770B; <code>ERR_INVALID_ARG_VALUE</code> &#x7684;&#x62A5;&#x9519;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> cp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;child_process&apos;</span>);
+
+cp.exec(<span class="hljs-string">&apos;ls -la&apos;</span>, <span class="hljs-literal">null</span>,<span class="hljs-string">&apos;sdds&apos;</span>);
+</code></pre>
+<ul>
+<li><p>&#x8981;&#x4F20;&#x5165;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x624D;&#x80FD;&#x770B;&#x89C1;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x62A5;&#x9519;&#x3002;&#x539F;&#x56E0;&#x89C1;&#x201D;&#x5BF9;&#x8C61;&#x7684;&#x6269;&#x5C55;&#x8FD0;&#x7B97;&#x7B26;&#x201C;</p>
+<pre><code class="lang-bash">olly@192 child_process % node index.js
+child_process.js:202
+    throw new ERR_INVALID_ARG_VALUE(<span class="hljs-string">&apos;args&apos;</span>, arguments[pos]);
+    ^
+
+TypeError [ERR_INVALID_ARG_VALUE]: The argument <span class="hljs-string">&apos;args&apos;</span> is invalid. Received <span class="hljs-string">&apos;sdds&apos;</span>
+    at Object.execFile (child_process.js:202:11)
+    at Object.exec (child_process.js:145:25)
+    at Object.&lt;anonymous&gt; (/Users/jolly/Desktop/imooc/child_process/index.js:4:4)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+    at Module.load (internal/modules/cjs/loader.js:815:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:727:14)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:1047:10)
+    at internal/main/run_main_module.js:17:11 {
+  code: <span class="hljs-string">&apos;ERR_INVALID_ARG_VALUE&apos;</span>
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x6570;&#x7EC4;&#x7684;&#x6D45;&#x62F7;&#x8D1D;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//args = args.slice(0)</span>
+<span class="hljs-keyword">var</span> a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">var</span> b = a.slice(<span class="hljs-number">0</span>); <span class="hljs-comment">// b: [1, 2, 3]</span>
+a === b; <span class="hljs-comment">// false</span>
+</code></pre>
+</li>
+<li><p><code>spawn</code> &#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x62FC;&#x63A5;&#x90E8;&#x5206;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (options.shell) {
+  <span class="hljs-keyword">const</span> command = [file].concat(args).join(<span class="hljs-string">&apos; &apos;</span>); <span class="hljs-comment">// &#x62FC;&#x63A5;&#x547D;&#x4EE4;&#x6587;&#x4EF6;&#x548C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;</span>
+  <span class="hljs-comment">// Set the shell, switches, and commands.</span>
+  <span class="hljs-keyword">if</span> (process.platform === <span class="hljs-string">&apos;win32&apos;</span>) { <span class="hljs-comment">// windows</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> options.shell === <span class="hljs-string">&apos;string&apos;</span>) <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x6267;&#x884C;shell&#x7684;&#x6587;&#x4EF6;</span>
+      file = options.shell;
+    <span class="hljs-keyword">else</span>
+      file = process.env.comspec || <span class="hljs-string">&apos;cmd.exe&apos;</span>;
+    <span class="hljs-comment">// &apos;/d /s /c&apos; is used only for cmd.exe.</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^(?:.*\\)?cmd(?:\.exe)?$/i</span>.test(file)) { <span class="hljs-comment">// &#x5339;&#x914D;&#x4EFB;&#x610F;&#x8DEF;&#x5F84;&#x4E0B;&#x7684; cmd.exe&#x3002;&#x8FD9;&#x91CC;&#x6307;&#x5B9A;&#x4E86; cmd.exe &#x7684;&#x8DEF;&#x5F84;</span>
+      args = [<span class="hljs-string">&apos;/d&apos;</span>, <span class="hljs-string">&apos;/s&apos;</span>, <span class="hljs-string">&apos;/c&apos;</span>, <span class="hljs-string">`&quot;<span class="hljs-subst">${command}</span>&quot;`</span>]; <span class="hljs-comment">// &apos;/d /s /c&apos; &#x4EC5;&#x7528;&#x4E8E; cmd.exe.</span>
+      options.windowsVerbatimArguments = <span class="hljs-literal">true</span>; <span class="hljs-comment">// options &#x4E2D;&#x7684; windowsVerbatimArguments &#x53C2;&#x6570;</span>
+    } <span class="hljs-keyword">else</span> {
+      args = [<span class="hljs-string">&apos;-c&apos;</span>, command];
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> options.shell === <span class="hljs-string">&apos;string&apos;</span>)
+      file = options.shell;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (process.platform === <span class="hljs-string">&apos;android&apos;</span>) <span class="hljs-comment">// &#x5B89;&#x5353;&#x7CFB;&#x7EDF;</span>
+      file = <span class="hljs-string">&apos;/system/bin/sh&apos;</span>;
+    <span class="hljs-keyword">else</span>
+      file = <span class="hljs-string">&apos;/bin/sh&apos;</span>; <span class="hljs-comment">// &#x9ED8;&#x8BA4;&#x4F7F;&#x7528; &apos;/bin/sh&apos;</span>
+    args = [<span class="hljs-string">&apos;-c&apos;</span>, command];
+  }
+}
+</code></pre>
+</li>
+<li><p><code>spawn</code> &#x4E2D;&#x7684; <code>new ChildProcess()</code> </p>
+<ul>
+<li><p><code>EventEmitter.call(this);</code>  &#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x53D1;&#x4E8B;&#x4EF6;&#x4E86;&#x3002;</p>
+<ul>
+<li><code>emit</code> &#x5206;&#x53D1;</li>
+<li><code>on</code> &#x76D1;&#x542C;</li>
+</ul>
+</li>
+<li><p><code>this._handle.onexit</code> &#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x4E4B;&#x540E;&#x56DE;&#x8C03;</p>
+</li>
+<li><p><code>child.spawn</code>/ <code>ChildProcess.prototype.spawn</code></p>
+<ul>
+<li><p><code>getValidStdio()</code> &#x521B;&#x5EFA;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x6D41;</p>
+<ul>
+<li>&#x8F93;&#x5165;&#x6D41;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x53EA;&#x6709;&#x8BFB;&#x6743;&#x9650;</li>
+<li>&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x53EA;&#x6709;&#x5199;&#x6743;&#x9650;</li>
+<li><p><code>new Pipe()</code> &#x521B;&#x5EFA; <code>socket</code> &#x901A;&#x4FE1;&#xFF0C;&#x8C03;&#x7528; <code>pipe_wrap</code></p>
+</li>
+<li><p><code>ipc</code> &#x5EFA;&#x7ACB;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x53CC;&#x5411;&#x901A;&#x4FE1;&#xFF0C;&#x5728; <code>fork</code> &#x65F6;&#x521B;&#x5EFA;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x5FAA;&#x73AF;&#x5EFA;&#x7ACB;&#x7236;&#x5B50;&#x8FDB;&#x7A0B; socket &#x901A;&#x4FE1;</p>
+<ul>
+<li>socket &#x5BF9;&#x8C61;&#x4F7F;&#x7528; on(&apos;data&apos;)&#x76D1;&#x542C;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="nodeprocess&#x56DE;&#x8C03;&#x8C03;&#x7528;&#x6D41;&#x7A0B;">node_process&#x56DE;&#x8C03;&#x8C03;&#x7528;&#x6D41;&#x7A0B;</h3>
+<p><img src="images/node_process&#x56DE;&#x8C03;&#x8C03;&#x7528;&#x6D41;&#x7A0B;.png" alt="node_process&#x56DE;&#x8C03;&#x8C03;&#x7528;&#x6D41;&#x7A0B;"></p>
+<ul>
+<li>Process &#x6267;&#x884C;&#x547D;&#x4EE4;<ul>
+<li><code>child._handle.spawn(options)</code> &#x6267;&#x884C;&#x547D;&#x4EE4; </li>
+<li><code>exitCode</code> &#x4E3A;0&#xFF0C;&#x8868;&#x793A;&#x6267;&#x884C;&#x6210;&#x529F;&#xFF0C;&#x5C0F;&#x4E8E;0&#x8868;&#x793A;&#x5931;&#x8D25;</li>
+</ul>
+</li>
+<li>&#x547D;&#x4EE4;&#x6267;&#x884C;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5F80;&#x201D;&#x6D41;&#x201C;&#x4E2D;&#x5199;&#x5165;&#x4FE1;&#x606F;&#xFF0C;&#x56DE;&#x8C03; <code>onStreamRead</code> &#x65B9;&#x6CD5;&#x8BFB;&#x53D6;&#x6D41;&#x4E2D;&#x4FE1;&#x606F;</li>
+<li><code>onStreamRead</code> &#x6BCF;&#x8BFB;&#x53D6;&#x5B8C;&#x4E00;&#x6761;&#x6D41;&#x4E2D;&#x4FE1;&#x606F;&#xFF0C;&#x8C03;&#x7528;&#x4E00;&#x6B21; <code>onReadableStreamEnd</code> </li>
+<li><code>maybeClose()</code> &#x4E2D;&#xFF0C;&#x5224;&#x65AD;&#x6240;&#x6709;<code>socket</code> &#x5173;&#x95ED;&#x540E;&#xFF0C;&#x5173;&#x95ED;&#x5B50;&#x8FDB;&#x7A0B;</li>
+<li>&#x4E24;&#x6761;&#x7EBF;&#xFF1A;<ul>
+<li>&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x7EBF;</li>
+<li>&#x6D41;&#x7684;&#x8BFB;&#x53D6;&#x7EBF;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x6267;&#x884C;&#x987A;&#x5E8F;">&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x6267;&#x884C;&#x987A;&#x5E8F;</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> child = cp.execFile(<span class="hljs-string">&apos;ls -la&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, stdout, stderr</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;callback start-----------&apos;</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;err: &apos;</span>, err);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;stdout: &apos;</span>, stdout);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;stderr: &apos;</span>, stderr);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;callback end-----------&apos;</span>);
+});
+
+child.on(<span class="hljs-string">&apos;error&apos;</span>, chunk =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;error! &apos;</span>, chunk);
+})
+child.stdout.on(<span class="hljs-string">&apos;data&apos;</span>, chunk =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;stdout data: &apos;</span>, chunk);
+});
+
+child.stderr.on(<span class="hljs-string">&apos;data&apos;</span>, chunk =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;stderr data: &apos;</span>, chunk);
+});
+
+child.stdout.on(<span class="hljs-string">&apos;close&apos;</span>, chunk =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;stdout close&apos;</span>);
+});
+
+child.stderr.on(<span class="hljs-string">&apos;close&apos;</span>, chunk =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;stderr close&apos;</span>);
+});
+
+child.on(<span class="hljs-string">&apos;exit&apos;</span>, (exitCode, signalCode) =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;exit! &apos;</span>, exitCode, <span class="hljs-string">&apos; &apos;</span>, signalCode);
+});
+
+child.on(<span class="hljs-string">&apos;close&apos;</span>, (exitCode, signalCode) =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;close! &apos;</span>, exitCode, <span class="hljs-string">&apos; &apos;</span>, signalCode);
+});
+</code></pre>
+<pre><code class="lang-bash">jolly@192 child_process % node index.js
+stdout data:  total 24
+drwxr-xr-x   6 jolly  staff   192  2 10 15:11 .
+drwxr-xr-x  14 jolly  staff   448  2  7 16:58 ..
+drwxr-xr-x   3 jolly  staff    96  2 10 15:11 .vscode
+-rw-r--r--   1 jolly  staff   225  2  7 21:10 child.js
+-rw-r--r--   1 jolly  staff  1901  2 11 16:50 index.js
+-rwxr-xr-x   1 jolly  staff    15  2  7 20:19 test.shell
+
+<span class="hljs-built_in">exit</span>!  0   null
+stderr close
+callback start-----------
+err:  null
+stdout:  total 24
+drwxr-xr-x   6 jolly  staff   192  2 10 15:11 .
+drwxr-xr-x  14 jolly  staff   448  2  7 16:58 ..
+drwxr-xr-x   3 jolly  staff    96  2 10 15:11 .vscode
+-rw-r--r--   1 jolly  staff   225  2  7 21:10 child.js
+-rw-r--r--   1 jolly  staff  1901  2 11 16:50 index.js
+-rwxr-xr-x   1 jolly  staff    15  2  7 20:19 test.shell
+
+stderr:  
+callback end-----------
+close!  0   null
+stdout close
+</code></pre>
+<p><img src="images/child&#x56DE;&#x8C03;&#x6267;&#x884C;&#x987A;&#x5E8F;.png" alt="child&#x56DE;&#x8C03;&#x6267;&#x884C;&#x987A;&#x5E8F;.png" style="zoom:50%;"></p>
+<h3 id="exec-&#x6267;&#x884C;&#x548C;&#x56DE;&#x8C03;&#x8111;&#x56FE;"><code>exec</code> &#x6267;&#x884C;&#x548C;&#x56DE;&#x8C03;&#x8111;&#x56FE;</h3>
+<p><img src="images/exec&#x89E3;&#x8BFB;.png" alt="exec &#x6267;&#x884C;&#x548C;&#x56DE;&#x8C03;&#x8111;&#x56FE;"></p>
+<p>&#x989C;&#x8272;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>&#x9EC4;&#x8272;&#xFF1A;&#x56DE;&#x8C03;&#x6267;&#x884C;&#x8FC7;&#x7A0B;</li>
+<li>&#x7D2B;&#x8272;&#xFF1A;&#x5E7F;&#x64AD;&#x4E8B;&#x4EF6;</li>
+<li>&#x7EFF;&#x8272;&#xFF1A;&#x8FDB;&#x7A0B; <code>error</code> &#x6D41;&#x7A0B;</li>
+</ul>
+<p>&#x5173;&#x4E8E; <code>stderr</code> </p>
+<ul>
+<li>&#x5F53;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#xFF0C;&#x5982; <code>lss -ls</code> &#x65F6;<ul>
+<li><code>ChildProcess.prototype.spawn()</code> &#x4E2D; <strong><code>exitCode</code> &#x662F; 0</strong>&#xFF0C;&#x5E76;&#x4E0D;&#x5C0F;&#x4E8E;0</li>
+</ul>
+</li>
+</ul>
+<h3 id="buffer-&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;&#x5668;"><code>Buffer</code> &#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;&#x5668;</h3>
+<p>&#x5728; <code>fork</code> &#x6D41;&#x7A0B;&#xFF0C;<code>setupChannel(child, ipc)</code> &#x8BBE;&#x7F6E;&#xFF0C;&#x5176;&#x4E2D;&#x6D89;&#x53CA; <code>Buffer</code> &#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;&#x3002;</p>
+<p><code>string_decoder</code> &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; API&#xFF0C;&#x7528;&#x4E00;&#x79CD;&#x80FD;&#x4FDD;&#x62A4;&#x5DF2;&#x7F16;&#x7801;&#x7684;&#x591A;&#x5B57;&#x8282; UTF-8 &#x548C; UTF-16 &#x5B57;&#x7B26;&#x7684;&#x65B9;&#x5F0F;&#x5C06; <code>Buffer</code> &#x5BF9;&#x8C61;&#x89E3;&#x7801;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x57FA;&#x672C;&#x7528;&#x6CD5;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { StringDecoder } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;string_decoder&apos;</span>);
+<span class="hljs-keyword">const</span> decoder = <span class="hljs-keyword">new</span> StringDecoder(<span class="hljs-string">&apos;utf8&apos;</span>);
+
+<span class="hljs-keyword">const</span> cent = Buffer.from([<span class="hljs-number">0xC2</span>, <span class="hljs-number">0xA2</span>]);
+<span class="hljs-built_in">console</span>.log(decoder.write(cent));
+
+<span class="hljs-keyword">const</span> euro = Buffer.from([<span class="hljs-number">0xE2</span>, <span class="hljs-number">0x82</span>, <span class="hljs-number">0xAC</span>]);
+<span class="hljs-built_in">console</span>.log(decoder.write(euro));
+</code></pre>
+<h3 id="fork-&#x6E90;&#x7801;&#x89E3;&#x8BFB;"><code>fork</code> &#x6E90;&#x7801;&#x89E3;&#x8BFB;</h3>
+<p><img src="images/fork&#x8111;&#x56FE;.png" alt="fork&#x6267;&#x884C;&#x8111;&#x56FE;"></p>
+<ul>
+<li>&#x5269;&#x4F59;&#x90E8;&#x5206;&#x89C1; <code>exec</code> &#x6267;&#x884C;&#x8111;&#x56FE;</li>
+<li>stdio <code>ipc</code> &#x901A;&#x4FE1;&#xFF1A;<code>[0, 1, 2, &apos;ipc&apos;]</code></li>
+<li><code>process.execPath</code> &#x62FF;&#x5230; <code>node</code> &#x8DEF;&#x5F84;</li>
+<li>&#x91CD;&#x70B9; <code>getValidStdio(stdio, false)</code><ul>
+<li>&#x6267;&#x884C;<code>setupChannel(this, ipc)</code>&#xFF0C;&#x589E;&#x5F3A; <code>ipc</code> &#x529F;&#x80FD;&#xFF0C;&#x5728;&#x7236;&#x3001;&#x5B50;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x542F;&#x52A8; <code>ipc</code>&#xFF1A;<code>channel.readStart()</code><ul>
+<li><code>new Control(channel)</code> &#x521B;&#x5EFA; <code>control</code> &#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x6267;&#x884C; <code>ipc</code> &#x7684;<code>ref</code> &#x548C; <code>unref</code> &#x65B9;&#x6CD5;</li>
+<li>&#x6709;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x65F6;&#xFF0C;&#x8FDB;&#x5165; <code>channel.onread</code> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>child.send()</code> &#x8C03;&#x7528; <code>target.send()</code> &#x8FDB;&#x884C;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#xFF0C; &#x4F7F;&#x7528; <code>pipe</code> &#x8FDB;&#x884C;&#x6570;&#x636E;&#x4F20;&#x9012;</li>
+<li>&#x5728;&#x6267;&#x884C;&#x7684; <code>js</code> &#x6587;&#x4EF6;&#x4E2D;&#xFF0C;<code>process.send()</code> &#x4E5F;&#x662F;&#x4F7F;&#x7528; <code>target.send()</code> &#x8FDB;&#x884C;&#x901A;&#x4FE1;</li>
+</ul>
+<h3 id="node-&#x591A;&#x8FDB;&#x7A0B;&#x6E90;&#x7801;&#x603B;&#x7ED3;">Node &#x591A;&#x8FDB;&#x7A0B;&#x6E90;&#x7801;&#x603B;&#x7ED3;</h3>
+<ul>
+<li>exec/execFile/spawn/fork&#x7684;&#x533A;&#x522B;<ul>
+<li><code>exec</code> : &#x539F;&#x7406;&#x662F;&#x8C03;&#x7528; <code>bin/shell -c</code> &#x6267;&#x884C;&#x6211;&#x4EEC;&#x4F20;&#x5165;&#x7684; <code>shell</code> &#x811A;&#x672C;&#xFF0C;&#x8C03;&#x7528; <code>execFile</code>&#xFF0C;&#x4F46;&#x4F20;&#x53C2;&#x505A;&#x4E86;&#x5904;&#x7406;</li>
+<li><code>execFile</code>&#xFF1A;&#x539F;&#x7406;&#x662F;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x6211;&#x4EEC;&#x4F20;&#x5165;&#x7684; <code>file</code> &#x548C; <code>args</code>&#xFF0C;&#x5E95;&#x5C42;&#x8C03;&#x7528; <code>spawn</code> &#x521B;&#x5EFA;&#x548C;&#x6267;&#x884C;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F46;&#x901A;&#x8FC7;&#x76D1;&#x542C; <code>spawn</code> &#x4E2D;&#x5E7F;&#x64AD;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x5EFA;&#x7ACB;&#x4E86;&#x56DE;&#x8C03;&#xFF0C;&#x4E14;&#x4E00;&#x6B21;&#x6027;&#x5C06;&#x6240;&#x6709;&#x7684; <code>stdout</code> &#x548C; <code>stderr</code> &#x7ED3;&#x679C;&#x8FD4;&#x56DE;</li>
+<li><code>spawn</code>&#xFF1A;&#x539F;&#x7406;&#x662F;&#x8C03;&#x7528; <code>internal/child_process</code>&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x4E86; <code>ChildProcess</code> &#x5B50;&#x8FDB;&#x7A0B;&#x5BF9;&#x8C61;&#xFF0C;&#x518D;&#x8C03;&#x7528; <code>ChildProcess.prototype.spawn()</code> &#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x5E76;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x5E95;&#x5C42;&#x8C03;&#x7528;&#x4E86; <code>child._handle.spawn()</code> &#x6267;&#x884C; <code>C++ process_wrap</code> &#x4E2D;&#x7684; <code>spawn</code> &#x65B9;&#x6CD5;&#x3002;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x3002;&#x6267;&#x884C;&#x5B8C;&#x540E;&#xFF0C;&#x901A;&#x8FC7; pipe &#x8FDB;&#x884C;&#x5355;&#x5411;&#x6570;&#x636E;&#x901A;&#x4FE1;&#xFF0C;&#x901A;&#x4FE1;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x53D1;&#x8D77; <code>child._handle.onexit</code> &#x56DE;&#x8C03;&#xFF0C;&#x540C;&#x65F6; socket &#x4F1A;&#x6267;&#x884C; <code>close</code> &#x56DE;&#x8C03;&#x3002;</li>
+<li><code>fork</code>&#xFF1A;&#x539F;&#x7406;&#x662F;&#x901A;&#x8FC7; <code>spawn</code> &#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#x548C;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x3002;&#x4F7F;&#x7528; <code>node</code> &#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF0C;&#x901A;&#x8FC7; <code>setupchannel</code> &#x521B;&#x5EFA; <code>IPC</code> &#x7528;&#x4E8E;&#x5B50;&#x8FDB;&#x7A0B;&#x548C;&#x7236;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x7684;&#x53CC;&#x5411;&#x901A;&#x4FE1;</li>
+</ul>
+</li>
+<li>data/error/exit/close&#x56DE;&#x8C03;&#x7684;&#x533A;&#x522B;<ul>
+<li><code>data</code>&#xFF1A;&#x4E3B;&#x8FDB;&#x7A0B;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7; <code>onStreamRead</code> &#x53D1;&#x8D77;&#x56DE;&#x8C03;</li>
+<li><code>error</code>&#xFF1A;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#x540E;&#x53D1;&#x8D77;&#x7684;&#x56DE;&#x8C03;</li>
+<li><code>exit</code>&#xFF1A;&#x5B50;&#x8FDB;&#x7A0B;&#x5173;&#x95ED;&#x5B8C;&#x6210;&#x540E;&#x53D1;&#x8D77;&#x7684;&#x56DE;&#x8C03;</li>
+<li><code>close</code>&#xFF1A;&#x5B50;&#x8FDB;&#x7A0B;&#x6240;&#x6709; <code>Socket</code> &#x901A;&#x4FE1;&#x7AEF;&#x53E3;&#x5168;&#x90E8;&#x5173;&#x95ED;&#x540E;&#x53D1;&#x8D77;&#x7684;&#x56DE;&#x8C03;</li>
+<li><code>stdout close</code>/<code>stderr close</code>&#xFF1A;&#x7279;&#x5B9A;&#x7684; PIPE &#x8BFB;&#x53D6;&#x5B8C;&#x6210;&#x540E;&#x8C03;&#x7528; <code>onReadableStreamEnd()</code> &#x5173;&#x95ED; <code>Socket</code> &#x65F6;&#x53D1;&#x8D77;&#x7684;&#x56DE;&#x8C03;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; imooc-lego (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
+2021-02-20 03:15:34
+</span></footer><footer></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第四周 child_process同步源码解析.html" class="navigation navigation-prev " aria-label="Previous page: 第四周 Child Process同步源码解析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第四周 cluster深入浅出.html" class="navigation navigation-next " aria-label="Next page: 第四周 Cluster深入浅出">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第四周 Child Process异步源码解析","level":"1.22.10","depth":2,"next":{"title":"第四周 Cluster深入浅出","level":"1.22.11","depth":2,"path":"pages/jolly_chen/第四周 cluster深入浅出.md","ref":"pages/jolly_chen/第四周 cluster深入浅出.md","articles":[]},"previous":{"title":"第四周 Child Process同步源码解析","level":"1.22.9","depth":2,"path":"pages/jolly_chen/第四周 child_process同步源码解析.md","ref":"pages/jolly_chen/第四周 child_process同步源码解析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/jolly_chen/第四周 child_process异步源码解析.md","mtime":"2021-02-20T03:15:34.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-20T03:16:27.434Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-extra-html/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
