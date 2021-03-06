@@ -1356,12 +1356,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.24.13" data-path="第六周 ejs教程.html">
+        <li class="chapter " data-level="1.24.13" data-path="第六周 ejs使用和源码解析.html">
             
-                <a href="第六周 ejs教程.html">
+                <a href="第六周 ejs使用和源码解析.html">
             
                     
-                    第六周 Ejs教程
+                    第六周 Ejs使用和源码解析
             
                 </a>
             
@@ -1382,7 +1382,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.24.15" data-path="第六周 脚手架创建项目和组件初始化开发.html">
+        <li class="chapter " data-level="1.24.15" data-path="第六周 node require 加载模块.html">
+            
+                <a href="第六周 node require 加载模块.html">
+            
+                    
+                    第六周 Node Require 加载模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24.16" data-path="第六周 脚手架创建项目和组件初始化开发.html">
             
                 <a href="第六周 脚手架创建项目和组件初始化开发.html">
             
@@ -1395,7 +1408,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.24.16" data-path="第四周 Node多进程入门.html">
+        <li class="chapter " data-level="1.24.17" data-path="第四周 Node多进程入门.html">
             
                 <a href="第四周 Node多进程入门.html">
             
@@ -1408,7 +1421,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.24.17" data-path="第四周 child_process同步源码解析.html">
+        <li class="chapter " data-level="1.24.18" data-path="第四周 child_process同步源码解析.html">
             
                 <a href="第四周 child_process同步源码解析.html">
             
@@ -1421,7 +1434,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.24.18" data-path="第四周 child_process异步源码解析.html">
+        <li class="chapter " data-level="1.24.19" data-path="第四周 child_process异步源码解析.html">
             
                 <a href="第四周 child_process异步源码解析.html">
             
@@ -1434,7 +1447,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.24.19" data-path="第四周 cluster深入浅出.html">
+        <li class="chapter " data-level="1.24.20" data-path="第四周 cluster深入浅出.html">
             
                 <a href="第四周 cluster深入浅出.html">
             
@@ -1447,7 +1460,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.24.20" data-path="第四周 脚手架命令注册和执行过程开发.html">
+        <li class="chapter " data-level="1.24.21" data-path="第四周 脚手架命令注册和执行过程开发.html">
             
                 <a href="第四周 脚手架命令注册和执行过程开发.html">
             
@@ -3432,21 +3445,20 @@ rl.question(<span class="hljs-string">&apos;your name: &apos;</span>, (answer =&
 </code></pre>
 </li>
 <li><p>&#x83B7;&#x53D6;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x80FD;&#x529B;</p>
-<p>```js
-EventEmitter.call(this);</p>
+<pre><code class="lang-js">EventEmitter.call(<span class="hljs-keyword">this</span>);
+</code></pre>
+</li>
+<li><p>&#x76D1;&#x542C;&#x952E;&#x76D8;&#x4E8B;&#x4EF6;</p>
+<pre><code class="lang-js">emitKeypressEvents(input, <span class="hljs-keyword">this</span>);
+
+<span class="hljs-comment">// `input` usually refers to stdin</span>
+input.on(<span class="hljs-string">&apos;keypress&apos;</span>, onkeypress);
+input.on(<span class="hljs-string">&apos;end&apos;</span>, ontermend);
+</code></pre>
 </li>
 </ul>
-<pre><code>
-- &#x76D1;&#x542C;&#x952E;&#x76D8;&#x4E8B;&#x4EF6;
-
-  ```js
-  emitKeypressEvents(input, this);
-
-  // `input` usually refers to stdin
-  input.on(&apos;keypress&apos;, onkeypress);
-  input.on(&apos;end&apos;, ontermend);
-</code></pre><h4 id="readline-&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;"><code>readline</code> &#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;</h4>
-<p><img src="../../Users/jolly/Desktop/imooc/students-learn-task/docs/pages/jolly_chen/images/readline &#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;.png" alt="readline&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;.png"></p>
+<h4 id="readline-&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;"><code>readline</code> &#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;</h4>
+<p><img src="images/readline &#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;.png" alt="readline&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;.png"></p>
 <ul>
 <li>&#x6838;&#x5FC3; <code>emitKeypressEvents(input, this)</code>&#xFF0C;&#x76D1;&#x542C;&#x7EC8;&#x7AEF;&#x4E2D;&#x7684;&#x952E;&#x76D8;&#x8F93;&#x5165;<ul>
 <li><code>emitKeys()</code> &#x662F;&#x4E00;&#x4E2A; <code>Generator</code> &#x51FD;&#x6570; </li>
@@ -3457,7 +3469,7 @@ EventEmitter.call(this);</p>
 <li>&#x7528;&#x6237;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8F93;&#x5165;&#xFF0C;<code>_stream_readable.js</code> &#x4E2D; <code>addChunk()</code> &#x51FD;&#x6570;&#x6D3E;&#x53D1;&#x4E8B;&#x4EF6; <code>stream.emit(&apos;data&apos;, chunk);</code></li>
 <li><code>this.input.pause()</code> &#x5C06;&#x8F93;&#x5165;&#x6D41;&#x5173;&#x95ED;</li>
 </ul>
-<p><img src="../../Users/jolly/Desktop/imooc/students-learn-task/docs/pages/jolly_chen/images/readline&#x8111;&#x56FE;.png" alt="readline&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x8111;&#x56FE;.png"></p>
+<p><img src="images/readline&#x8111;&#x56FE;.png" alt="readline&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x8111;&#x56FE;.png"></p>
 <h4 id="&#x77E5;&#x8BC6;&#x70B9;">&#x77E5;&#x8BC6;&#x70B9;</h4>
 <ul>
 <li><code>Number.isNaN(val)</code></li>
@@ -3508,7 +3520,7 @@ stepRead(<span class="hljs-function"><span class="hljs-keyword">function</span>(
 });
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; imooc-lego (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
-2021-03-05 10:16:21
+2021-03-06 15:04:55
 </span></footer><footer></footer>
                                 
                                 </section>
@@ -3552,7 +3564,7 @@ stepRead(<span class="hljs-function"><span class="hljs-keyword">function</span>(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第五周 Readline 深入浅出","level":"1.24.11","depth":2,"next":{"title":"第五周 脚手架创建项目流程设计和开发","level":"1.24.12","depth":2,"path":"pages/jolly_chen/第五周 脚手架创建项目流程设计和开发.md","ref":"pages/jolly_chen/第五周 脚手架创建项目流程设计和开发.md","articles":[]},"previous":{"title":"第五周 Inquirer核心理解","level":"1.24.10","depth":2,"path":"pages/jolly_chen/第五周 inquirer核心理解.md","ref":"pages/jolly_chen/第五周 inquirer核心理解.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/jolly_chen/第五周 readline 深入浅出.md","mtime":"2021-03-05T10:16:21.220Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-05T10:17:15.219Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第五周 Readline 深入浅出","level":"1.24.11","depth":2,"next":{"title":"第五周 脚手架创建项目流程设计和开发","level":"1.24.12","depth":2,"path":"pages/jolly_chen/第五周 脚手架创建项目流程设计和开发.md","ref":"pages/jolly_chen/第五周 脚手架创建项目流程设计和开发.md","articles":[]},"previous":{"title":"第五周 Inquirer核心理解","level":"1.24.10","depth":2,"path":"pages/jolly_chen/第五周 inquirer核心理解.md","ref":"pages/jolly_chen/第五周 inquirer核心理解.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/jolly_chen/第五周 readline 深入浅出.md","mtime":"2021-03-06T15:04:55.833Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-06T15:05:47.096Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
