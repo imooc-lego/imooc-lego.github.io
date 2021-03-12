@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第一周 · Web 前端架构师课-学员分享</title>
+        <title>第六周Require源码分析 · Web 前端架构师课-学员分享</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../wanda/" />
+    <link rel="next" href="../Wu/" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="04-第六周ejs源码分析.html" />
     
 
     </head>
@@ -638,9 +638,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="../Sunshine/">
+        <li class="chapter " data-level="1.14" data-path="./">
             
-                <a href="../Sunshine/">
+                <a href="./">
             
                     
                     Sunshine
@@ -652,9 +652,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.14.1" data-path="../Sunshine/01-第一周笔记和作业.html">
+        <li class="chapter " data-level="1.14.1" data-path="01-第一周笔记和作业.html">
             
-                <a href="../Sunshine/01-第一周笔记和作业.html">
+                <a href="01-第一周笔记和作业.html">
             
                     
                     第一周笔记和作业
@@ -665,9 +665,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14.2" data-path="../Sunshine/02-第二周作业和笔记.html">
+        <li class="chapter " data-level="1.14.2" data-path="02-第二周作业和笔记.html">
             
-                <a href="../Sunshine/02-第二周作业和笔记.html">
+                <a href="02-第二周作业和笔记.html">
             
                     
                     第二周作业和笔记
@@ -678,9 +678,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14.3" data-path="../Sunshine/03-第五周笔记和作业.html">
+        <li class="chapter " data-level="1.14.3" data-path="03-第五周笔记和作业.html">
             
-                <a href="../Sunshine/03-第五周笔记和作业.html">
+                <a href="03-第五周笔记和作业.html">
             
                     
                     第五周笔记和作业
@@ -691,9 +691,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14.4" data-path="../Sunshine/04-第六周ejs源码分析.html">
+        <li class="chapter " data-level="1.14.4" data-path="04-第六周ejs源码分析.html">
             
-                <a href="../Sunshine/04-第六周ejs源码分析.html">
+                <a href="04-第六周ejs源码分析.html">
             
                     
                     第六周Ejs源码分析
@@ -704,9 +704,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14.5" data-path="../Sunshine/04-第六周require源码分析.html">
+        <li class="chapter active" data-level="1.14.5" data-path="04-第六周require源码分析.html">
             
-                <a href="../Sunshine/04-第六周require源码分析.html">
+                <a href="04-第六周require源码分析.html">
             
                     
                     第六周Require源码分析
@@ -1742,9 +1742,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.31" data-path="./">
+        <li class="chapter " data-level="1.31" data-path="../ricky94/">
             
-                <a href="./">
+                <a href="../ricky94/">
             
                     
                     Ricky94
@@ -1756,9 +1756,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.31.1" data-path="01-第一周.html">
+        <li class="chapter " data-level="1.31.1" data-path="../ricky94/01-第一周.html">
             
-                <a href="01-第一周.html">
+                <a href="../ricky94/01-第一周.html">
             
                     
                     第一周
@@ -3500,7 +3500,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >第一周</a>
+        <a href="../.." >第六周Require源码分析</a>
     </h1>
 </div>
 
@@ -3525,23 +3525,85 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script>
-</header><h1 id="&#x7B2C;&#x4E00;&#x5468;&#xFF1A;&#x9700;&#x6C42;&#x5206;&#x6790;&#x548C;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#xFF1A;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x5982;&#x4F55;&#x505A;&#xFF1F;">&#x7B2C;&#x4E00;&#x5468;&#xFF1A;&#x9700;&#x6C42;&#x5206;&#x6790;&#x548C;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#xFF1A;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x5982;&#x4F55;&#x505A;&#xFF1F;</h1>
-<h2 id="&#x9700;&#x6C42;&#x8BBE;&#x8BA1;">&#x9700;&#x6C42;&#x8BBE;&#x8BA1;</h2>
-<p>&#x67B6;&#x6784;&#x8131;&#x79BB;&#x4E0D;&#x4E86;&#x4E1A;&#x52A1;&#x3002;&#x8981;&#x505A;&#x597D;&#x67B6;&#x6784;&#x5FC5;&#x987B;&#x8981;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x9700;&#x6C42;&#x3001;&#x53C2;&#x4E0E;&#x9700;&#x6C42;&#x3001;&#x770B;&#x900F;&#x9700;&#x6C42;&#x80CC;&#x540E;&#x7684;&#x4E1A;&#x52A1;&#x672C;&#x8D28;&#x3002;</p>
+</header><h3 id="require&#x6E90;&#x7801;&#x5206;&#x6790;">require&#x6E90;&#x7801;&#x5206;&#x6790;</h3>
+<p>require&#x8BED;&#x53E5;&#x7528;&#x6765;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#xFF0C;&#x8FD4;&#x56DE;&#x8BE5;&#x6A21;&#x5757;&#x7684;exports&#x5BF9;&#x8C61;&#xFF0C;&#x6267;&#x884C;&#x903B;&#x8F91;&#x5927;&#x81F4;&#x5982;&#x4E0B;&#xFF1A;</p>
 <blockquote>
 <ul>
-<li><p>PV&#xFF08;Page View&#xFF09;&#xFF1A;&#x5373;&#x9875;&#x9762;&#x6D4F;&#x89C8;&#x91CF;&#x6216;&#x70B9;&#x51FB;&#x91CF;&#xFF0C;&#x7528;&#x6237;&#x6BCF;&#x4E00;&#x6B21;&#x5BF9;&#x7F51;&#x7AD9;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x7F51;&#x9875;&#x8BBF;&#x95EE;&#x5747;&#x88AB;&#x8BB0;&#x5F55;&#x4E00;&#x4E2A;PV&#x3002;&#x7528;&#x6237;&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x591A;&#x6B21;&#x8BBF;&#x95EE;&#xFF0C;&#x8BBF;&#x95EE;&#x91CF;&#x7D2F;&#x8BA1;&#xFF0C;&#x7528;&#x4EE5;&#x8861;&#x91CF;&#x7F51;&#x7AD9;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x7684;&#x7F51;&#x9875;&#x6570;&#x91CF;&#x3002;</p>
+<li>&#x9996;&#x5148;&#x67E5;&#x8BE2;&#x7F13;&#x5B58;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</li>
+<li>&#x5982;&#x679C;&#x8BE5;&#x6587;&#x4EF6;&#x662F;&#x5185;&#x90E8;&#x6A21;&#x5757;&#xFF0C;&#x67E5;&#x5230;&#x540E;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x662F;node_modules&#x6A21;&#x5757;&#xFF0C;&#x6839;&#x636E;&#x6240;&#x5728;&#x7684;&#x7236;&#x6A21;&#x5757;&#xFF0C;&#x786E;&#x5B9A;&#x8BE5;&#x6587;&#x4EF6;&#x53EF;&#x80FD;&#x7684;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x3002;&#x4F9D;&#x6B21;&#x5728;&#x6BCF;&#x4E2A;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x8BE5;&#x6587;&#x4EF6;&#xFF0C;&#x627E;&#x5230;&#x540E;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#xFF0C;&#x786E;&#x5B9A;&#x6587;&#x4EF6;&#x7684;&#x51B3;&#x5B9A;&#x8DEF;&#x5F84;&#xFF0C;&#x627E;&#x5230;&#x6587;&#x4EF6;&#x540E;&#x8FD4;&#x56DE;;   <h5 id="&#x652F;&#x6301;&#x52A0;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF1A;">&#x652F;&#x6301;&#x52A0;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF1A;</h5>
 </li>
-<li><p>UV&#xFF08;Unique Visitor&#xFF09;&#xFF1A;&#x662F;&#x6307;&#x901A;&#x8FC7;&#x4E92;&#x8054;&#x7F51;&#x8BBF;&#x95EE;&#x3001;&#x6D4F;&#x89C8;&#x8FD9;&#x4E2A;&#x7F51;&#x9875;&#x7684;&#x81EA;&#x7136;&#x4EBA;&#x3002;&#x4E00;&#x5929;&#x5185;&#x540C;&#x4E00;&#x4E2A;&#x8BBF;&#x5BA2;&#x591A;&#x6B21;&#x8BBF;&#x95EE;&#x4EC5;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;UV&#x3002;</p>
-</li>
-<li><p>&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#xFF1A;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x57CB;&#x70B9;&#xFF0C;&#x5BF9;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x8FDB;&#x884C;&#x8FFD;&#x8E2A;&#xFF0C;&#x5B8C;&#x6210;&#x5BF9;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x7EC6;&#x8282;&#x7684;&#x8BB0;&#x5F55;&#x3002;</p>
-</li>
+<li>.js&#x7C7B;&#x578B;</li>
+<li>.json&#x7C7B;&#x578B;</li>
+<li>.node&#x7C7B;&#x578B;</li>
+<li>.mjs&#x7C7B;&#x578B;(node 15&#x4EE5;&#x4E0B;&#x7684;&#x7248;&#x672C;&#x4E0D;&#x652F;&#x6301;&#x4F1A;&#x76F4;&#x63A5;&#x629B;&#x51FA;&#x5F02;&#x5E38;)</li>
+<li>&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x7C7B;&#x578B;(&#x4F1A;&#x7EDF;&#x4E00;&#x8F6C;&#x5316;&#x4E3A;js&#x7C7B;&#x578B;)</li>
 </ul>
 </blockquote>
-<h2 id="&#x67B6;&#x6784;&#x8BBE;&#x8BA1;">&#x67B6;&#x6784;&#x8BBE;&#x8BA1;</h2>
+<h4 id="&#x6E90;&#x7801;&#x6267;&#x884C;&#x6D41;&#x7A0B;">&#x6E90;&#x7801;&#x6267;&#x884C;&#x6D41;&#x7A0B;</h4>
 <ol>
-<li>&#x5206;&#x6790;&#x9700;&#x6C42;&#xFF0C;&#x786E;&#x5B9A;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;</li>
+<li>&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF1A;<code>mod.require(path);</code>&#xFF0C;&#x8C03;&#x7528;module&#x5BF9;&#x8C61;&#x7684;require&#x65B9;&#x6CD5;;</li>
+<li>&#x8C03;&#x7528;<code>Module._load(id, this, /* isMain */ false);</code> &#x6765;&#x5BF9;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;&#x4E3B;&#x6587;&#x4EF6;
+3.<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> filename = relativeResolveCache[relResolveCacheIdentifier];
+ <span class="hljs-keyword">if</span> (filename !== <span class="hljs-literal">undefined</span>) {
+   <span class="hljs-keyword">const</span> cachedModule = Module._cache[filename];
+   <span class="hljs-keyword">if</span> (cachedModule !== <span class="hljs-literal">undefined</span>) {
+     updateChildren(parent, cachedModule, <span class="hljs-literal">true</span>);
+     <span class="hljs-keyword">return</span> cachedModule.exports;
+   }
+   <span class="hljs-keyword">delete</span> relativeResolveCache[relResolveCacheIdentifier];
+ }
+</code></pre>
+&#x5224;&#x65AD;&#x8BE5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;module.exports&#x5BF9;&#x8C61;<br>.4. &#x5BFB;&#x627E;&#x6587;&#x4EF6;&#x7684;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;&#xFF1A;<code>const filename = Module._resolveFilename(request, parent, isMain);</code>,&#x5173;&#x952E;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;:<blockquote>
+<ul>
+<li>&#x6839;&#x636E;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#xFF0C;&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x8DEF;&#x5F84; <code>paths = Module._resolveLookupPaths(request, parent);</code> &#x5982;&#x679C;&#x8BE5;&#x6587;&#x4EF6;&#x662F;node_modules
+&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x8DEF;&#x5F84;:<code>[&#x200C;/Users/niechengyang/Desktop/ejs_test/node_modules,/Users/niechengyang/Desktop/node_modules,/Users/niechengyang/node_modules,/Users/node_modules,/node_modules,/Users/niechengyang/.node_modules,/Users/niechengyang/.node_libraries,/usr/local/lib/node]</code>&#xFF0C;
+&#x5982;&#x679C;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x7236;&#x6A21;&#x5757;&#x6240;&#x6709;&#x7684;&#x76EE;&#x5F55;<code>parentDir = [path.dirname(parent.filename)]</code>&#x6BD4;&#x5982;&#xFF1A;<code>[&apos;/Users/niechengyang/Desktop/ejs_test&apos;]</code></li>
+<li>&#x6839;&#x636E;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x8DEF;&#x5F84;&#x53BB;&#x67E5;&#x627E;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;<code>const filename = Module._findPath(request, paths, isMain, false);</code>&#x627E;&#x5230;&#x540E;&#x8FD4;&#x56DE;&#x6587;&#x4EF6;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;
+<code>/Users/niechengyang/Desktop/ejs_test/node_modules/ejs/lib/ejs.js</code>&#xFF0C;&#x5E76;&#x5C06;&#x8BE5;&#x8DEF;&#x5F84;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#xFF1B;  </li>
+</ul>
+</blockquote>
+</li>
 </ol>
+<p>.5. &#x5224;&#x65AD;&#x8BE5;&#x6A21;&#x5757;&#x662F;&#x5426;&#x4E3A;&#x5185;&#x7F6E;&#x6A21;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x7684;&#x8BDD;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;<code>const mod = loadNativeModule(filename, request, experimentalModules);</code>&#x5982;&#x679C;&#x4E0D;&#x662F;&#x7684;&#x8BDD;
+&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Module&#x5BF9;&#x8C61;&#x6765;&#x5B58;&#x50A8;&#x8BE5;&#x6587;&#x4EF6;<code>const module = new Module(filename, parent)</code>,&#x5E76;&#x5C06;&#x8BE5;&#x6A21;&#x5757;&#x7F13;&#x5B58;&#x4E0B;&#x6765;<code>Module._cache[filename] = module;</code>&#xFF0C; module&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li>id&#xFF1A;&#x6E90;&#x7801;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;&#xFF1A;/Users/sam/Desktop/vue-test/imooc-test/bin/ejs/index.js</li>
+<li>path&#xFF1A;&#x6E90;&#x7801;&#x6587;&#x4EF6;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x901A;&#x8FC7;path.dirname(id) &#x751F;&#x6210;</li>
+<li>exports&#xFF1A;&#x6A21;&#x5757;&#x8F93;&#x51FA;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; {}</li>
+<li>parent&#xFF1A;&#x7236;&#x6A21;&#x5757;&#x4FE1;&#x606F;</li>
+<li>filename&#xFF1A;&#x6E90;&#x7801;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</li>
+<li>loaded&#xFF1A;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#x5B8C;&#x6BD5;</li>
+<li>children&#xFF1A;&#x5B50;&#x6A21;&#x5757;&#x5BF9;&#x8C61;&#x96C6;&#x5408;</li>
+<li>paths&#xFF1A;&#x6A21;&#x5757;&#x67E5;&#x8BE2;&#x8303;&#x56F4;</li>
+</ul>
+</blockquote>
+<p>.6. &#x52A0;&#x8F7D;&#x6A21;&#x5757;<code>module.load(filename);</code>&#xFF0C;&#x8BE6;&#x7EC6;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li>&#x83B7;&#x53D6;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x540E;&#x7F00;&#x540D;<code>const extension = findLongestRegisteredExtension(filename);</code></li>
+<li>&#x83B7;&#x53D6;&#x5230;&#x6267;&#x884C;&#x8BE5;&#x540E;&#x7F00;&#x540D;&#x6587;&#x4EF6;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;<code>Module._extensions[extension](this, filename);</code> <pre><code class="lang-javascript">Module._extensions[<span class="hljs-string">&apos;.js&apos;</span>] = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, filename</span>) </span>{
+<span class="hljs-keyword">if</span> (filename.endsWith(<span class="hljs-string">&apos;.js&apos;</span>)) {
+  <span class="hljs-keyword">const</span> pkg = readPackageScope(filename);
+  <span class="hljs-comment">// Function require shouldn&apos;t be used in ES modules.</span>
+  <span class="hljs-keyword">if</span> (pkg &amp;&amp; pkg.data &amp;&amp; pkg.data.type === <span class="hljs-string">&apos;module&apos;</span>) {
+    <span class="hljs-keyword">const</span> parentPath = <span class="hljs-built_in">module</span>.parent &amp;&amp; <span class="hljs-built_in">module</span>.parent.filename;
+    <span class="hljs-keyword">const</span> packageJsonPath = path.resolve(pkg.path, <span class="hljs-string">&apos;package.json&apos;</span>);
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ERR_REQUIRE_ESM(filename, parentPath, packageJsonPath);
+  }
+}
+<span class="hljs-keyword">const</span> content = fs.readFileSync(filename, <span class="hljs-string">&apos;utf8&apos;</span>);
+<span class="hljs-built_in">module</span>._compile(content, filename);
+</code></pre>
+</li>
+<li>&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x5BF9;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;<code>module._compile(content, filename);</code>&#x5C06;&#x6A21;&#x677F;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;<code>const compiledWrapper = wrapSafe(filename, content, this);</code>
+&#x5E76;&#x4E14;&#x751F;&#x6210;&#x6267;&#x884C;&#x51FD;&#x6570;&#x6240;&#x9700;&#x8981;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5305;&#x62EC; exports, require, module, filename, dirname</li>
+<li>&#x5C06;&#x751F;&#x6210;&#x7684;&#x51FD;&#x6570;&#x6267;&#x884C;&#x8D77;&#x6765;<code>result = compiledWrapper.call(thisValue, exports, require, module, filename, dirname);</code></li>
+<li>&#x8FD4;&#x56DE;<code>module.exports</code></li>
+</ul>
+</blockquote>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; imooc-lego (2020 - present) all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">File Modify: 
 2021-03-12 13:33:12
 </span></footer><footer></footer>
@@ -3571,12 +3633,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Ricky94">
+                <a href="04-第六周ejs源码分析.html" class="navigation navigation-prev " aria-label="Previous page: 第六周Ejs源码分析">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../wanda/" class="navigation navigation-next " aria-label="Next page: Wanda">
+                <a href="../Wu/" class="navigation navigation-next " aria-label="Next page: Wu">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -3587,7 +3649,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一周","level":"1.31.1","depth":2,"next":{"title":"Wanda","level":"1.32","depth":1,"path":"pages/wanda/README.md","ref":"pages/wanda/README.md","articles":[{"title":"第一周笔记和作业","level":"1.32.1","depth":2,"path":"pages/wanda/01-第一周笔记和作业.md","ref":"pages/wanda/01-第一周笔记和作业.md","articles":[]},{"title":"Images","level":"1.32.2","depth":2,"ref":"","articles":[]}]},"previous":{"title":"Ricky94","level":"1.31","depth":1,"path":"pages/ricky94/README.md","ref":"pages/ricky94/README.md","articles":[{"title":"第一周","level":"1.31.1","depth":2,"path":"pages/ricky94/01-第一周.md","ref":"pages/ricky94/01-第一周.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/ricky94/01-第一周.md","mtime":"2021-03-12T13:33:12.984Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-12T13:34:03.935Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第六周Require源码分析","level":"1.14.5","depth":2,"next":{"title":"Wu","level":"1.15","depth":1,"path":"pages/Wu/README.md","ref":"pages/Wu/README.md","articles":[{"title":"技术方案设计文档","level":"1.15.1","depth":2,"path":"pages/Wu/01-技术方案设计文档.md","ref":"pages/Wu/01-技术方案设计文档.md","articles":[]},{"title":"Xx","level":"1.15.2","depth":2,"path":"pages/Wu/02-xx.md","ref":"pages/Wu/02-xx.md","articles":[]},{"title":"Images","level":"1.15.3","depth":2,"ref":"","articles":[]}]},"previous":{"title":"第六周Ejs源码分析","level":"1.14.4","depth":2,"path":"pages/Sunshine/04-第六周ejs源码分析.md","ref":"pages/Sunshine/04-第六周ejs源码分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["advanced-emoji","todo","chapter-fold","-lunr","-search","search-pro","github","splitter","tbfed-pagefooter","hide-element","summary","extra-html"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy imooc-lego (2020 - present)"},"chapter-fold":{},"github":{"url":"https://github.com/imooc-lego/students-learn-task"},"todo":{},"summary":{},"splitter":{},"search-pro":{},"extra-html":{"footer":{},"header":{"files":["extra-html-files/baidu-tongji.html"]}},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lego-team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Web 前端架构师课-学员分享","language":"zh-hans","gitbook":"*","description":"Web 前端架构师课-学员分享"},"file":{"path":"pages/Sunshine/04-第六周require源码分析.md","mtime":"2021-03-12T13:33:12.844Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-12T13:34:03.935Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
